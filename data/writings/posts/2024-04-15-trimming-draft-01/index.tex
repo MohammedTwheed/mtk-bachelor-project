@@ -218,10 +218,10 @@ This paper presents a genetic algorithm (GA) methodology to optimize
 neural network hyperparameters in the context of pump impeller trimming.
 Impeller trimming, a process involving modifications to pump impeller
 geometry, traditionally requires expert knowledge and empirical methods
-to achieve the desired performance. The use of neural networks (NNs)
+to achieve the desired performance. The use of neural networks (NN)
 provides an automated approach to improve the impeller trimming process
 based on input data and performance outcomes. The proposed method uses a
-GA to identify the optimal NN hyperparameters, such as hidden layer
+(GA) to identify the optimal NN hyperparameters, such as hidden layer
 size, training function, activation function, and maximum epochs, aiming
 to minimize the mean squared error (MSE) between the network's
 predictions and the actual target outcomes. This paper discusses the
@@ -246,6 +246,12 @@ optimization \sep Genetic algorithms \sep
 \defitem{GA}\defterm{Genetic Algorithm}
 
 \end{deflist}
+
+\begin{deflist}[AAA] %[AAAA] if you have 4 letters max for example
+\defitem{MSE}\defterm{Mean Square Erorr}
+
+
+\end{deflist}
 \end{nomenclature}
 
 \section{introduction}\label{introduction}
@@ -255,34 +261,40 @@ performance for specific applications. It involves modifying the
 impeller's geometry to achieve desired hydraulic characteristics such as
 head, flow rate, and efficiency. Traditionally, the process has been
 dependent on empirical methods and engineering expertise. However, the
-introduction of artificial neural networks (NNs) offers a data-driven
+introduction of artificial neural networks (NN) offers a data-driven
 approach to automate and enhance impeller trimming.
 
-NNs excel at modeling complex relationships between input data and
-desired outputs. In the case of pump impeller trimming, the input data
-(x) can include geometric parameters of the impeller, while the target
-data (t) can consist of pump performance metrics. By training an NN on a
-dataset of impeller designs and performance outcomes, the network can
-learn to predict new impeller performance based on their geometries.
+NN excel at modeling complex relationships between input data and
+desired outputs.
+
+By training an NN on a dataset of impeller designs and performance
+outcomes, the network can learn to predict new impeller performance
+based on their geometries.
+
+In the case of pump impeller trimming, the input data in our case is the
+desired operating point of the pump (flow rate Q, head H), while the
+target data or output from the network is (the impeller outer diameter D
+, pump efficiency \(\eta\) ).
 
 Achieving optimal NN performance requires selecting appropriate
 hyperparameters, which influence network architecture and the learning
-process. Key NN hyperparameters include the size of the hidden layer,
-the training function for weight updates, the activation function
-introducing non-linearity, and the maximum number of training epochs.
+process. Key NN hyperparameters include : 1. the size of the hidden
+layer. 2. the training function for weight updates. 3. the activation
+function introducing non-linearity. 4. the maximum number of training
+epochs.
 
 \section{Methodology}\label{methodology}
 
 This paper outlines a genetic algorithm (GA) methodology for optimizing
-neural network hyperparameters in pump impeller trimming. GAs are
+neural network hyperparameters in pump impeller trimming. (GA) is
 suitable for searching for optimal solutions in complex,
-high-dimensional spaces. The GA approach used in this study involves a
+high-dimensional spaces. The (GA) approach used in this study involves a
 population of candidate hyperparameter sets. Each set is evaluated by
 training an NN with those hyperparameters and measuring the resulting
-MSE on a validation dataset. The GA iteratively selects promising
-hyperparameter sets based on MSE values, performs crossover and mutation
-to create new candidates, and continues until a stopping criterion (such
-as maximum generations or elapsed time) is met.
+(MSE) on a validation dataset. The GA iteratively selects promising
+hyperparameter sets based on (MSE) values of the (NN), performs
+crossover and mutation to create new candidates, and continues until a
+stopping criterion (such as maximum generations or elapsed time) is met.
 
 \subsection{Define Options}\label{define-options}
 
@@ -693,11 +705,9 @@ as dr farid said \citep{Dirac1953888} this is no enough
 \addcontentsline{toc}{subsection}{References}
 
 \renewcommand{\bibsection}{}
-\bibliography{../../../../references.bib,bibliography.bib}
+\bibliography{../../../../references.bib,references.bib}
 
 
 
-
-\nocite{*}
 
 \end{document}

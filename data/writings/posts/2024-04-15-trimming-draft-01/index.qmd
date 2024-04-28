@@ -57,17 +57,17 @@ keywords:
   - Genetic algorithms
   - Mean squared error
 abstract: |
-  This paper presents a genetic algorithm (GA) methodology to optimize neural network hyperparameters in the context of pump impeller trimming. Impeller trimming, a process involving modifications to pump impeller geometry, traditionally requires expert knowledge and empirical methods to achieve the desired performance. The use of neural networks (NNs) provides an automated approach to improve the impeller trimming process based on input data and performance outcomes. The proposed method uses a GA to identify the optimal NN hyperparameters, such as hidden layer size, training function, activation function, and maximum epochs, aiming to minimize the mean squared error (MSE) between the network's predictions and the actual target outcomes. This paper discusses the implementation details of the optimization process and explains the key components and their significance.
+  This paper presents a genetic algorithm (GA) methodology to optimize neural network hyperparameters in the context of pump impeller trimming. Impeller trimming, a process involving modifications to pump impeller geometry, traditionally requires expert knowledge and empirical methods to achieve the desired performance. The use of neural networks (NN) provides an automated approach to improve the impeller trimming process based on input data and performance outcomes. The proposed method uses a (GA) to identify the optimal NN hyperparameters, such as hidden layer size, training function, activation function, and maximum epochs, aiming to minimize the mean squared error (MSE) between the network's predictions and the actual target outcomes. This paper discusses the implementation details of the optimization process and explains the key components and their significance.
 
 date: 2024-04-15
-bibliography: bibliography.bib
+bibliography: references.bib
 nocite: '@*'
 citation:
   container-title: work on bachelor project with prof. dr. mohamed farid khalil
 
 format:
-  elsevier-html: default
-  docx: default
+  # elsevier-html: default
+  # docx: default
   elsevier-pdf:
     nocite: '@*'
     keep-tex: true
@@ -83,30 +83,61 @@ format:
         \defitem{GA}\defterm{Genetic Algorithm}
         
         \end{deflist}
+
+        \begin{deflist}[AAA] %[AAAA] if you have 4 letters max for example
+        \defitem{MSE}\defterm{Mean Square Erorr}
+        \defitem{NNs}\defterm{Neural Networks}
+        
+        \end{deflist}
         \end{nomenclature}
-    include-after-body:
-      text: '\nocite{*}'
+    # include-after-body:
+    #   # text: '\nocite{*}'
 
     journal:
       name: Dr. Farid
       formatting: review
       model: 3p
       cite-style: super
-
+freeze: true
 ---
 
 # introduction
 
-Pump impeller trimming is a critical procedure in optimizing pump performance for specific applications. It involves modifying the impeller's geometry to achieve desired hydraulic characteristics such as head, flow rate, and efficiency. Traditionally, the process has been dependent on empirical methods and engineering expertise. However, the introduction of artificial neural networks (NNs) offers a data-driven approach to automate and enhance impeller trimming.
+Pump impeller trimming is a critical procedure in optimizing pump performance for specific applications. It involves modifying the impeller's geometry to achieve desired hydraulic characteristics such as head, flow rate, and efficiency. Traditionally, the process has been dependent on empirical methods and engineering expertise. However, the introduction of artificial neural networks (NN) offers a data-driven approach to automate and enhance impeller trimming.
 
-NNs excel at modeling complex relationships between input data and desired outputs. In the case of pump impeller trimming, the input data (x) can include geometric parameters of the impeller, while the target data (t) can consist of pump performance metrics. By training an NN on a dataset of impeller designs and performance outcomes, the network can learn to predict new impeller performance based on their geometries.
+NN  excel at modeling complex relationships between input data and desired outputs. 
 
-Achieving optimal NN performance requires selecting appropriate hyperparameters, which influence network architecture and the learning process. Key NN hyperparameters include the size of the hidden layer, the training function for weight updates, the activation function introducing non-linearity, and the maximum number of training epochs.
+By training an NN on a dataset of impeller designs and performance outcomes, the network can learn to predict new impeller performance based on their geometries.
+
+In the case of pump impeller trimming, 
+the input data in our case is the desired operating point of the pump (flow rate Q, head H), while the target data or output from the network is (the impeller outer diameter D , pump efficiency $\eta$ ). 
+
+
+Achieving optimal NN performance requires selecting appropriate hyperparameters, which influence network architecture and the learning process. Key NN hyperparameters include :
+1. the size of the hidden layer. 
+2. the training function for weight updates. 
+3. the activation function introducing non-linearity.
+4. the maximum number of training epochs.
 
 
 # Methodology
 
-This paper outlines a genetic algorithm (GA) methodology for optimizing neural network hyperparameters in pump impeller trimming. GAs are suitable for searching for optimal solutions in complex, high-dimensional spaces. The GA approach used in this study involves a population of candidate hyperparameter sets. Each set is evaluated by training an NN with those hyperparameters and measuring the resulting MSE on a validation dataset. The GA iteratively selects promising hyperparameter sets based on MSE values, performs crossover and mutation to create new candidates, and continues until a stopping criterion (such as maximum generations or elapsed time) is met.
+This paper outlines a genetic algorithm (GA) methodology for optimizing neural network hyperparameters in pump impeller trimming. (GA) is suitable for searching for optimal solutions in complex, high-dimensional spaces. The (GA) approach used in this study involves a population of candidate hyperparameter sets. Each set is evaluated by training an NN with those hyperparameters and measuring the resulting (MSE) on a validation dataset. The GA iteratively selects promising hyperparameter sets based on (MSE) values of the (NN), performs crossover and mutation to create new candidates, and continues until a stopping criterion (such as maximum generations or elapsed time) is met.
+
+
+
+# Neural Networks
+
+FROM:[https://www.historyofinformation.com/detail.php?entryid=782]
+
+The concept of artificial neural networks (NNs) draws inspiration from the biological structure and function of the human brain. Early work in the 1940s by Warren McCulloch and Walter Pitts established a foundation for artificial neurons as interconnected nodes mimicking biological neurons. In the 1950s, Frank Rosenblatt introduced the perceptron, a simple NN architecture that laid the groundwork for further development. However, limitations of the perceptron led to a period of decline in NN research during the 1970s and 1980s.
+
+The resurgence of NNs can be attributed to advancements in several areas. The development of the backpropagation algorithm in the 1980s provided a more efficient method for training complex NN architectures. Additionally, increased computational power and the introduction of new NN architectures, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), expanded the capabilities of NNs.
+
+Mathematically, NNs operate by transforming input data through a series of interconnected layers. Each layer consists of artificial neurons that perform weighted sums of their inputs and apply an activation function to introduce non-linearity. This allows NNs to learn complex relationships between input and output data, making them powerful tools for tasks like pump impeller trimming.
+
+
+
 
 
 ## Define Options

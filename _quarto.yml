@@ -37,8 +37,8 @@ website:
       #   href: https://twitter.com/quarto_pub
       #   aria-label: Quarto Twitter
       - icon: github
-        href: https://github.com/MohammedTwheed/mtk-bachelor-project
-        aria-label: mtk-bachelor-project GitHub
+        href: https://github.com/MohammedTwheed/mtk-bachelor-project-website
+        aria-label: mtk-bachelor-project-website GitHub
 
 
 
