@@ -32,13 +32,13 @@ website:
     center:
       - text: "About"
         href: about.qmd
-    # right:
-    #   - icon: youtube
-    #     href: https://twitter.com/quarto_pub
-    #     aria-label: Quarto Twitter
-    #   - icon: github
-    #     href: https://github.com/quarto-dev/quarto-cli
-    #     aria-label: Quarto GitHub
+    right:
+      # - icon: youtube
+      #   href: https://twitter.com/quarto_pub
+      #   aria-label: Quarto Twitter
+      - icon: github
+        href: https://github.com/MohammedTwheed/mtk-bachelor-project
+        aria-label: mtk-bachelor-project GitHub
 
 
 
