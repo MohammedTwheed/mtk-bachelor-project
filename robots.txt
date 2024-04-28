@@ -1,1 +1,1 @@
-Sitemap: https://MohammedTwheed.github.io/mtk-bachelor-project/sitemap.xml
+Sitemap: https://MohammedTwheed.github.io/mtk-bachelor-project-website/sitemap.xml
