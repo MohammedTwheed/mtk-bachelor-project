@@ -1,0 +1,15 @@
+---
+title: AI Applications in Pumps 
+subtitle: this blog will contian all of our writings related to the project
+listing:
+  sort: "date desc"
+  contents: "posts/*/index.qmd"
+  sort-ui: true
+  filter-ui: true
+  categories: true
+  feed: false
+page-layout: full
+title-block-banner: "#EDF3F9"
+title-block-banner-color: body
+search: true
+---

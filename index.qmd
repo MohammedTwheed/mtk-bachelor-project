@@ -1,0 +1,61 @@
+---
+pagetitle: "UNDER_CONSTRUCTION"
+page-layout: custom
+section-divs: true
+toc: false
+css: index.css
+editor: source
+description: | 
+  this website host your bachelor project about artificial intelligence applications in centrifugal pumps with main focus on regression tasks including symbolic regression and more.
+
+execute:
+  echo: false
+---
+
+::: {.hero-banner}
+::: {.content-block}
+
+
+
+
+::: {.grid .column-page}
+::: {.headline .g-col-lg-6 .g-col-12 .g-col-md-12}
+::: h1
+AI Applications in Pumps
+:::
+
+## the website will host
+
+
+
+-   [Articles & Reports](#articles-reports)
+-   [Presentations](#presentations)
+-   [Interactive Docs](#interactive-docs)
+-   [Websites](#websites)
+-   [Books](#books)
+:::
+
+<!-- ```{r}
+#| classes: '.g-col-lg-6 .g-col-12 .g-col-md-12'
+#| warning: false
+source("carousel.R")
+carousel("gallery-carousel", 5000, 
+         yaml.load_file("carousel.yml"))
+``` -->
+
+:::
+
+
+:::
+:::
+
+
+
+
+
+:::
+
+
+
+
+
