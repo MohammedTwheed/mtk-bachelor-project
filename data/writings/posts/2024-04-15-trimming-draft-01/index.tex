@@ -249,7 +249,9 @@ optimization \sep Genetic algorithms \sep
 
 \begin{deflist}[AAA] %[AAAA] if you have 4 letters max for example
 \defitem{MSE}\defterm{Mean Square Erorr}
-
+\defitem{NNs}\defterm{Neural Networks}
+\defitem{CNNs}\defterm{Convolution Neural Networks}
+\defitem{RNNs}\defterm{Recurrent Neural Networks}
 
 \end{deflist}
 \end{nomenclature}
@@ -295,6 +297,61 @@ training an NN with those hyperparameters and measuring the resulting
 hyperparameter sets based on (MSE) values of the (NN), performs
 crossover and mutation to create new candidates, and continues until a
 stopping criterion (such as maximum generations or elapsed time) is met.
+
+\section{Neural Networks}\label{neural-networks}
+
+FROM:{[}https://www.historyofinformation.com/detail.php?entryid=782{]}
+
+The concept of artificial neural networks (NNs) draws inspiration from
+the biological structure and function of the human brain. Early work in
+the 1940s by Warren McCulloch and Walter Pitts established a foundation
+for artificial neurons as interconnected nodes mimicking biological
+neurons. In the 1950s, Frank Rosenblatt introduced the perceptron, a
+simple NN architecture that laid the groundwork for further development.
+However, limitations of the perceptron led to a period of decline in NN
+research during the 1970s and 1980s.
+
+The resurgence of NNs can be attributed to advancements in several
+areas. The development of the backpropagation algorithm in the 1980s
+provided a more efficient method for training complex NN architectures.
+Additionally, increased computational power and the introduction of new
+NN architectures, such as convolutional neural networks (CNNs) and
+recurrent neural networks (RNNs), expanded the capabilities of NNs.
+
+Mathematically, NNs operate by transforming input data through a series
+of interconnected layers. Each layer consists of artificial neurons that
+perform weighted sums of their inputs and apply an activation function
+to introduce non-linearity. This allows NNs to learn complex
+relationships between input and output data, making them powerful tools
+for tasks like pump impeller trimming performance curve prediction.
+
+FROM:{[}https://playground.tensorflow.org/{]}
+
+\subsection{Simple numerical example on how neural networks
+work}\label{simple-numerical-example-on-how-neural-networks-work}
+
+In this example we will use a very simple shallow neural network
+consists of Input layer consists of 2 neurons , Hidden layer consists of
+3 neurons and Output layer consists of 2 neurons.
+
+TODO
+
+\subsection{Our neural network}\label{our-neural-network}
+
+our neural network will be trained on \((Q \; m^3/h,H \; m)\) to predict
+\((D \; mm,\eta)\).
+
+the neural network will be consisted of 2-neurons input layer ,
+n-neurons hidden layer and 2-neurons output layer using matlab ga
+toolbox we will search for optimum hyperparameters (n (number of neurons
+in hidden layer),training algorithm,activation function and number of
+epochs) where n varies from 5 to 200 , training algorithms
+\({'trainlm', 'trainbr', 'trainrp', 'traincgb', 'traincgf', 'traincgp', 'traingdx', 'trainoss'}\)
+, number of epochs will vary from 50 to 200 and activations functions
+will be \({'tansig', 'logsig'}\) where Hyperbolic Tangent (tansig) is
+\(f(x) = \tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}\)
+and Logistic Sigmoid (logsig) is
+\(f(x) = \sigma(x) = \frac{1}{1 + e^{-x}}\).
 
 \subsection{Define Options}\label{define-options}
 

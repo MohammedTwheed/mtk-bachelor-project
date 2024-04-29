@@ -66,8 +66,8 @@ citation:
   container-title: work on bachelor project with prof. dr. mohamed farid khalil
 
 format:
-  # elsevier-html: default
-  # docx: default
+  elsevier-html: default
+  docx: default
   elsevier-pdf:
     nocite: '@*'
     keep-tex: true
@@ -87,6 +87,8 @@ format:
         \begin{deflist}[AAA] %[AAAA] if you have 4 letters max for example
         \defitem{MSE}\defterm{Mean Square Erorr}
         \defitem{NNs}\defterm{Neural Networks}
+        \defitem{CNNs}\defterm{Convolution Neural Networks}
+        \defitem{RNNs}\defterm{Recurrent Neural Networks}
         
         \end{deflist}
         \end{nomenclature}
@@ -98,7 +100,7 @@ format:
       formatting: review
       model: 3p
       cite-style: super
-freeze: true
+# freeze: true
 ---
 
 # introduction
@@ -134,52 +136,39 @@ The concept of artificial neural networks (NNs) draws inspiration from the biolo
 
 The resurgence of NNs can be attributed to advancements in several areas. The development of the backpropagation algorithm in the 1980s provided a more efficient method for training complex NN architectures. Additionally, increased computational power and the introduction of new NN architectures, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), expanded the capabilities of NNs.
 
-Mathematically, NNs operate by transforming input data through a series of interconnected layers. Each layer consists of artificial neurons that perform weighted sums of their inputs and apply an activation function to introduce non-linearity. This allows NNs to learn complex relationships between input and output data, making them powerful tools for tasks like pump impeller trimming.
+Mathematically, NNs operate by transforming input data through a series of interconnected layers. Each layer consists of artificial neurons that perform weighted sums of their inputs and apply an activation function to introduce non-linearity. This allows NNs to learn complex relationships between input and output data, making them powerful tools for tasks like pump impeller trimming performance curve prediction.
+
+
+FROM:[https://playground.tensorflow.org/]
+
+## Simple numerical example on how neural networks work
+
+In this example we will use a very simple shallow neural network consists of Input layer consists of 2 neurons , Hidden layer consists of 3 neurons and Output layer consists of 2 neurons.
+
+
+TODO
+
+
+## Our neural network
+
+our neural network is trained on $(Q \; m^3/h,H \; m)$ to predict $(D \; mm,\eta)$.
+
+the neural network consists of 2-neurons input layer , n-neurons hidden layer and 2-neurons output layer
+using matlab ga toolbox we will search for optimum hyperparameters (n (number of neurons in hidden layer),training algorithm,activation function and number of epochs) where n varies from 5 to 200 , training algorithms ${'trainlm', 'trainbr', 'trainrp', 'traincgb', 'traincgf', 'traincgp', 'traingdx', 'trainoss'}$ , number of epochs will vary from 50 to 200 and activations functions will be ${'tansig', 'logsig'}$ where Hyperbolic Tangent (tansig) is 
+$f(x) = \tanh(x) = \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$ and Logistic Sigmoid (logsig) is 
+$f(x) = \sigma(x) = \frac{1}{1 + e^{-x}}$.
+
+
+we use matlab `mapminmax` to normalize our training dataset to 
+interval $[-1,1]$ and after the training we recover the scale back using `reverse` option in `mapminmax`. This is because
+neural network training algorithms typically rely on gradient descent to optimize weights. By normalizing the input data to a specific range (often -1 to 1 or 0 to 1), the gradients calculated during *backpropagation* have a more consistent magnitude. This helps the training process converge faster and avoid getting stuck in local minima.
+
+
+we set a random seed for reproducibility where Setting a random seed ensures that the neural network training process is reproducible. This allows for consistent results across different runs and helps in comparing models fairly.
 
 
 
-
-
-## Define Options
-
- Define the set of available training functions (e.g., Levenberg-Marquardt, Bayesian Regularization) and activation functions (e.g., tansigmoid, logarithmic sigmoid).
-
-
-## Nested Evaluation Function
-
-Implement a nested function `evaluateHyperparameters(hyperParams, x, t, randomSeed)` to evaluate a candidate hyperparameter set (`hyperParams`), input data (`x`), and target data (`t`). This function:
-- Extracts individual hyperparameters (hidden layer size, maximum epochs, training and activation function indices).
-- Defines an NN architecture with the given hyperparameters.
-- Splits data into training, validation, and testing sets.
-- Trains the NN using the training data and specified training function.
-- Evaluates the NN on validation data and calculates MSE.
-- Returns the calculated MSE.
-
-
-
-## Random Seed and Bounds
-
-set a random seed for reproducibility and define bounds for each hyperparameter based on practical considerations and prior knowledge.
-
-### Importance of Random Seed:
-
-- **Reproducibility:** Setting a random seed ensures that the neural network training process is reproducible. This allows for consistent results across different runs and helps in comparing models fairly.
-- **Comparison:** When testing different hyperparameters or models, using the same random seed allows for a direct comparison of their performance.
-
-## GA Options
-
- Configure GA options using `optimoptions('ga')`, specifying parameters such as maximum allowed time.
-
-##  Perform Optimization
-
- Execute the GA using `ga` from MATLAB's Optimization Toolbox. This function uses the `evaluateHyperparameters` function as the objective function to minimize, along with the number of hyperparameters, bounds, and GA options.
-
-##  Extract and Round
- Obtain the final optimized hyperparameter set and round them (if necessary) for practical NN implementation.
-
-##  Report Results
-
- Report the optimized hyperparameters, final MSE, random seed used, and total elapsed time of the optimization process. 
+# results
 
 
 
@@ -345,9 +334,7 @@ The function `evaluateHyperparameters` evaluates a set of hyperparameters for a 
 - **Optimum Number of Epochs:** An optimal number of epochs strikes a balance between underfitting and overfitting, ensuring the network generalizes well to new data.
 
 
-# test citation
 
-as dr farid said  [@Dirac1953888] this is no enough
 
 
 ## References {.unnumbered}
