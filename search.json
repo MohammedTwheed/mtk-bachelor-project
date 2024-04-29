@@ -11,69 +11,34 @@
     "href": "data/writings/index.html",
     "title": "AI Applications in Pumps",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nShort Paper\n\n\nA Short Subtitle\n\n\nThis paper presents a genetic algorithm (GA) methodology to optimize neural network hyperparameters in the context of pump impeller trimming. Impeller trimming, a process involving modifications to pump impeller geometry, traditionally requires expert knowledge and empirical methods to achieve the desired performance. The use of neural networks (NNs) provides an automated approach to improve the impeller trimming process based on input data and performance outcomes. The proposed method uses a GA to identify the optimal NN hyperparameters, such as hidden layer size, training function, activation function, and maximum epochs, aiming to minimize the mean squared error (MSE) between the network’s predictions and the actual target outcomes. This paper discusses the implementation details of the optimization process and explains the key components and their significance. \n\n\n\n\n\nApr 15, 2024\n\n\nMohamed Farid Khalil, Mohammed Twheed Khater, Seif Ibrahim Hassan\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nShort Paper\n\n\nA Short Subtitle\n\n\nThis paper presents a genetic algorithm (GA) methodology to optimize neural network hyperparameters in the context of pump impeller trimming. Impeller trimming, a process involving modifications to pump impeller geometry, traditionally requires expert knowledge and empirical methods to achieve the desired performance. The use of neural networks (NN) provides an automated approach to improve the impeller trimming process based on input data and performance outcomes. The proposed method uses a (GA) to identify the optimal NN hyperparameters, such as hidden layer size, training function, activation function, and maximum epochs, aiming to minimize the mean squared error (MSE) between the network’s predictions and the actual target outcomes. This paper discusses the implementation details of the optimization process and explains the key components and their significance. \n\n\n\n\n\nApr 15, 2024\n\n\nMohamed Farid Khalil, Mohammed Twheed Khater, Seif Ibrahim Hassan\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html",
     "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html",
     "title": "Short Paper",
     "section": "",
-    "text": "Pump impeller trimming is a critical procedure in optimizing pump performance for specific applications. It involves modifying the impeller’s geometry to achieve desired hydraulic characteristics such as head, flow rate, and efficiency. Traditionally, the process has been dependent on empirical methods and engineering expertise. However, the introduction of artificial neural networks (NNs) offers a data-driven approach to automate and enhance impeller trimming.\nNNs excel at modeling complex relationships between input data and desired outputs. In the case of pump impeller trimming, the input data (x) can include geometric parameters of the impeller, while the target data (t) can consist of pump performance metrics. By training an NN on a dataset of impeller designs and performance outcomes, the network can learn to predict new impeller performance based on their geometries.\nAchieving optimal NN performance requires selecting appropriate hyperparameters, which influence network architecture and the learning process. Key NN hyperparameters include the size of the hidden layer, the training function for weight updates, the activation function introducing non-linearity, and the maximum number of training epochs."
+    "text": "Pump impeller trimming is a critical procedure in optimizing pump performance for specific applications. It involves modifying the impeller’s geometry to achieve desired hydraulic characteristics such as head, flow rate, and efficiency. Traditionally, the process has been dependent on empirical methods and engineering expertise. However, the introduction of artificial neural networks (NN) offers a data-driven approach to automate and enhance impeller trimming.\nNN excel at modeling complex relationships between input data and desired outputs.\nBy training an NN on a dataset of impeller designs and performance outcomes, the network can learn to predict new impeller performance based on their geometries.\nIn the case of pump impeller trimming, the input data in our case is the desired operating point of the pump (flow rate Q, head H), while the target data or output from the network is (the impeller outer diameter D , pump efficiency \\(\\eta\\) ).\nAchieving optimal NN performance requires selecting appropriate hyperparameters, which influence network architecture and the learning process. Key NN hyperparameters include : 1. the size of the hidden layer. 2. the training function for weight updates. 3. the activation function introducing non-linearity. 4. the maximum number of training epochs."
   },
   {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#define-options",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#define-options",
+    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#simple-numerical-example-on-how-neural-networks-work",
+    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#simple-numerical-example-on-how-neural-networks-work",
     "title": "Short Paper",
-    "section": "Define Options",
-    "text": "Define Options\nDefine the set of available training functions (e.g., Levenberg-Marquardt, Bayesian Regularization) and activation functions (e.g., tansigmoid, logarithmic sigmoid)."
+    "section": "Simple numerical example on how neural networks work",
+    "text": "Simple numerical example on how neural networks work\nIn this example we will use a very simple shallow neural network consists of Input layer consists of 2 neurons , Hidden layer consists of 3 neurons and Output layer consists of 2 neurons.\nTODO"
   },
   {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#nested-evaluation-function",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#nested-evaluation-function",
+    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#our-neural-network",
+    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#our-neural-network",
     "title": "Short Paper",
-    "section": "Nested Evaluation Function",
-    "text": "Nested Evaluation Function\nImplement a nested function evaluateHyperparameters(hyperParams, x, t, randomSeed) to evaluate a candidate hyperparameter set (hyperParams), input data (x), and target data (t). This function: - Extracts individual hyperparameters (hidden layer size, maximum epochs, training and activation function indices). - Defines an NN architecture with the given hyperparameters. - Splits data into training, validation, and testing sets. - Trains the NN using the training data and specified training function. - Evaluates the NN on validation data and calculates MSE. - Returns the calculated MSE."
-  },
-  {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#random-seed-and-bounds",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#random-seed-and-bounds",
-    "title": "Short Paper",
-    "section": "Random Seed and Bounds",
-    "text": "Random Seed and Bounds\nset a random seed for reproducibility and define bounds for each hyperparameter based on practical considerations and prior knowledge.\n\nImportance of Random Seed:\n\nReproducibility: Setting a random seed ensures that the neural network training process is reproducible. This allows for consistent results across different runs and helps in comparing models fairly.\nComparison: When testing different hyperparameters or models, using the same random seed allows for a direct comparison of their performance."
-  },
-  {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#ga-options",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#ga-options",
-    "title": "Short Paper",
-    "section": "GA Options",
-    "text": "GA Options\nConfigure GA options using optimoptions('ga'), specifying parameters such as maximum allowed time."
-  },
-  {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#perform-optimization",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#perform-optimization",
-    "title": "Short Paper",
-    "section": "Perform Optimization",
-    "text": "Perform Optimization\nExecute the GA using ga from MATLAB’s Optimization Toolbox. This function uses the evaluateHyperparameters function as the objective function to minimize, along with the number of hyperparameters, bounds, and GA options."
-  },
-  {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#extract-and-round",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#extract-and-round",
-    "title": "Short Paper",
-    "section": "Extract and Round",
-    "text": "Extract and Round\nObtain the final optimized hyperparameter set and round them (if necessary) for practical NN implementation."
-  },
-  {
-    "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#report-results",
-    "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#report-results",
-    "title": "Short Paper",
-    "section": "Report Results",
-    "text": "Report Results\nReport the optimized hyperparameters, final MSE, random seed used, and total elapsed time of the optimization process."
+    "section": "Our neural network",
+    "text": "Our neural network\nour neural network is trained on \\((Q \\; m^3/h,H \\; m)\\) to predict \\((D \\; mm,\\eta)\\).\nthe neural network consists of 2-neurons input layer , n-neurons hidden layer and 2-neurons output layer using matlab ga toolbox we will search for optimum hyperparameters (n (number of neurons in hidden layer),training algorithm,activation function and number of epochs) where n varies from 5 to 200 , training algorithms \\({'trainlm', 'trainbr', 'trainrp', 'traincgb', 'traincgf', 'traincgp', 'traingdx', 'trainoss'}\\) , number of epochs will vary from 50 to 200 and activations functions will be \\({'tansig', 'logsig'}\\) where Hyperbolic Tangent (tansig) is \\(f(x) = \\tanh(x) = \\frac{\\sinh(x)}{\\cosh(x)} = \\frac{e^x - e^{-x}}{e^x + e^{-x}}\\) and Logistic Sigmoid (logsig) is \\(f(x) = \\sigma(x) = \\frac{1}{1 + e^{-x}}\\).\nwe use matlab mapminmax to normalize our training dataset to interval \\([-1,1]\\) and after the training we recover the scale back using reverse option in mapminmax. This is because neural network training algorithms typically rely on gradient descent to optimize weights. By normalizing the input data to a specific range (often -1 to 1 or 0 to 1), the gradients calculated during backpropagation have a more consistent magnitude. This helps the training process converge faster and avoid getting stuck in local minima.\nwe set a random seed for reproducibility where Setting a random seed ensures that the neural network training process is reproducible. This allows for consistent results across different runs and helps in comparing models fairly."
   },
   {
     "objectID": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#references",
     "href": "data/writings/posts/2024-04-15-trimming-draft-01/index.html#references",
     "title": "Short Paper",
     "section": "References",
-    "text": "References\n\n\nDirac, P.A.M., 1953. The Lorentz transformation and absolute time. Physica 19, 888–896. https://doi.org/10.1016/S0031-8914(53)80099-6\n\n\nFeynman, R.P., Vernon Jr., F.L., 1963. The theory of a general quantum system interacting with a linear dissipative system. Annals of Physics 24, 118–173. https://doi.org/10.1016/0003-4916(63)90068-X"
+    "text": "References\n\n\nKhalil, M., Elgohary, M., Shaito, A., 2013. Application of artificial neural network for the prediction of trimmed impeller size of a centrifugal pump."
   }
 ]
