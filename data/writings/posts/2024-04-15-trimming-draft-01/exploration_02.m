@@ -1,50 +1,76 @@
-% 
+
 % clear; clc; clf;
 % Load data
 % load('QH.mat');
 % load('D.mat');
+% load('P.mat');
 
 % 
 
-input  = QH';
-target = D';
-
-% [a,b,c,d]=optimizeNNForTrimmingPumpImpeller(QH',D');
-[a,b,c,d,e]=optimizeNNForTrimmingPumpImpeller2(QH',D');
-
-% Test the Network
-y = d(input);
 
 
 
-% now the problem was with the number of data points
-% we need just to understand the dimensionality of 
-% inputs and outputs
-% QH was 331x2 so its transpose is 2x331.
-% D was 331x1 so its transpose is 1x331.
-% this means that the network takes in 2 inputs and get 1
-% output for a 331 points.
 
-Q = QH(:,1);
-H = QH(:,2);
-ND = sim(d,QH');
 
-[Qq, Hq] = meshgrid(0:2:440, 0:.5:90);
-Dq = griddata(Q, H, ND, Qq, Hq);
+[optimalHyperParamsD, finalMSED, randomSeedD, bestTrainedNetD]=optimizeNNForTrimmingPumpImpeller(QH',D');
 
-figure;
-mesh(Qq, Hq, Dq);
-hold on;
-scatter3(Q, H, D, 'o', 'MarkerFaceColor', 'r', 'MarkerEdgeColor', 'k');
-xlabel('Flow Rate (m^3/h)');
-ylabel('Head (m)');
-zlabel('Diameter (mm)');
-title('Fitted Function and Data Points');
-legend('Fitted Function', 'Data Points');
 
-h = gca;
-h.XLim = [0 440];
-h.YLim = [0 90];
+% P = QP(:,2);
+% 
+% [optimalHyperParamsP, finalMSEP, randomSeedP, bestTrainedNetP]=optimizeNNForTrimmingPumpImpeller(QD',P');
+
+
+
+
+
+% % now the problem was with the number of data points
+% % we need just to understand the dimensionality of 
+% % inputs and outputs
+% % QH was 331x2 so its transpose is 2x331.
+% % D was 331x1 so its transpose is 1x331.
+% % this means that the network takes in 2 inputs and get 1
+% % output for a 331 points.
+% 
+% Q = QH(:,1);
+% H = QH(:,2);
+% ND = sim(bestTrainedNetD,QH');
+% 
+% NDP = sim(bestTrainedNetP,QD');
+% 
+% [Qq, Hq] = meshgrid(0:2:440, 0:.5:90);
+% Dq = griddata(Q, H, ND, Qq, Hq);
+% 
+% [QDq, Pq] = meshgrid(0:2:440, 0:.5:90);
+% DqP = griddata(Q, P, NDP, QDq, Pq);
+% 
+% figure;
+% 
+% subplot(2, 1, 1);
+% mesh(Qq, Hq, Dq);
+% hold on;
+% scatter3(Q, H, D, 'o', 'MarkerFaceColor', 'r', 'MarkerEdgeColor', 'k');
+% xlabel('Flow Rate (m^3/h)');
+% ylabel('Head (m)');
+% zlabel('Diameter (mm)');
+% title('Fitted Function and Data Points');
+% legend('Fitted Function', 'Data Points');
+% 
+% h = gca;
+% h.XLim = [0 440];
+% h.YLim = [0 90];
+% hold off
+% subplot(2, 1, 2);
+% 
+% mesh(QDq, Pq,DqP);
+% hold on
+% scatter3(QD(:,1), QD(:,2), P, 'o', 'MarkerFaceColor', 'r', 'MarkerEdgeColor', 'k');
+% 
+% h = gca;
+% h.XLim = [0 440];
+% h.YLim = [220 270];
+% hold off
+% 
+
 
 
 function [optimalHyperParams, finalMSE, randomSeed, bestTrainedNet] = optimizeNNForTrimmingPumpImpeller(x, t)
@@ -140,12 +166,13 @@ function [optimalHyperParams, finalMSE, randomSeed, bestTrainedNet] = optimizeNN
         net.divideParam.trainRatio = 0.7;
         net.divideParam.valRatio = 0.15;
         net.divideParam.testRatio = 0.15;
-
+        
+        disp("have defined the neural network");
         % Train the neural network.
         [trainedNet, tr] = train(net, x, t);
 
         % Evaluate the model performance using mean squared error (MSE).
-
+        disp("have trained the neural network");
         % predictions = trainedNet(normalized_input);
         predictions = trainedNet(x);
         mse = perform(trainedNet, t, predictions);
@@ -164,7 +191,7 @@ function [optimalHyperParams, finalMSE, randomSeed, bestTrainedNet] = optimizeNN
             trainPerformance +...
             valPerformance+....
             testPerformance) / 4;
-
+        disp("avgMSEs");
     
         % Check if the current MSE is the best MSE so far and update the global variable if necessary.
         if isempty(bestTrainedNet) || avgMSEs < perform(bestTrainedNet, t, bestTrainedNet(x))
