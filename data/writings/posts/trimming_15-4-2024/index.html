@@ -337,7 +337,6 @@ f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 </section>
 <section id="code-documentation" class="level1">
 <h1>Code Documentation</h1>
-<p>Absolutely, I can analyze the provided MATLAB code for optimizing NN hyperparameters with a genetic algorithm. Here’s a breakdown of each function and its components:</p>
 <p><strong>1. loadData function:</strong></p>
 <ul>
 <li>This function loads data from four separate <code>.mat</code> files containing flow rate (Q), head (H), diameter (D), and power (P) values.</li>
@@ -363,7 +362,7 @@ f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 <li>It trains the network using the training function and activation function specified by the indices.</li>
 <li>It splits the data into training, validation, and testing sets.</li>
 <li>It trains the network and calculates the mean squared error (MSE) on the validation set.</li>
-<li>It returns the average MSE of the training, validation, and testing sets. (This might be a modification to the original code for potentially better performance based on the comments)</li>
+<li>It returns the average MSE of the training, validation, and testing sets.</li>
 <li>It also checks if the current MSE is the best so far and updates the <code>bestTrainedNet</code> global variable if necessary.</li>
 </ul></li>
 <li>The <code>optimizeNNForTrimmingPumpImpeller</code> function uses the GA to search for the combination of hyperparameters that minimizes the MSE returned by the <code>evaluateHyperparameters</code> function.</li>
@@ -375,7 +374,7 @@ f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 <li>It takes the pre-loaded data (<code>QH</code>, <code>D</code>, <code>QD</code>, <code>P</code>), the trained neural networks (<code>bestTrainedNetD</code> for diameter, <code>bestTrainedNetP</code> for power), and an optional <code>saveFigures</code> argument.</li>
 <li>It performs data interpolation using <code>griddata</code> to create smoother surfaces for visualization of predicted diameters and power.</li>
 <li>It then creates visualizations using <code>mesh</code> plots for both diameters and power, along with scatter plots of the original data points for comparison.</li>
-<li>The function utilizes transpose (<code>'</code>) again before feeding data to the neural networks with <code>sim(bestTrainedNetD, QH')</code> and <code>sim(bestTrainedNetP, QD')</code>. This is likely because the neural network expects the input data in transposed form (column vectors).</li>
+<li>The function utilizes transpose (<code>'</code>) again before feeding data to the neural networks with <code>sim(bestTrainedNetD, QH')</code> and <code>sim(bestTrainedNetP, QD')</code>. This is because the neural network expects the input data in transposed form (column vectors).</li>
 <li>It saves the visualizations as <code>.fig</code> and <code>.png</code> files if the <code>saveFigures</code> argument is set to <code>true</code>.</li>
 </ul>
 <p><strong>Overall Structure:</strong></p>
