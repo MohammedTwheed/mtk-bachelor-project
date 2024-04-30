@@ -408,24 +408,19 @@ functions introduce non-linearity into the network, allowing it to model
 complex relationships between the input and output data. The GA will
 evaluate the performance of the NN using different activation functions
 (sigmoid and tansig) and select the one that leads to the minimal MSE
-between predicted and actual impeller diameters.
+between predicted and actual data.
 
 The tansig function used in your code is defined as: \[
 f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 \]
-
-This function is mathematically equivalent to the hyperbolic tangent
-function (tanh) but offers some computational advantages. The GA will
-consider both sigmoid and tansig during optimization and select the one
-that yields better performance for your specific dataset and problem.
 
 \textbf{Genetic Algorithm (GA) for Hyperparameter Optimization:}
 
 The GA serves as the core optimization engine, searching for the optimal
 combination of NN hyperparameters that minimizes the mean squared error
 (MSE) between the network's predicted diameter (D) and the actual values
-in the training data. Here's a breakdown of the GA implementation based
-on common practices:
+in the training data. and here is some glimpses on how in general it
+works:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -467,7 +462,8 @@ on common practices:
 The code
 \href{https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m}{(refer
 to the MATLAB code for specific details)} will implement the specific
-selection, crossover, and mutation operators used in the GA.
+selection, crossover, and mutation operators used in the GA and all of
+this is handled by \texttt{ga} the MATLAB toolbox.
 
 \textbf{Training and Validation:}
 

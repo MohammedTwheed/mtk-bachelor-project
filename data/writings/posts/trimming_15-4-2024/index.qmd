@@ -185,18 +185,17 @@ $$
 f(x) = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 $$
 
-Both sigmoid and tansig (which is mathematically equivalent to tanh) functions introduce non-linearity into the network, allowing it to model complex relationships between the input and output data. The GA will evaluate the performance of the NN using different activation functions (sigmoid and tansig) and select the one that leads to the minimal MSE between predicted and actual impeller diameters.
+Both sigmoid and tansig (which is mathematically equivalent to tanh) functions introduce non-linearity into the network, allowing it to model complex relationships between the input and output data. The GA will evaluate the performance of the NN using different activation functions (sigmoid and tansig) and select the one that leads to the minimal MSE between predicted and actual data.
 
 The tansig function used in your code is defined as:
 $$
 f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 $$
 
-This function is mathematically equivalent to the hyperbolic tangent function (tanh) but offers some computational advantages. The GA will consider both sigmoid and tansig during optimization and select the one that yields better performance for your specific dataset and problem.
 
 **Genetic Algorithm (GA) for Hyperparameter Optimization:**
 
-The GA serves as the core optimization engine, searching for the optimal combination of NN hyperparameters that minimizes the mean squared error (MSE) between the network's predicted diameter (D) and the actual values in the training data. Here's a breakdown of the GA implementation based on common practices:
+The GA serves as the core optimization engine, searching for the optimal combination of NN hyperparameters that minimizes the mean squared error (MSE) between the network's predicted diameter (D) and the actual values in the training data. and here is some glimpses on how in general it works: 
 
 1. **Population Initialization:** The GA starts with a population of individuals (candidate hyperparameter sets). Each individual represents a unique configuration for the NN, including hidden layer size, training function, activation function, and maximum epochs.
 2. **Fitness Evaluation:** Each individual in the population undergoes evaluation. The code trains an NN using the specific hyperparameters encoded in the individual's chromosome. The resulting NN's performance is then measured by calculating the MSE between its predicted diameter (D) and the actual values on a validation dataset (a portion of the original data set aside for evaluation). 
@@ -205,7 +204,7 @@ The GA serves as the core optimization engine, searching for the optimal combina
 5. **Mutation:**  A small probability of mutation is introduced to introduce random variations in the offspring's chromosomes. This helps maintain genetic diversity and explore new regions of the search space.
 6. **Replacement and Termination:** The new generation of offspring replaces a portion of the lower-performing individuals in the population. The GA iterates through these steps until a stopping criterion is met, such as reaching a maximum number of generations or achieving a desired level of convergence (minimum MSE).
 
-The code [(refer to the MATLAB code for specific details)](https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m) will implement the specific selection, crossover, and mutation operators used in the GA.
+The code [(refer to the MATLAB code for specific details)](https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m) will implement the specific selection, crossover, and mutation operators used in the GA and all of this is handled by `ga` the MATLAB toolbox.
 
 **Training and Validation:**
 
