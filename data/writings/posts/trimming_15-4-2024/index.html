@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mohamed Farid Khalil">
+<meta name="author" content="Mohammed Twheed Khater">
+<meta name="author" content="Seif Ibrahim Hassan">
+<meta name="keywords" content="Pump impeller trimming, Neural networks, Hyperparameter optimization, Genetic algorithms, Mean squared error">
+
+<title>Home - Beyond Trial and Error: A Machine Learning Approach to Optimal Centrifugal Pump Impeller Trimming</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../artificial-intelligence.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #EDF3F9;
+      }
+</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../artificial-intelligence.png" alt="AI for Pumps logo." class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../data/writings/index.html"> 
+<span class="menu-text">Writings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Beyond Trial and Error: A Machine Learning Approach to Optimal Centrifugal Pump Impeller Trimming</h1>
+            <p class="subtitle lead">A Genetic Algorithm Hyperparameter Optimization Approach</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Mohamed Farid Khalil <a href="mailto:mfaridkhalil@yahoo.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Alexandria University
+            </p>
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author">Mohammed Twheed Khater <a href="mailto:mohammedtwheed@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Alexandria University
+            </p>
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author">Seif Ibrahim Hassan </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Alexandria University
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">Monday, April 15, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="block-title">Abstract</div>
+      <p>This paper proposes a genetic algorithm (GA)-based methodology to optimize hyperparameters for artificial neural networks (NNs) applied to pump impeller trimming. Traditionally, impeller trimming relies on expert knowledge and empirical methods, leading to time-consuming and potentially suboptimal outcomes. This work introduces a data-driven approach using NNs trained to predict the impeller diameter (D) and pump power (P), which can be calculated from flow rate (Q), density (ρ), head (H), and efficiency (<span class="math inline">\(\eta\)</span>) using the equation P = (Q * ρ * g * H) / <span class="math inline">\(\eta\)</span>. based on the desired operating point (flow rate (Q) and head (H)). A GA is employed to identify the optimal NN hyperparameters, including hidden layer size, training function, activation function, and maximum epochs. The goal is to minimize the mean squared error (MSE) between the network’s predictions and the actual performance data. The paper details the implementation of the GA optimization process and discusses the key components and their significance in achieving optimal impeller trimming through NN predictions.</p>
+    </div>
+  </div>
+
+  <div>
+    <div class="keywords">
+      <div class="block-title">Keywords</div>
+      <p>Pump impeller trimming, Neural networks, Hyperparameter optimization, Genetic algorithms, Mean squared error</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (elsevier)</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div class="quarto-alternate-formats"><h5 class="anchored">Download Other Formats</h5><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (elsevier)</a></li></ul></div>
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Pump impeller trimming is a crucial procedure in optimizing the performance of centrifugal pumps for specific operating conditions. It involves modifying the impeller geometry, typically by removing material from the blades, to achieve desired hydraulic characteristics such as flow rate (Q), head (H), and efficiency (<span class="math inline">\(\eta\)</span>). Traditionally, this process has relied heavily on <strong>empirical methods and engineering expertise</strong>. These methods can be time-consuming, require significant trial-and-error experimentation, and may not always achieve the optimal trimming configuration.</p>
+<p>The introduction of artificial neural networks (NNs) offers a promising <strong>data-driven</strong> alternative for automating and enhancing the pump impeller trimming process. NNs excel at modeling complex relationships between input data and desired outputs. By training an NN on a dataset of impeller designs and their corresponding performance outcomes (Q, H, <span class="math inline">\(\eta\)</span>), the network can learn to predict the performance of new impellers based solely on their geometries.</p>
+<p>In the context of pump impeller trimming, the input data to the NN would typically consist of the desired operating point of the pump, specified by the flow rate (Q) and head (H). The target data, or the network’s output, would be the impeller’s outer diameter (D) and the pump efficiency (<span class="math inline">\(\eta\)</span>). However, directly predicting <span class="math inline">\(\eta\)</span> is challenging due to its dependence on multiple factors beyond impeller geometry. Therefore, this work proposes using the NN to predict the impeller diameter (D) as the primary design variable. The pump efficiency (<span class="math inline">\(\eta\)</span>) can then be calculated indirectly using the equation:</p>
+<p><span class="math display">\[
+P = \frac{Q* \rho *g*H}{\eta}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li>P is the pump power (kW)</li>
+<li><span class="math inline">\(\rho\)</span> is the fluid density <span class="math inline">\((kg/m^3)\)</span></li>
+<li>g is the acceleration due to gravity <span class="math inline">\((m/s^2)\)</span></li>
+</ul>
+<p><strong>This approach allows the NN to focus on predicting the impeller geometry (D) that directly influences the pump’s hydraulic performance, while the efficiency can be estimated based on the predicted D and the operating conditions (Q, H).</strong></p>
+<p>Achieving optimal NN performance for impeller trimming prediction requires careful selection of <strong>hyperparameters</strong>. These parameters define the network architecture and learning process, and significantly influence the NN’s ability to learn complex relationships from the data. Key NN hyperparameters include:</p>
+<ul>
+<li><strong>Hidden layer size:</strong> The number of neurons in the hidden layer(s) determines the network’s capacity to learn complex patterns.</li>
+<li><strong>Training function:</strong> This function dictates how the network updates its internal weights during the training process to minimize the error between predictions and actual outputs.</li>
+<li><strong>Activation function:</strong> This function introduces non-linearity into the network, allowing it to model more complex relationships than a linear model.</li>
+<li><strong>Maximum epochs:</strong> This parameter specifies the number of training iterations the network undergoes before stopping.</li>
+</ul>
+<p>Selecting the optimal hyperparameters for a specific task can be a complex process. This paper proposes a <strong>genetic algorithm (GA)</strong>-based approach to automate the hyperparameter optimization process for the NN used in pump impeller trimming prediction.</p>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>This section outlines the methodology employed to optimize the hyperparameters of an artificial neural network (NN) for predicting pump impeller diameter (D) in the context of impeller trimming. The optimization process utilizes a genetic algorithm (GA) implemented using the MATLAB GA toolbox.</p>
+<p><strong>Data Acquisition and Preprocessing:</strong></p>
+<p>The methodology leverages a dataset containing impeller geometries and their corresponding performance data, including flow rate (Q), head (H), diameter (D), and pump power (P). While the dataset doesn’t include a direct measurement of efficiency (<span class="math inline">\(\eta\)</span>), it can be calculated using the provided information and the following equation:</p>
+<p><span class="math display">\[
+P = \frac{Q*\rho*g*H}{\eta}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\eta\)</span> is the pump efficiency (-)</li>
+<li><span class="math inline">\(\rho\)</span> is the fluid density <span class="math inline">\((kg/m^3)\)</span></li>
+<li><span class="math inline">\(g\)</span> is the acceleration due to gravity <span class="math inline">\((m/s^2)\)</span></li>
+</ul>
+<p>This data can be obtained from various sources, such as experimental measurements, computational fluid dynamics (CFD) simulations, or a combination of both. <strong>Our</strong> code (refer to the provided MATLAB code for specific details)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> performs the following data preprocessing steps:</p>
+<ol type="1">
+<li><strong>Data Cleaning:</strong> The data is inspected for missing values or outliers. Missing values can be addressed through techniques like imputation or deletion, while outliers may require further investigation or removal if they significantly impact the training process.</li>
+<li><strong>Normalization:</strong> The data is normalized to a specific range (often -1 to 1 or 0 to 1) using techniques like <code>mapminmax</code> in MATLAB. This helps ensure the gradients calculated during backpropagation have a more consistent magnitude, facilitating faster convergence and avoiding local minima during training.</li>
+</ol>
+<p><strong>Neural Network Architecture:</strong></p>
+<p>The proposed NN architecture utilizes a supervised learning approach for regression. The specific details in the code will determine the exact structure, but a typical configuration might involve:</p>
+<ul>
+<li><strong>Input Layer:</strong> This layer consists of two neurons, corresponding to the input features: flow rate (Q) and head (H).</li>
+<li><strong>Hidden Layer(s):</strong> One or more hidden layers are employed to learn complex relationships between the input and output data. The GA will optimize the number of neurons in the hidden layer(s) based on performance.</li>
+<li><strong>Output Layer:</strong> The output layer contains a single neuron responsible for predicting the impeller diameter (D).</li>
+</ul>
+<p>The activation functions used in each layer will also be optimized by the GA. The code specifically uses two common choices for activation functions in regression tasks:</p>
+<ul>
+<li><p><strong>Sigmoid (Logistic Function):</strong> This function takes the form <code>f(x) = 1 / (1 + exp(-x))</code>. It squashes the input values between 0 and 1, introducing non-linearity into the network. Mathematically, the sigmoid function can be expressed as: <span class="math display">\[
+f(x) = \frac{1}{1 + e^{-x}}
+\]</span></p></li>
+<li><p><strong>Tanh (Hyperbolic Tangent Function):</strong> This function takes the form <code>f(x) = (tanh(x)) = (e^x - e^{-x}) / (e^x + e^{-x})</code>. It squashes the input values between -1 and 1, providing a wider range of output compared to the sigmoid function. Mathematically, the tanh function can be expressed as: <span class="math display">\[
+f(x) = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</span></p></li>
+</ul>
+<p>Both sigmoid and tansig (which is mathematically equivalent to tanh) functions introduce non-linearity into the network, allowing it to model complex relationships between the input and output data. The GA will evaluate the performance of the NN using different activation functions (sigmoid and tansig) and select the one that leads to the minimal MSE between predicted and actual impeller diameters.</p>
+<p>The tansig function used in your code is defined as: <span class="math display">\[
+f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
+\]</span></p>
+<p>This function is mathematically equivalent to the hyperbolic tangent function (tanh) but offers some computational advantages. The GA will consider both sigmoid and tansig during optimization and select the one that yields better performance for your specific dataset and problem.</p>
+<p><strong>Genetic Algorithm (GA) for Hyperparameter Optimization:</strong></p>
+<p>The GA serves as the core optimization engine, searching for the optimal combination of NN hyperparameters that minimizes the mean squared error (MSE) between the network’s predicted diameter (D) and the actual values in the training data. Here’s a breakdown of the GA implementation based on common practices:</p>
+<ol type="1">
+<li><strong>Population Initialization:</strong> The GA starts with a population of individuals (candidate hyperparameter sets). Each individual represents a unique configuration for the NN, including hidden layer size, training function, activation function, and maximum epochs.</li>
+<li><strong>Fitness Evaluation:</strong> Each individual in the population undergoes evaluation. The code trains an NN using the specific hyperparameters encoded in the individual’s chromosome. The resulting NN’s performance is then measured by calculating the MSE between its predicted diameter (D) and the actual values on a validation dataset (a portion of the original data set aside for evaluation).</li>
+<li><strong>Selection:</strong> Based on the fitness values (MSE), the GA selects a subset of individuals with superior performance (low MSE) to become parents for the next generation.</li>
+<li><strong>Crossover:</strong> Selected parent individuals undergo crossover, where portions of their genetic material (hyperparameter configurations) are exchanged to create new offspring (candidate solutions).</li>
+<li><strong>Mutation:</strong> A small probability of mutation is introduced to introduce random variations in the offspring’s chromosomes. This helps maintain genetic diversity and explore new regions of the search space.</li>
+<li><strong>Replacement and Termination:</strong> The new generation of offspring replaces a portion of the lower-performing individuals in the population. The GA iterates through these steps until a stopping criterion is met, such as reaching a maximum number of generations or achieving a desired level of convergence (minimum MSE).</li>
+</ol>
+<p>The code <a href="https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m">(refer to the MATLAB code for specific details)</a> will implement the specific selection, crossover, and mutation operators used in the GA.</p>
+<p><strong>Training and Validation:</strong></p>
+<p>The final, selected hyperparameter configuration from the GA is used to train a new NN model. This model is trained on a separate training dataset, excluding the data used for validation during the GA optimization process. The trained model is then evaluated on a hold-out test dataset to assess its generalizability and prediction accuracy on unseen data.</p>
+<p><strong>Performance Evaluation:</strong></p>
+<p>The performance of the trained NN model is evaluated based on various metrics, including:</p>
+<ul>
+<li><strong>Mean Squared Error (MSE):</strong> This metric measures the average squared difference between the predicted impeller diameters (D) and the actual values in the test dataset. A lower MSE indicates better prediction accuracy.</li>
+<li><strong>Coefficient of Determination (R-squared):</strong> This metric indicates the proportion of the variance in the actual diameter data explained by the NN model’s predictions. A value closer to 1 signifies a stronger correlation between the predicted and actual values.</li>
+<li><strong>Visualization Techniques:</strong> Visualizations such as scatter plots comparing predicted vs.&nbsp;actual data.</li>
+</ul>
+</section>
+</section>
+<section id="code-documentation" class="level1">
+<h1>Code Documentation</h1>
+<p>Absolutely, I can analyze the provided MATLAB code for optimizing NN hyperparameters with a genetic algorithm. Here’s a breakdown of each function and its components:</p>
+<p><strong>1. loadData function:</strong></p>
+<ul>
+<li>This function loads data from four separate <code>.mat</code> files containing flow rate (Q), head (H), diameter (D), and power (P) values.</li>
+<li>It performs error handling to ensure the data path exists and loads the data into MATLAB variables using <code>load(fullfile(dataPath, 'QH.mat'))</code>.</li>
+<li>The function uses <code>transpose</code> on loaded variables (<code>QH.QH</code>, <code>D.D</code>, etc.) to convert them from row vectors to column vectors. This is likely because the <code>train</code> function in MATLAB expects training data as column vectors (<code>number of inputs x number of examples</code>).</li>
+</ul>
+<p><strong>2. optimizeNNForTrimmingPumpImpeller function:</strong></p>
+<ul>
+<li>This core function performs the optimization for a neural network using a genetic algorithm (GA).</li>
+<li>It takes input data (<code>x</code> - flow rate, head), target data (<code>t</code> - diameter or power), and an optional user-specified random seed (<code>userSeed</code>) for reproducibility.</li>
+<li>It defines several key elements:
+<ul>
+<li><strong>Training Function Options:</strong> A list of possible training functions like <code>'trainlm'</code>, <code>'trainbr'</code>, etc. These functions determine how the network weights are updated during training.</li>
+<li><strong>Activation Function Options:</strong> A list of possible activation functions like <code>'tansig'</code>, <code>'logsig'</code>. These functions introduce non-linearity into the network’s behavior.</li>
+<li><strong>Bounds for Hyperparameters:</strong> Lower and upper bounds for the number of hidden layer neurons, epochs, training function index, and activation function index. These bounds are used by the GA for exploration.</li>
+<li><strong>GA Options:</strong> These options define the parameters for the GA, such as <code>MaxTime</code> (maximum optimization time) and potential stopping criteria.</li>
+<li><strong>Global Variable:</strong> <code>bestTrainedNet</code> is a global variable used to store the best trained neural network found during optimization.</li>
+</ul></li>
+<li>An important part of this function is the <code>evaluateHyperparameters</code> function (defined locally within <code>optimizeNNForTrimmingPumpImpeller</code>). It’s likely not provided in the code you shared, but here’s what it might do:
+<ul>
+<li>It takes hyperparameters (hidden layer size, epochs, training function index, activation function index) and the data (<code>x</code>, <code>t</code>) as input.</li>
+<li>It builds a neural network based on the provided hyperparameters.</li>
+<li>It trains the network using the training function and activation function specified by the indices.</li>
+<li>It splits the data into training, validation, and testing sets.</li>
+<li>It trains the network and calculates the mean squared error (MSE) on the validation set.</li>
+<li>It returns the average MSE of the training, validation, and testing sets. (This might be a modification to the original code for potentially better performance based on the comments)</li>
+<li>It also checks if the current MSE is the best so far and updates the <code>bestTrainedNet</code> global variable if necessary.</li>
+</ul></li>
+<li>The <code>optimizeNNForTrimmingPumpImpeller</code> function uses the GA to search for the combination of hyperparameters that minimizes the MSE returned by the <code>evaluateHyperparameters</code> function.</li>
+<li>It logs the optimization results to a file named <code>optimizeNNForTrimmingPumpImpeller_log.txt</code>, including optimized hyperparameters, final MSE, random seed, and optimization duration.</li>
+</ul>
+<p><strong>3. processDataAndVisualize function:</strong></p>
+<ul>
+<li>This function processes the data and visualizes the results.</li>
+<li>It takes the pre-loaded data (<code>QH</code>, <code>D</code>, <code>QD</code>, <code>P</code>), the trained neural networks (<code>bestTrainedNetD</code> for diameter, <code>bestTrainedNetP</code> for power), and an optional <code>saveFigures</code> argument.</li>
+<li>It performs data interpolation using <code>griddata</code> to create smoother surfaces for visualization of predicted diameters and power.</li>
+<li>It then creates visualizations using <code>mesh</code> plots for both diameters and power, along with scatter plots of the original data points for comparison.</li>
+<li>The function utilizes transpose (<code>'</code>) again before feeding data to the neural networks with <code>sim(bestTrainedNetD, QH')</code> and <code>sim(bestTrainedNetP, QD')</code>. This is likely because the neural network expects the input data in transposed form (column vectors).</li>
+<li>It saves the visualizations as <code>.fig</code> and <code>.png</code> files if the <code>saveFigures</code> argument is set to <code>true</code>.</li>
+</ul>
+<p><strong>Overall Structure:</strong></p>
+<ul>
+<li>The main script (<code>MAIN</code>) starts by loading the data using <code>loadData</code>.</li>
+<li>It then optimizes two separate neural networks:
+<ul>
+<li>One for predicting diameter (D) based on flow rate (Q) and head (H).</li>
+<li>Another for predicting power consumption (P) based on flow rate (Q) and diameter (D).</li>
+</ul></li>
+<li>then plot the data against the neural network.</li>
+</ul>
+<p>here is example plot for our data<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fig-NNvsData" class="quarto-xref">Figure&nbsp;1</a></p>
+<div id="fig-NNvsData" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-NNvsData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="diameter_power_visualization_2024-04-30_18-58-24.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NNvsData-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: NN vs Data
+</figcaption>
+</figure>
+</div>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-khalil-ApplicationArtificialNeural-2013" class="csl-entry" role="listitem">
+Khalil, M., Elgohary, M., Shaito, A., 2013. Application of artificial neural network for the prediction of trimmed impeller size of a centrifugal pump.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>github link to our code:<a href="https://github.com/MohammedTwheed/trimming-code" class="uri">https://github.com/MohammedTwheed/trimming-code</a> <a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>we will find the dataset we used at: <a href="https://github.com/MohammedTwheed/trimming-code/tree/main/training-data" class="uri">https://github.com/MohammedTwheed/trimming-code/tree/main/training-data</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{farid khalil2024,
+  author = {Farid Khalil, Mohamed and Twheed Khater, Mohammed and
+    Ibrahim Hassan, Seif},
+  title = {Beyond {Trial} and {Error:} {A} {Machine} {Learning}
+    {Approach} to {Optimal} {Centrifugal} {Pump} {Impeller} {Trimming}},
+  date = {2024-04-15},
+  url = {https://MohammedTwheed.github.io/mtk-bachelor-project-website//data/writings/posts/trimming_15-4-2024},
+  langid = {en},
+  abstract = {This paper proposes a genetic algorithm (GA)-based
+    methodology to optimize hyperparameters for artificial neural
+    networks (NNs) applied to pump impeller trimming. Traditionally,
+    impeller trimming relies on expert knowledge and empirical methods,
+    leading to time-consuming and potentially suboptimal outcomes. This
+    work introduces a data-driven approach using NNs trained to predict
+    the impeller diameter (D) and pump power (P), which can be
+    calculated from flow rate (Q), density (ρ), head (H), and efficiency
+    (\$\textbackslash eta\$) using the equation P = (Q * ρ * g * H) /
+    \$\textbackslash eta\$. based on the desired operating point (flow
+    rate (Q) and head (H)). A GA is employed to identify the optimal NN
+    hyperparameters, including hidden layer size, training function,
+    activation function, and maximum epochs. The goal is to minimize the
+    mean squared error (MSE) between the network’s predictions and the
+    actual performance data. The paper details the implementation of the
+    GA optimization process and discusses the key components and their
+    significance in achieving optimal impeller trimming through NN
+    predictions.}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-farid khalil2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Farid Khalil, Mohamed, Mohammed Twheed Khater, and Seif Ibrahim Hassan.
+2024. <span>“Beyond Trial and Error: A Machine Learning Approach to
+Optimal Centrifugal Pump Impeller Trimming.”</span> Work on Bachelor
+Project with Prof. Dr. Mohamed Farid Khalil. April 15, 2024. <a href="https://MohammedTwheed.github.io/mtk-bachelor-project-website//data/writings/posts/trimming_15-4-2024">https://MohammedTwheed.github.io/mtk-bachelor-project-website//data/writings/posts/trimming_15-4-2024</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/MohammedTwheed\.github\.io\/mtk-bachelor-project-website\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="MohammedTwheed/mtk-bachelor-project-website" data-repo-id="R_kgDOL0cvvQ" data-category="Blog" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Proudly supervised by <a href="https://scholar.google.com.eg/citations?user=JebIw2QAAAAJ&amp;hl=en"><img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=JebIw2QAAAAJ&amp;citpid=2.png" class="img-fluid" alt="Prof. Dr. Mohamed farid khalil" width="65"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MohammedTwheed/mtk-bachelor-project-website">
+      <i class="bi bi-github" role="img" aria-label="mtk-bachelor-project-website GitHub">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
