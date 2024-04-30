@@ -220,7 +220,7 @@ window.Quarto = {
   <div>
     <div class="abstract">
       <div class="block-title">Abstract</div>
-      <p>This paper proposes a genetic algorithm (GA)-based methodology to optimize hyperparameters for artificial neural networks (NNs) applied to pump impeller trimming. Traditionally, impeller trimming relies on expert knowledge and empirical methods, leading to time-consuming and potentially suboptimal outcomes. This work introduces a data-driven approach using NNs trained to predict the impeller diameter (D) and pump power (P), which can be calculated from flow rate (Q), density (ρ), head (H), and efficiency (<span class="math inline">\(\eta\)</span>) using the equation P = (Q * ρ * g * H) / <span class="math inline">\(\eta\)</span>. based on the desired operating point (flow rate (Q) and head (H)). A GA is employed to identify the optimal NN hyperparameters, including hidden layer size, training function, activation function, and maximum epochs. The goal is to minimize the mean squared error (MSE) between the network’s predictions and the actual performance data. The paper details the implementation of the GA optimization process and discusses the key components and their significance in achieving optimal impeller trimming through NN predictions.</p>
+      <p>This paper proposes a genetic algorithm (GA)-based methodology to optimize hyperparameters for artificial neural networks (NNs) applied to pump impeller trimming. Traditionally, impeller trimming relies on expert knowledge and empirical methods, leading to time-consuming and potentially suboptimal outcomes. This work introduces a data-driven approach using NNs trained to predict the impeller diameter (D) and pump power (P), which can be calculated from flow rate (Q), density (<span class="math inline">\(\rho\)</span>), head (H), and efficiency (<span class="math inline">\(\eta\)</span>) using the equation P = (Q * <span class="math inline">\(\rho\)</span> * g * H) / <span class="math inline">\(\eta\)</span>. based on the desired operating point (flow rate (Q) and head (H)). A GA is employed to identify the optimal NN hyperparameters, including hidden layer size, training function, activation function, and maximum epochs. The goal is to minimize the mean squared error (MSE) between the network’s predictions and the actual performance data. The paper details the implementation of the GA optimization process and discusses the key components and their significance in achieving optimal impeller trimming through NN predictions.</p>
     </div>
   </div>
 
@@ -430,17 +430,17 @@ Khalil, M., Elgohary, M., Shaito, A., 2013. Application of artificial neural net
     leading to time-consuming and potentially suboptimal outcomes. This
     work introduces a data-driven approach using NNs trained to predict
     the impeller diameter (D) and pump power (P), which can be
-    calculated from flow rate (Q), density (ρ), head (H), and efficiency
-    (\$\textbackslash eta\$) using the equation P = (Q * ρ * g * H) /
-    \$\textbackslash eta\$. based on the desired operating point (flow
-    rate (Q) and head (H)). A GA is employed to identify the optimal NN
-    hyperparameters, including hidden layer size, training function,
-    activation function, and maximum epochs. The goal is to minimize the
-    mean squared error (MSE) between the network’s predictions and the
-    actual performance data. The paper details the implementation of the
-    GA optimization process and discusses the key components and their
-    significance in achieving optimal impeller trimming through NN
-    predictions.}
+    calculated from flow rate (Q), density (\$\textbackslash rho\$),
+    head (H), and efficiency (\$\textbackslash eta\$) using the equation
+    P = (Q * \$\textbackslash rho\$ * g * H) / \$\textbackslash eta\$.
+    based on the desired operating point (flow rate (Q) and head (H)). A
+    GA is employed to identify the optimal NN hyperparameters, including
+    hidden layer size, training function, activation function, and
+    maximum epochs. The goal is to minimize the mean squared error (MSE)
+    between the network’s predictions and the actual performance data.
+    The paper details the implementation of the GA optimization process
+    and discusses the key components and their significance in achieving
+    optimal impeller trimming through NN predictions.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-farid khalil2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Farid Khalil, Mohamed, Mohammed Twheed Khater, and Seif Ibrahim Hassan.
