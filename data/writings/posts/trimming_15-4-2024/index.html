@@ -308,13 +308,12 @@ f(x) = \frac{1}{1 + e^{-x}}
 f(x) = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 \]</span></p></li>
 </ul>
-<p>Both sigmoid and tansig (which is mathematically equivalent to tanh) functions introduce non-linearity into the network, allowing it to model complex relationships between the input and output data. The GA will evaluate the performance of the NN using different activation functions (sigmoid and tansig) and select the one that leads to the minimal MSE between predicted and actual impeller diameters.</p>
+<p>Both sigmoid and tansig (which is mathematically equivalent to tanh) functions introduce non-linearity into the network, allowing it to model complex relationships between the input and output data. The GA will evaluate the performance of the NN using different activation functions (sigmoid and tansig) and select the one that leads to the minimal MSE between predicted and actual data.</p>
 <p>The tansig function used in your code is defined as: <span class="math display">\[
 f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 \]</span></p>
-<p>This function is mathematically equivalent to the hyperbolic tangent function (tanh) but offers some computational advantages. The GA will consider both sigmoid and tansig during optimization and select the one that yields better performance for your specific dataset and problem.</p>
 <p><strong>Genetic Algorithm (GA) for Hyperparameter Optimization:</strong></p>
-<p>The GA serves as the core optimization engine, searching for the optimal combination of NN hyperparameters that minimizes the mean squared error (MSE) between the network’s predicted diameter (D) and the actual values in the training data. Here’s a breakdown of the GA implementation based on common practices:</p>
+<p>The GA serves as the core optimization engine, searching for the optimal combination of NN hyperparameters that minimizes the mean squared error (MSE) between the network’s predicted diameter (D) and the actual values in the training data. and here is some glimpses on how in general it works:</p>
 <ol type="1">
 <li><strong>Population Initialization:</strong> The GA starts with a population of individuals (candidate hyperparameter sets). Each individual represents a unique configuration for the NN, including hidden layer size, training function, activation function, and maximum epochs.</li>
 <li><strong>Fitness Evaluation:</strong> Each individual in the population undergoes evaluation. The code trains an NN using the specific hyperparameters encoded in the individual’s chromosome. The resulting NN’s performance is then measured by calculating the MSE between its predicted diameter (D) and the actual values on a validation dataset (a portion of the original data set aside for evaluation).</li>
@@ -323,7 +322,7 @@ f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 <li><strong>Mutation:</strong> A small probability of mutation is introduced to introduce random variations in the offspring’s chromosomes. This helps maintain genetic diversity and explore new regions of the search space.</li>
 <li><strong>Replacement and Termination:</strong> The new generation of offspring replaces a portion of the lower-performing individuals in the population. The GA iterates through these steps until a stopping criterion is met, such as reaching a maximum number of generations or achieving a desired level of convergence (minimum MSE).</li>
 </ol>
-<p>The code <a href="https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m">(refer to the MATLAB code for specific details)</a> will implement the specific selection, crossover, and mutation operators used in the GA.</p>
+<p>The code <a href="https://github.com/MohammedTwheed/trimming-code/blob/main/trimming_code.m">(refer to the MATLAB code for specific details)</a> will implement the specific selection, crossover, and mutation operators used in the GA and all of this is handled by <code>ga</code> the MATLAB toolbox.</p>
 <p><strong>Training and Validation:</strong></p>
 <p>The final, selected hyperparameter configuration from the GA is used to train a new NN model. This model is trained on a separate training dataset, excluding the data used for validation during the GA optimization process. The trained model is then evaluated on a hold-out test dataset to assess its generalizability and prediction accuracy on unseen data.</p>
 <p><strong>Performance Evaluation:</strong></p>
