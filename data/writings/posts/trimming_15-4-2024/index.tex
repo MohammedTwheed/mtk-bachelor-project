@@ -182,16 +182,17 @@ pump impeller trimming. Traditionally, impeller trimming relies on
 expert knowledge and empirical methods, leading to time-consuming and
 potentially suboptimal outcomes. This work introduces a data-driven
 approach using NNs trained to predict the impeller diameter (D) and pump
-power (P), which can be calculated from flow rate (Q), density (ρ), head
-(H), and efficiency (\(\eta\)) using the equation P = (Q * ρ * g * H) /
-\(\eta\). based on the desired operating point (flow rate (Q) and head
-(H)). A GA is employed to identify the optimal NN hyperparameters,
-including hidden layer size, training function, activation function, and
-maximum epochs. The goal is to minimize the mean squared error (MSE)
-between the network's predictions and the actual performance data. The
-paper details the implementation of the GA optimization process and
-discusses the key components and their significance in achieving optimal
-impeller trimming through NN predictions.
+power (P), which can be calculated from flow rate (Q), density
+(\(\rho\)), head (H), and efficiency (\(\eta\)) using the equation P =
+(Q * \(\rho\) * g * H) / \(\eta\). based on the desired operating point
+(flow rate (Q) and head (H)). A GA is employed to identify the optimal
+NN hyperparameters, including hidden layer size, training function,
+activation function, and maximum epochs. The goal is to minimize the
+mean squared error (MSE) between the network's predictions and the
+actual performance data. The paper details the implementation of the GA
+optimization process and discusses the key components and their
+significance in achieving optimal impeller trimming through NN
+predictions.
 \end{abstract}
 
 
