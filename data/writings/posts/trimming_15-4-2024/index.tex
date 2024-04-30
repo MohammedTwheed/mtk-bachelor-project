@@ -502,10 +502,6 @@ metrics, including:
 
 \section{Code Documentation}\label{code-documentation}
 
-Absolutely, I can analyze the provided MATLAB code for optimizing NN
-hyperparameters with a genetic algorithm. Here's a breakdown of each
-function and its components:
-
 \textbf{1. loadData function:}
 
 \begin{itemize}
@@ -591,8 +587,7 @@ function and its components:
     the validation set.
   \item
     It returns the average MSE of the training, validation, and testing
-    sets. (This might be a modification to the original code for
-    potentially better performance based on the comments)
+    sets.
   \item
     It also checks if the current MSE is the best so far and updates the
     \texttt{bestTrainedNet} global variable if necessary.
@@ -630,9 +625,9 @@ function and its components:
   The function utilizes transpose (\texttt{\textquotesingle{}}) again
   before feeding data to the neural networks with
   \texttt{sim(bestTrainedNetD,\ QH\textquotesingle{})} and
-  \texttt{sim(bestTrainedNetP,\ QD\textquotesingle{})}. This is likely
-  because the neural network expects the input data in transposed form
-  (column vectors).
+  \texttt{sim(bestTrainedNetP,\ QD\textquotesingle{})}. This is because
+  the neural network expects the input data in transposed form (column
+  vectors).
 \item
   It saves the visualizations as \texttt{.fig} and \texttt{.png} files
   if the \texttt{saveFigures} argument is set to \texttt{true}.

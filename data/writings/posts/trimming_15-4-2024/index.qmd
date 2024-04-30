@@ -226,7 +226,7 @@ The performance of the trained NN model is evaluated based on various metrics, i
 # Code Documentation
 
 
-Absolutely, I can analyze the provided MATLAB code for optimizing NN hyperparameters with a genetic algorithm. Here's a breakdown of each function and its components:
+
 
 **1. loadData function:**
 
@@ -251,7 +251,7 @@ Absolutely, I can analyze the provided MATLAB code for optimizing NN hyperparame
     * It trains the network using the training function and activation function specified by the indices.
     * It splits the data into training, validation, and testing sets.
     * It trains the network and calculates the mean squared error (MSE) on the validation set.
-    * It returns the average MSE of the training, validation, and testing sets. (This might be a modification to the original code for potentially better performance based on the comments)
+    * It returns the average MSE of the training, validation, and testing sets. 
     * It also checks if the current MSE is the best so far and updates the `bestTrainedNet` global variable if necessary.
 
 * The `optimizeNNForTrimmingPumpImpeller` function uses the GA to search for the combination of hyperparameters that minimizes the MSE returned by the `evaluateHyperparameters` function.
@@ -263,7 +263,7 @@ Absolutely, I can analyze the provided MATLAB code for optimizing NN hyperparame
 * It takes the pre-loaded data (`QH`, `D`, `QD`, `P`), the trained neural networks (`bestTrainedNetD` for diameter, `bestTrainedNetP` for power), and an optional `saveFigures` argument.
 * It performs data interpolation using `griddata` to create smoother surfaces for visualization of predicted diameters and power.
 * It then creates visualizations using `mesh` plots for both diameters and power, along with scatter plots of the original data points for comparison.
-* The function utilizes transpose (`'`) again before feeding data to the neural networks with `sim(bestTrainedNetD, QH')` and `sim(bestTrainedNetP, QD')`. This is likely because the neural network expects the input data in transposed form (column vectors).
+* The function utilizes transpose (`'`) again before feeding data to the neural networks with `sim(bestTrainedNetD, QH')` and `sim(bestTrainedNetP, QD')`. This is  because the neural network expects the input data in transposed form (column vectors).
 * It saves the visualizations as `.fig` and `.png` files if the `saveFigures` argument is set to `true`.
 
 **Overall Structure:**
