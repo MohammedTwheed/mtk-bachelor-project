@@ -244,7 +244,7 @@ The performance of the trained NN model is evaluated based on various metrics, i
     * **GA Options:** These options define the parameters for the GA, such as `MaxTime` (maximum optimization time) and potential stopping criteria.
     * **Global Variable:** `bestTrainedNet` is a global variable used to store the best trained neural network found during optimization.
 
-* An important part of this function is the `evaluateHyperparameters` function (defined locally within `optimizeNNForTrimmingPumpImpeller`). It's likely not provided in the code you shared, but here's what it might do:
+* An important part of this function is the `evaluateHyperparameters` function (defined locally within `optimizeNNForTrimmingPumpImpeller`). 
     * It takes hyperparameters (hidden layer size, epochs, training function index, activation function index) and the data (`x`, `t`) as input.
     * It builds a neural network based on the provided hyperparameters.
     * It trains the network using the training function and activation function specified by the indices.
