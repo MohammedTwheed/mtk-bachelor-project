@@ -354,7 +354,7 @@ f(x) = tansig(x) = \frac{2}{1 + exp(-2x)} - 1
 <li><strong>GA Options:</strong> These options define the parameters for the GA, such as <code>MaxTime</code> (maximum optimization time) and potential stopping criteria.</li>
 <li><strong>Global Variable:</strong> <code>bestTrainedNet</code> is a global variable used to store the best trained neural network found during optimization.</li>
 </ul></li>
-<li>An important part of this function is the <code>evaluateHyperparameters</code> function (defined locally within <code>optimizeNNForTrimmingPumpImpeller</code>). It’s likely not provided in the code you shared, but here’s what it might do:
+<li>An important part of this function is the <code>evaluateHyperparameters</code> function (defined locally within <code>optimizeNNForTrimmingPumpImpeller</code>).
 <ul>
 <li>It takes hyperparameters (hidden layer size, epochs, training function index, activation function index) and the data (<code>x</code>, <code>t</code>) as input.</li>
 <li>It builds a neural network based on the provided hyperparameters.</li>
