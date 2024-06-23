@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/index.html</loc>
-    <lastmod>2024-05-01T01:56:44.570Z</lastmod>
+    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/about.html</loc>
+    <lastmod>2024-06-23T00:32:21.365Z</lastmod>
   </url>
   <url>
-    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/data/writings/index.html</loc>
-    <lastmod>2024-05-01T01:56:44.570Z</lastmod>
+    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/index.html</loc>
+    <lastmod>2024-06-23T00:32:21.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/data/writings/posts/2024-06-23-symbolic-regression-translation-to-matlab/index.html</loc>
+    <lastmod>2024-06-23T00:32:21.365Z</lastmod>
   </url>
   <url>
     <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/data/writings/posts/trimming_15-4-2024/index.html</loc>
-    <lastmod>2024-05-01T01:56:44.570Z</lastmod>
+    <lastmod>2024-06-23T00:32:21.369Z</lastmod>
   </url>
   <url>
-    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/about.html</loc>
-    <lastmod>2024-05-01T01:56:44.570Z</lastmod>
+    <loc>https://MohammedTwheed.github.io/mtk-bachelor-project-website/data/writings/index.html</loc>
+    <lastmod>2024-06-23T00:32:21.365Z</lastmod>
   </url>
 </urlset>
