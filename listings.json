@@ -1,7 +1,16 @@
 [
   {
+    "listing": "/data/writings/posts/2024-06-24-chapter-1-trimming -AI/gallery.html",
+    "items": []
+  },
+  {
+    "listing": "/data/writings/posts/2024-06-24-chapter-1-trimming -AI/index.html",
+    "items": []
+  },
+  {
     "listing": "/data/writings/index.html",
     "items": [
+      "/data/writings/posts/2024-06-24-chapter-1-trimming -AI/index.html",
       "/data/writings/posts/2024-06-23-symbolic-regression-translation-to-matlab/index.html",
       "/data/writings/posts/trimming_15-4-2024/index.html"
     ]

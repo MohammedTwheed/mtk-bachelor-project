@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.556">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mohammed Twheed Khater">
+<meta name="dcterms.date" content="2024-06-24">
+
+<title>Home - Application of Artificial Intelligence on the Centrifugal Pump Operation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../artificial-intelligence.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #EDF3F9;
+      }
+</style>
+
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../artificial-intelligence.png" alt="AI for Pumps logo." class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../data/writings/index.html"> 
+<span class="menu-text">Writings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Application of Artificial Intelligence on the Centrifugal Pump Operation</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Mohammed Twheed Khater </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 24, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" id="toc-chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="nav-link active" data-scroll-target="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai">Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#the-concept-of-impeller-trimming" id="toc-the-concept-of-impeller-trimming" class="nav-link" data-scroll-target="#the-concept-of-impeller-trimming">The Concept of Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#what-is-trimming" id="toc-what-is-trimming" class="nav-link" data-scroll-target="#what-is-trimming">What is Trimming?</a></li>
+  <li><a href="#why-trimming" id="toc-why-trimming" class="nav-link" data-scroll-target="#why-trimming">Why Trimming?</a></li>
+  </ul></li>
+  <li><a href="#energy-savings-and-environmental-impact" id="toc-energy-savings-and-environmental-impact" class="nav-link" data-scroll-target="#energy-savings-and-environmental-impact">Energy Savings and Environmental Impact</a></li>
+  <li><a href="#traditional-methods-of-impeller-trimming" id="toc-traditional-methods-of-impeller-trimming" class="nav-link" data-scroll-target="#traditional-methods-of-impeller-trimming">Traditional Methods of Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#scaling-methods" id="toc-scaling-methods" class="nav-link" data-scroll-target="#scaling-methods">Scaling Methods</a></li>
+  </ul></li>
+  <li><a href="#artificial-neural-networks-for-impeller-trimming" id="toc-artificial-neural-networks-for-impeller-trimming" class="nav-link" data-scroll-target="#artificial-neural-networks-for-impeller-trimming">Artificial Neural Networks for Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#advantages-of-neural-networks" id="toc-advantages-of-neural-networks" class="nav-link" data-scroll-target="#advantages-of-neural-networks">Advantages of Neural Networks</a></li>
+  <li><a href="#implementation-in-matlab" id="toc-implementation-in-matlab" class="nav-link" data-scroll-target="#implementation-in-matlab">Implementation in MATLAB</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="level1">
+<h1>Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Centrifugal pumps are integral components in various industrial applications, ranging from water supply systems to chemical processing. Optimizing their performance is crucial for enhancing energy efficiency and reducing operational costs. One key optimization technique is impeller trimming, which involves reducing the diameter of a pump impeller to align the pump’s performance more closely with the system requirements. This chapter explores the concept of impeller trimming, its significance, traditional methods, and the advantages of employing Artificial Intelligence (AI) for performance prediction.</p>
+</section>
+<section id="the-concept-of-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="the-concept-of-impeller-trimming">The Concept of Impeller Trimming</h2>
+<section id="what-is-trimming" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-trimming">What is Trimming?</h3>
+<p>Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.</p>
+</section>
+<section id="why-trimming" class="level3">
+<h3 class="anchored" data-anchor-id="why-trimming">Why Trimming?</h3>
+<p>Impeller trimming is essential for several reasons: 1. <strong>Energy Consumption</strong>: Proper trimming ensures that the pump operates at its optimal efficiency point, significantly reducing energy consumption. Each kilowatt saved at the pump level translates to approximately six kilowatts saved at the power station. 2. <strong>Market Availability</strong>: Pumps available in the market may not always fit specific system requirements precisely. Trimming provides a means to tailor the pump’s performance to meet these specific needs.</p>
+</section>
+</section>
+<section id="energy-savings-and-environmental-impact" class="level2">
+<h2 class="anchored" data-anchor-id="energy-savings-and-environmental-impact">Energy Savings and Environmental Impact</h2>
+<p>Impeller trimming is not only beneficial for energy savings but also contributes to environmental sustainability. Reduced energy consumption leads to lower greenhouse gas emissions. For every kilowatt-hour (kWh) saved by the pump, the reduction in power station output significantly decreases pollution, making trimming an environmentally responsible practice.</p>
+</section>
+<section id="traditional-methods-of-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-methods-of-impeller-trimming">Traditional Methods of Impeller Trimming</h2>
+<section id="scaling-methods" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-methods">Scaling Methods</h3>
+<p>Instead of relying solely on empirical formulas and performance curves derived from extensive testing, scaling methods provide a mathematical approach to predicting the performance of a trimmed impeller. One such method is constant-area scaling, which assumes that the trimmed impeller maintains a constant area, ensuring proportional changes in flow and head.</p>
+<section id="constant-area-scaling" class="level4">
+<h4 class="anchored" data-anchor-id="constant-area-scaling">Constant-Area Scaling</h4>
+<p>Constant-area scaling involves adjusting the impeller diameter while maintaining the proportional relationship between the flow rate and head. This method ensures that the trimmed impeller operates efficiently within the desired performance range, without significant deviations from the original design.</p>
+<p>The constant-area scaling method is defined by the following relationship:</p>
+<p>[ D_{trimmed} = D_{original} ()^{1/2} ]</p>
+<p>Where: - ( D_{trimmed} ) is the diameter of the trimmed impeller. - ( D_{original} ) is the original diameter of the impeller. - ( Q_{trimmed} ) is the desired flow rate after trimming. - ( Q_{original} ) is the original flow rate.</p>
+</section>
+</section>
+</section>
+<section id="artificial-neural-networks-for-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-neural-networks-for-impeller-trimming">Artificial Neural Networks for Impeller Trimming</h2>
+<p>Artificial Neural Networks (ANNs) offer a robust alternative to traditional methods by leveraging large datasets to predict pump performance accurately. Unlike empirical methods, ANNs can model complex, non-linear relationships between variables, providing more precise predictions.</p>
+<section id="advantages-of-neural-networks" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-neural-networks">Advantages of Neural Networks</h3>
+<ul>
+<li><strong>Accuracy</strong>: ANNs can learn from vast amounts of data, capturing intricate patterns and relationships that traditional methods might miss.</li>
+<li><strong>Efficiency</strong>: Once trained, ANNs can quickly predict performance outcomes for different impeller diameters, saving time and resources.</li>
+<li><strong>Adaptability</strong>: Neural networks can be updated with new data, continuously improving their predictive capabilities.</li>
+</ul>
+</section>
+<section id="implementation-in-matlab" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-in-matlab">Implementation in MATLAB</h3>
+<p>The implementation of AI for impeller trimming was carried out using MATLAB. The scripts <code>main_04.m</code> and <code>QHforDiameters.m</code> are critical components of this implementation, leveraging optimized neural network architectures to predict pump performance based on different impeller diameters.</p>
+<section id="script-main_04.m" class="level4">
+<h4 class="anchored" data-anchor-id="script-main_04.m">Script: main_04.m</h4>
+<p>The <code>main_04.m</code> script incorporates the following key steps:</p>
+<ol type="1">
+<li><strong>Data Loading</strong>: Loading datasets containing flow rate, head, diameter, and power metrics.</li>
+<li><strong>Network Training</strong>: Training neural networks with optimized architectures to predict head and power based on flow rate and diameter.</li>
+<li><strong>Performance Evaluation</strong>: Evaluating the trained networks on various performance metrics to ensure accuracy and reliability.</li>
+<li><strong>Visualization</strong>: Generating 3D plots to visualize the relationship between flow rate, head, diameter, and power, showcasing the neural network predictions versus actual data.</li>
+</ol>
+<section id="key-functions-and-their-roles" class="level5">
+<h5 class="anchored" data-anchor-id="key-functions-and-their-roles">Key Functions and Their Roles</h5>
+<ul>
+<li><strong>train_nn</strong>: This function trains the neural network using the provided data, returning the trained model and performance metrics.</li>
+<li><strong>trim_diameters</strong>: This function determines the optimal trimmed diameter based on the provided pump data and performance criteria.</li>
+<li><strong>processDataAndVisualize</strong>: This function processes the data and generates visualizations to compare neural network predictions with actual data points.</li>
+</ul>
+</section>
+<section id="sample-code-snippet" class="level5">
+<h5 class="anchored" data-anchor-id="sample-code-snippet">Sample Code Snippet</h5>
+<p>The following MATLAB code snippet from <code>main_04.m</code> demonstrates how to load data, train neural networks, and visualize the results:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">clear</span><span class="op">;</span> <span class="va">clc</span><span class="op">;</span> <span class="va">clf</span><span class="op">;</span> <span class="va">close</span> <span class="va">all</span><span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">% Load data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'filtered_QHD_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'filtered_QDP_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'deleted_QHD_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'deleted_QDP_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">% Extract data</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">QH</span> <span class="op">=</span> [<span class="va">filtered_QHD_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span> <span class="va">filtered_QHD_table</span>.<span class="va">Head_m</span>]<span class="op">';</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">D</span> <span class="op">=</span> [<span class="va">filtered_QHD_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="va">QD</span> <span class="op">=</span> [<span class="va">filtered_QDP_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span> <span class="va">filtered_QDP_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="va">P</span> <span class="op">=</span> [<span class="va">filtered_QDP_table</span>.<span class="va">Power_kW</span>]<span class="op">';</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">% Train on full dataset</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>[<span class="va">trainedNetQHD</span><span class="op">,</span> <span class="op">~,</span> <span class="op">~,</span> <span class="op">~,</span> <span class="op">~</span>] <span class="op">=</span> <span class="va">train_nn</span>([<span class="fl">2</span><span class="op">,</span> <span class="fl">16</span>]<span class="op">,</span> <span class="fl">191</span><span class="op">,</span> <span class="ss">'trainlm'</span><span class="op">,</span> <span class="va">QH</span><span class="op">,</span> <span class="va">D</span><span class="op">,</span> <span class="fl">4837</span>)<span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>[<span class="va">trainedNetQDP</span><span class="op">,</span> <span class="op">~,</span> <span class="op">~,</span> <span class="op">~,</span> <span class="op">~</span>] <span class="op">=</span> <span class="va">train_nn</span>([<span class="fl">2</span><span class="op">,</span> <span class="fl">7</span><span class="op">,</span> <span class="fl">29</span><span class="op">,</span> <span class="fl">17</span>]<span class="op">,</span> <span class="fl">191</span><span class="op">,</span> <span class="ss">'trainlm'</span><span class="op">,</span> <span class="va">QD</span><span class="op">,</span> <span class="va">P</span><span class="op">,</span> <span class="fl">4837</span>)<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">% Visualization</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="va">processDataAndVisualize</span>(<span class="va">QH</span><span class="op">',</span> <span class="va">D</span><span class="op">',</span> <span class="va">QD</span><span class="op">',</span> <span class="va">P</span><span class="op">',</span> <span class="va">trainedNetQHD</span><span class="op">,</span> <span class="va">trainedNetQDP</span><span class="op">,</span> <span class="ss">'figures'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this script, data is first loaded from various <code>.mat</code> files. The <code>train_nn</code> function is used to train neural networks on the flow rate and head data (<code>QH</code>) and diameter (<code>D</code>). The <code>processDataAndVisualize</code> function then generates visualizations to compare neural network predictions with actual data points.</p>
+</section>
+</section>
+<section id="script-qhfordiameters.m" class="level4">
+<h4 class="anchored" data-anchor-id="script-qhfordiameters.m">Script: QHforDiameters.m</h4>
+<p>The <code>QHforDiameters.m</code> script focuses on optimizing neural network hyperparameters for better performance prediction. It uses a genetic algorithm to find the optimal neural network architecture, ensuring accurate predictions for different impeller diameters.</p>
+<section id="key-steps-in-qhfordiameters.m" class="level5">
+<h5 class="anchored" data-anchor-id="key-steps-in-qhfordiameters.m">Key Steps in QHforDiameters.m</h5>
+<ol type="1">
+<li><strong>Initialization</strong>: Loading data and initializing variables.</li>
+<li><strong>Hyperparameter Optimization</strong>: Using a genetic algorithm to find the optimal neural network architecture.</li>
+<li><strong>Performance Evaluation</strong>: Assessing the neural network’s performance on the training and test datasets.</li>
+<li><strong>Visualization</strong>: Plotting the predicted performance curves for different impeller diameters.</li>
+</ol>
+</section>
+<section id="sample-code-snippet-1" class="level5">
+<h5 class="anchored" data-anchor-id="sample-code-snippet-1">Sample Code Snippet</h5>
+<p>The following MATLAB code snippet from <code>QHforDiameters.m</code> illustrates the process of optimizing neural network hyperparameters and visualizing the results:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">clear</span><span class="op">;</span> <span class="va">clc</span><span class="op">;</span> <span class="va">clf</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'filtered_QHD_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'filtered_QDP_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'deleted_QHD_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="va">load</span>(<span class="ss">'deleted_QDP_table.mat'</span>)<span class="op">;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="va">QH</span> <span class="op">=</span> [<span class="va">filtered_QHD_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span> <span class="va">filtered_QHD_table</span>.<span class="va">Head_m</span>]<span class="op">';</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="va">D</span>  <span class="op">=</span> [<span class="va">filtered_QHD_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="va">QH_beps</span><span class="op">=</span>[<span class="va">deleted_QHD_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span><span class="va">deleted_QHD_table</span>.<span class="va">Head_m</span>]<span class="op">';</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="va">D_beps</span><span class="op">=</span>[<span class="va">deleted_QHD_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="va">QD</span> <span class="op">=</span> [<span class="va">filtered_QDP_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span><span class="va">filtered_QDP_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="va">P</span> <span class="op">=</span> [<span class="va">filtered_QDP_table</span>.<span class="va">Power_kW</span>]<span class="op">';</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="va">QD_beps</span><span class="op">=</span>[<span class="va">deleted_QDP_table</span>.<span class="va">FlowRate_m3h</span><span class="op">,</span><span class="va">deleted_QDP_table</span>.<span class="va">Diameter_mm</span>]<span class="op">';</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="va">P_beps</span><span class="op">=</span>[<span class="va">deleted_QDP_table</span>.<span class="va">Power_kW</span>]<span class="op">';</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">% User-specified random seed (optional)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="va">userSeed</span> <span class="op">=</span> <span class="fl">4826</span><span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">% Define a threshold for MSE to exit the loop early</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="va">mseThreshold</span> <span class="op">=</span> <span class="fl">0.000199</span><span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">% Initialize result matrix</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="va">result</span> <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">% Find all distinct diameters in D</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="va">distinctDiameters</span> <span class="op">=</span> <span class="va">unique</span>(<span class="va">D</span>)<span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">% Weights for combining MSEs</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="va">weightDiameter</span> <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="va">weightBeps</span> <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="kw">for</span> <span class="va">dIdx</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">length</span>(<span class="va">distinctDiameters</span>)</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Current diameter to remove</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="va">diameterToRemove</span> <span class="op">=</span> <span class="va">distinctDiameters</span>(<span class="va">dIdx</span>)<span class="op">;</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Find indices of the current diameter in D</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="va">indicesToRemove</span> <span class="op">=</span> <span class="va">find</span>(<span class="va">D</span> <span class="op">==</span> <span class="va">diameterToRemove</span>)<span class="op">;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Store the removed data for later use</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="va">removedQH</span> <span class="op">=</span> <span class="va">QH</span>(<span class="op">:,</span> <span class="va">indicesToRemove</span>)<span class="op">;</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="va">removedD</span> <span class="op">=</span> <span class="va">D</span>(<span class="va">indicesToRemove</span>)<span class="op">;</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Remove rows from QH and D based on the indices</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="va">QH_temp</span> <span class="op">=</span> <span class="va">QH</span><span class="op">;</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="va">D_temp</span> <span class="op">=</span> <span class="va">D</span><span class="op">;</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="va">QH_temp</span>(<span class="op">:,</span> <span class="va">indicesToRemove</span>) <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    <span class="va">D_temp</span>(<span class="op">:,</span> <span class="va">indicesToRemove</span>) <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Initialize bounds</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="va">lower_bounds</span> <span class="op">=</span> [<span class="fl">2</span><span class="op">,</span> <span class="fl">13</span><span class="op">,</span> <span class="fl">13</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span>]<span class="op">;</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="va">upper_bounds</span> <span class="op">=</span> [<span class="fl">2</span><span class="op">,</span> <span class="fl">300</span><span class="op">,</span> <span class="fl">300</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">1</span>]<span class="op">;</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="co">% Track the previous combined MSE to determine the improvement</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="va">prevCombinedMSE</span> <span class="op">=</span> <span class="va">inf</span><span class="op">;</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a> <span class="va">i</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>        [<span class="va">optimalHyperParamsH</span><span class="op">,</span> <span class="va">finalMSEH</span><span class="op">,</span> <span class="va">randomSeedH</span><span class="op">,</span> <span class="va">bestTrainedNetH</span><span class="op">,</span> <span class="va">error</span>] <span class="op">=</span> <span class="va">optimizeNNForTrimmingPumpImpeller</span>([<span class="va">QH_temp</span>(<span class="fl">1</span><span class="op">,:</span>)<span class="op">;</span> <span class="va">D_temp</span>]<span class="op">,</span> <span class="va">QH_temp</span>(<span class="fl">2</span><span class="op">,:</span>)<span class="op">,</span> <span class="va">userSeed</span><span class="op">+</span><span class="va">i</span><span class="op">,</span> <span class="va">lower_bounds</span><span class="op">,</span> <span class="va">upper_bounds</span>)<span class="op">;</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Store result for this iteration</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        <span class="va">result</span>(<span class="va">i</span><span class="op">,</span> <span class="op">:</span>) <span class="op">=</span> [<span class="va">i</span><span class="op">,</span> <span class="va">optimalHyperParamsH</span><span class="op">,</span> <span class="va">finalMSEH</span><span class="op">,</span> <span class="va">randomSeedH</span><span class="op">,</span> <span class="va">error</span>(<span class="fl">1</span>)<span class="op">,</span> <span class="va">error</span>(<span class="fl">2</span>)<span class="op">,</span> <span class="va">error</span>(<span class="fl">3</span>)]<span class="op">;</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Calculate MSE for the removed diameter</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="va">predictedH</span> <span class="op">=</span> <span class="va">bestTrainedNetH</span>([<span class="va">removedQH</span>(<span class="fl">1</span><span class="op">,</span> <span class="op">:</span>)<span class="op">;</span> <span class="va">removedD</span>])<span class="op">';</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        <span class="va">mseDiameter</span> <span class="op">=</span> <span class="va">mean</span>((<span class="va">removedQH</span>(<span class="fl">2</span><span class="op">,</span> <span class="op">:</span>)<span class="op">'</span> <span class="op">-</span> <span class="va">predictedH</span>)<span class="op">.^</span><span class="fl">2</span> <span class="op">/</span> <span class="va">sum</span>(<span class="va">removedQH</span>(<span class="fl">2</span><span class="op">,</span> <span class="op">:</span>)))<span class="op">;</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>        <span class="va">predictedH_beps</span> <span class="op">=</span> <span class="va">bestTrainedNetH</span>([<span class="va">QH_beps</span>(<span class="fl">1</span><span class="op">,:</span>)<span class="op">;</span> <span class="va">D_beps</span>])<span class="op">';</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        <span class="va">mseQH_beps</span> <span class="op">=</span> <span class="va">mean</span>((<span class="va">QH_beps</span>(<span class="fl">2</span><span class="op">,:</span>)<span class="op">'</span> <span class="op">-</span> <span class="va">predictedH_beps</span>)<span class="op">.^</span><span class="fl">2</span> <span class="op">/</span> <span class="va">sum</span>(<span class="va">QH_beps</span>(<span class="fl">2</span><span class="op">,:</span>)))<span class="op">;</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        <span class="va">fprintf</span>(<span class="ss">'Diameter %d, Iteration %d, MSE_Dia: %.6f,  MSE_beps: %.6f \n'</span><span class="op">,</span> <span class="va">diameterToRemove</span><span class="op">,</span> <span class="va">i</span><span class="op">,</span> <span class="va">mseDiameter</span><span class="op">,</span> <span class="va">mseQH_beps</span>)<span class="op">;</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Combine the two MSEs into a single metric</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="va">combinedMSE</span> <span class="op">=</span> <span class="va">weightDiameter</span> <span class="op">*</span> <span class="va">mseDiameter</span> <span class="op">+</span> <span class="va">weightBeps</span> <span class="op">*</span> <span class="va">mseQH_beps</span><span class="op">;</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Determine the change in combined MSE</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>        <span class="va">deltaMSE</span> <span class="op">=</span> <span class="va">prevCombinedMSE</span> <span class="op">-</span> <span class="va">combinedMSE</span><span class="op">;</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Adjust the bounds based on the improvement in combined MSE</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> <span class="va">deltaMSE</span> <span class="op">&gt;</span> <span class="fl">0.01</span>  <span class="co">% Significant improvement</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>            <span class="va">adjustment</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">15</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>        <span class="kw">elseif</span> <span class="va">deltaMSE</span> <span class="op">&gt;</span> <span class="fl">0.001</span>  <span class="co">% Moderate improvement</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>            <span class="va">adjustment</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">10</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        <span class="kw">else</span>  <span class="co">% Minor improvement</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>            <span class="va">adjustment</span> <span class="op">=</span> [<span class="fl">0</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">5</span><span class="op">,</span> <span class="fl">0</span><span class="op">,</span> <span class="fl">0</span>]<span class="op">;</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        <span class="va">lower_bounds</span> <span class="op">=</span> <span class="va">max</span>(<span class="va">lower_bounds</span><span class="op">,</span> [<span class="fl">2</span><span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">2</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">3</span>)<span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span>] <span class="op">-</span> <span class="va">adjustment</span>)<span class="op">;</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>        <span class="va">upper_bounds</span> <span class="op">=</span> <span class="va">min</span>(<span class="va">upper_bounds</span><span class="op">,</span> [<span class="fl">2</span><span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">2</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">3</span>)<span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">1</span>] <span class="op">+</span> <span class="va">adjustment</span>)<span class="op">;</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Update the previous combined MSE for the next iteration</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>        <span class="va">prevCombinedMSE</span> <span class="op">=</span> <span class="va">combinedMSE</span><span class="op">;</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Define desired diameter values </span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>        <span class="va">desiredDiameters</span> <span class="op">=</span> <span class="va">distinctDiameters</span><span class="op">;</span> </span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Create a single figure for all plots</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>        <span class="va">figure</span><span class="op">;</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>        <span class="va">hold</span> <span class="va">on</span><span class="op">;</span>  <span class="co">% Keep plots on the same figure</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>        <span class="co">% Plot the removed diameter data points</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>        <span class="va">scatter</span>(<span class="va">removedQH</span>(<span class="fl">1</span><span class="op">,</span> <span class="op">:</span>)<span class="op">',</span> <span class="va">removedQH</span>(<span class="fl">2</span><span class="op">,</span> <span class="op">:</span>)<span class="op">',</span> <span class="ss">'r'</span><span class="op">,</span> <span class="ss">'filled'</span><span class="op">,</span> <span class="ss">'DisplayName'</span><span class="op">,</span> <span class="va">sprintf</span>(<span class="ss">'Removed Diameter: %dmm'</span><span class="op">,</span> <span class="va">diameterToRemove</span>))<span class="op">;</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>        <span class="va">Qt</span> <span class="op">=</span> <span class="va">linspace</span>(<span class="fl">0</span><span class="op">,</span> <span class="fl">400</span><span class="op">,</span> <span class="fl">200</span>)<span class="op">;</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>        <span class="kw">for</span> <span class="va">diameterIndex</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="va">length</span>(<span class="va">desiredDiameters</span>)</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>            <span class="va">desiredDiameter</span> <span class="op">=</span> <span class="va">desiredDiameters</span>(<span class="va">diameterIndex</span>)<span class="op">;</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>            <span class="va">Dt</span> <span class="op">=</span> <span class="va">repmat</span>(<span class="va">desiredDiameter</span><span class="op">,</span> <span class="va">length</span>(<span class="va">Qt</span>)<span class="op">,</span> <span class="fl">1</span>)<span class="op">;</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>            <span class="va">filteredQH</span> <span class="op">=</span> <span class="va">bestTrainedNetH</span>([<span class="va">Qt</span><span class="op">;</span> <span class="va">Dt</span><span class="op">'</span>])<span class="op">';</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>            <span class="va">legendLabel</span> <span class="op">=</span> <span class="va">strcat</span>(<span class="ss">'Diameter: '</span><span class="op">,</span> <span class="va">num2str</span>(<span class="va">desiredDiameter</span>)<span class="op">,</span> <span class="ss">'mm'</span>)<span class="op">;</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>            <span class="va">plot</span>(<span class="va">Qt</span><span class="op">,</span> <span class="va">filteredQH</span><span class="op">,</span> <span class="ss">'DisplayName'</span><span class="op">,</span> <span class="va">legendLabel</span>)<span class="op">;</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>            <span class="va">text</span>(<span class="va">Qt</span>(<span class="kw">end</span>)<span class="op">,</span> <span class="va">filteredQH</span>(<span class="kw">end</span>)<span class="op">,</span> <span class="va">sprintf</span>(<span class="ss">'%dmm'</span><span class="op">,</span> <span class="va">desiredDiameter</span>)<span class="op">,</span> <span class="ss">'FontSize'</span><span class="op">,</span> <span class="fl">8</span><span class="op">,</span> <span class="ss">'Color'</span><span class="op">,</span> <span class="ss">'black'</span><span class="op">,</span> <span class="ss">'BackgroundColor'</span><span class="op">,</span> <span class="ss">'white'</span>)<span class="op">;</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>        <span class="kw">end</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>        <span class="va">scatter</span>(<span class="va">Qa</span><span class="op">',</span> <span class="va">Ha</span><span class="op">',</span> <span class="ss">'b'</span><span class="op">,</span> <span class="ss">'filled'</span><span class="op">,</span> <span class="ss">'DisplayName'</span><span class="op">,</span> <span class="ss">'Reference Points'</span>)<span class="op">;</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>        <span class="va">xlabel</span>(<span class="ss">'Q (m^3/h)'</span>)<span class="op">;</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>        <span class="va">ylabel</span>(<span class="ss">'H (m)'</span>)<span class="op">;</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>        <span class="va">title</span>([<span class="ss">'(Q, H) slices with Diameters, Removed Diameter: '</span> <span class="va">num2str</span>(<span class="va">diameterToRemove</span>) <span class="ss">'mm'</span>])<span class="op">;</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>        <span class="va">legend</span><span class="op">;</span>  </span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>        <span class="va">hold</span> <span class="va">off</span><span class="op">;</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>        <span class="va">filename</span> <span class="op">=</span> <span class="va">sprintf</span>(<span class="ss">'../loop_05/01/nn_diameter-%d_iteration_%d_%d-%d-%d-%d-%d_mseDia-%d_test-%d.png'</span><span class="op">,</span> <span class="va">diameterToRemove</span><span class="op">,</span> <span class="va">i</span><span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">1</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">2</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">3</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">4</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">5</span>)<span class="op">,</span> <span class="va">mseDiameter</span><span class="op">,</span> <span class="va">error</span>(<span class="fl">3</span>))<span class="op">;</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>        <span class="va">saveas</span>(<span class="va">gcf</span><span class="op">,</span> <span class="va">filename</span>)<span class="op">;</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>        <span class="va">filename</span> <span class="op">=</span> <span class="va">sprintf</span>(<span class="ss">'../loop_05/01/nn_diameter-%d_iteration_%d_%d-%d-%d-%d-%d_mseDia-%d_test-%d.mat'</span><span class="op">,</span> <span class="va">diameterToRemove</span><span class="op">,</span> <span class="va">i</span><span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">1</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">2</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">3</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">4</span>)<span class="op">,</span> <span class="va">optimalHyperParamsH</span>(<span class="fl">5</span>)<span class="op">,</span> <span class="va">mseDiameter</span><span class="op">,</span> <span class="va">error</span>(<span class="fl">3</span>))<span class="op">;</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>        <span class="va">save</span>(<span class="va">filename</span><span class="op">,</span> <span class="ss">'bestTrainedNetH'</span>)<span class="op">;</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>        <span class="va">close</span>(<span class="va">gcf</span>)<span class="op">;</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>        <span class="kw">if</span> (<span class="va">mseDiameter</span> <span class="op">&lt;</span> <span class="va">mseThreshold</span>) <span class="op">&amp;&amp;</span> (<span class="va">error</span>(<span class="fl">3</span>) <span class="op">&lt;</span> <span class="fl">0.0199</span>) <span class="op">&amp;&amp;</span> (<span class="va">mseQH_beps</span> <span class="op">&lt;</span> <span class="va">mseThreshold</span>) {</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>            <span class="va">fprintf</span>(<span class="ss">'MSE for diameter %d is below the threshold. Exiting loop.\n'</span><span class="op">,</span> <span class="va">diameterToRemove</span>)<span class="op">;</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>            <span class="kw">break</span><span class="op">;</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    <span class="kw">end</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="va">writematrix</span>([[<span class="st">"Iteration"</span><span class="op">,</span> <span class="st">"Hidden Layer 1 Size"</span><span class="op">,</span> <span class="st">"Hidden Layer 2 Size"</span><span class="op">,</span> <span class="st">"Max Epochs"</span><span class="op">,</span> <span class="st">"Training Function"</span><span class="op">,</span> <span class="st">"Activation Function"</span><span class="op">,</span> <span class="st">"Final MSE"</span><span class="op">,</span> <span class="st">"Random Seed"</span><span class="op">,</span> <span class="st">"Training Error"</span><span class="op">,</span> <span class="st">"Validation Error"</span><span class="op">,</span> <span class="st">"Test Error"</span>]<span class="op">;</span> <span class="va">result</span>]<span class="op">,</span> <span class="ss">'./01/results_loop.csv'</span>)<span class="op">;</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="va">disp</span>(<span class="ss">'./01/Results saved to results_loop.csv'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this script, data is loaded and prepared for training. The genetic algorithm is utilized to optimize neural network hyperparameters, ensuring accurate predictions for different impeller diameters. The <code>optimizeNNForTrimmingPumpImpeller</code> function performs the optimization, while the main script iterates through various diameters, training and evaluating the neural network’s performance. The visualization step plots the predicted performance curves for different diameters, allowing for easy comparison and analysis.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This chapter has outlined the significance of impeller trimming in centrifugal pump operation, traditional methods for trimming, and the advantages of using AI, specifically neural networks, for predicting pump performance. The implementation details provided in MATLAB highlight the practical aspects of this approach, demonstrating its potential for optimizing pump performance efficiently and accurately. The use of constant-area scaling and advanced neural network architectures underscores the importance of combining theoretical understanding with computational techniques to achieve optimal results.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="text/javascript">
+
+// replace cmd keyboard shortcut w/ control on non-Mac platforms
+const kPlatformMac = typeof navigator !== 'undefined' ? /Mac/.test(navigator.platform) : false;
+if (!kPlatformMac) {
+   var kbds = document.querySelectorAll("kbd")
+   kbds.forEach(function(kbd) {
+      kbd.innerHTML = kbd.innerHTML.replace(/⌘/g, '⌃');
+   });
+}
+
+// tweak headings in pymd
+document.querySelectorAll(".pymd span.co").forEach(el => {
+   if (!el.innerText.startsWith("#|")) {
+      el.style.fontWeight = 1000;
+   }
+});
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/MohammedTwheed\.github\.io\/mtk-bachelor-project-website\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="MohammedTwheed/mtk-bachelor-project-website" data-repo-id="R_kgDOL0cvvQ" data-category="Blog" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Proudly supervised by <a href="https://scholar.google.com.eg/citations?user=JebIw2QAAAAJ&amp;hl=en"><img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=JebIw2QAAAAJ&amp;citpid=2.png" class="img-fluid" alt="Prof. Dr. Mohamed farid khalil" width="65"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MohammedTwheed/mtk-bachelor-project-website">
+      <i class="bi bi-github" role="img" aria-label="mtk-bachelor-project-website GitHub">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
