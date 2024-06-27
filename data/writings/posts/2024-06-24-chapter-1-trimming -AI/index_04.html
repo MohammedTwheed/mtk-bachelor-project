@@ -1,0 +1,2421 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.556">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mohammed Twheed Khater">
+<meta name="dcterms.date" content="2024-06-24">
+
+<title>Home - Application of Artificial Intelligence on the Centrifugal Pump Operation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<link href="../../../../artificial-intelligence.png" rel="icon" type="image/png">
+<script src="../../../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": true,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-gallery .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-category','listing-description','listing-tiles',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-category","listing-description","listing-tiles"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-gallery'] = new List('listing-gallery', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #EDF3F9;
+      }
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../../artificial-intelligence.png" alt="AI for Pumps logo." class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../../index.html">
+    <span class="navbar-title">Home</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../data/writings/index.html"> 
+<span class="menu-text">Writings</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Application of Artificial Intelligence on the Centrifugal Pump Operation</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Mohammed Twheed Khater </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 24, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" id="toc-chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="nav-link active" data-scroll-target="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai">Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#what-is-this-project-about" id="toc-what-is-this-project-about" class="nav-link" data-scroll-target="#what-is-this-project-about">What is This Project About?</a></li>
+  <li><a href="#how-will-it-achieve-its-goals" id="toc-how-will-it-achieve-its-goals" class="nav-link" data-scroll-target="#how-will-it-achieve-its-goals">How Will It Achieve Its Goals?</a></li>
+  <li><a href="#tools-it-will-use" id="toc-tools-it-will-use" class="nav-link" data-scroll-target="#tools-it-will-use">Tools It Will Use</a></li>
+  </ul></li>
+  <li><a href="#the-concept-of-impeller-trimming" id="toc-the-concept-of-impeller-trimming" class="nav-link" data-scroll-target="#the-concept-of-impeller-trimming">The Concept of Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#what-is-trimming" id="toc-what-is-trimming" class="nav-link" data-scroll-target="#what-is-trimming">What is Trimming?</a></li>
+  <li><a href="#why-trimming" id="toc-why-trimming" class="nav-link" data-scroll-target="#why-trimming">Why Trimming?</a></li>
+  </ul></li>
+  <li><a href="#energy-savings-and-environmental-impact" id="toc-energy-savings-and-environmental-impact" class="nav-link" data-scroll-target="#energy-savings-and-environmental-impact">Energy Savings and Environmental Impact</a></li>
+  <li><a href="#traditional-methods-of-impeller-trimming" id="toc-traditional-methods-of-impeller-trimming" class="nav-link" data-scroll-target="#traditional-methods-of-impeller-trimming">Traditional Methods of Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#scaling-methods" id="toc-scaling-methods" class="nav-link" data-scroll-target="#scaling-methods">Scaling Methods</a></li>
+  </ul></li>
+  <li><a href="#artificial-neural-networks-for-impeller-trimming" id="toc-artificial-neural-networks-for-impeller-trimming" class="nav-link" data-scroll-target="#artificial-neural-networks-for-impeller-trimming">Artificial Neural Networks for Impeller Trimming</a>
+  <ul class="collapse">
+  <li><a href="#advantages-of-neural-networks" id="toc-advantages-of-neural-networks" class="nav-link" data-scroll-target="#advantages-of-neural-networks">Advantages of Neural Networks</a></li>
+  <li><a href="#neural-network-architecture" id="toc-neural-network-architecture" class="nav-link" data-scroll-target="#neural-network-architecture">Neural Network Architecture</a></li>
+  <li><a href="#training-the-neural-network" id="toc-training-the-neural-network" class="nav-link" data-scroll-target="#training-the-neural-network">Training the Neural Network</a></li>
+  <li><a href="#hyperparameters-and-unlearnable-parameters" id="toc-hyperparameters-and-unlearnable-parameters" class="nav-link" data-scroll-target="#hyperparameters-and-unlearnable-parameters">Hyperparameters and Unlearnable Parameters</a></li>
+  </ul></li>
+  <li><a href="#genetic-algorithm-for-hyperparameter-optimization" id="toc-genetic-algorithm-for-hyperparameter-optimization" class="nav-link" data-scroll-target="#genetic-algorithm-for-hyperparameter-optimization">Genetic Algorithm for Hyperparameter Optimization</a>
+  <ul class="collapse">
+  <li><a href="#how-genetic-algorithms-work" id="toc-how-genetic-algorithms-work" class="nav-link" data-scroll-target="#how-genetic-algorithms-work">How Genetic Algorithms Work</a></li>
+  <li><a href="#using-genetic-algorithms-in-our-code" id="toc-using-genetic-algorithms-in-our-code" class="nav-link" data-scroll-target="#using-genetic-algorithms-in-our-code">Using Genetic Algorithms in Our Code</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="level1">
+<h1>Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="what-is-this-project-about" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-this-project-about">What is This Project About?</h3>
+<p>This project focuses on optimizing the performance of centrifugal pumps, which are essential in various industrial applications such as water supply systems and chemical processing. The optimization technique of interest is impeller trimming, which involves reducing the diameter of a pump impeller to better match the pump’s performance with the system requirements. This chapter explores the concept of impeller trimming, its significance, traditional methods, and the advantages of employing Artificial Intelligence (AI) for performance prediction.</p>
+</section>
+<section id="how-will-it-achieve-its-goals" class="level3">
+<h3 class="anchored" data-anchor-id="how-will-it-achieve-its-goals">How Will It Achieve Its Goals?</h3>
+<p>The project aims to enhance energy efficiency and reduce operational costs by accurately predicting the effects of impeller trimming on pump performance. By leveraging AI techniques, particularly neural networks and genetic algorithms, the project seeks to provide precise predictions that can outperform traditional empirical methods.</p>
+</section>
+<section id="tools-it-will-use" class="level3">
+<h3 class="anchored" data-anchor-id="tools-it-will-use">Tools It Will Use</h3>
+<ol type="1">
+<li><strong>Artificial Neural Networks (ANNs)</strong>: For predicting pump performance based on various input parameters.</li>
+<li><strong>Genetic Algorithms (GAs)</strong>: For optimizing the hyperparameters of the neural networks.</li>
+<li><strong>MATLAB</strong>: As the primary platform for implementing the AI models and optimization algorithms.</li>
+</ol>
+</section>
+</section>
+<section id="the-concept-of-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="the-concept-of-impeller-trimming">The Concept of Impeller Trimming</h2>
+<section id="what-is-trimming" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-trimming">What is Trimming?</h3>
+<p>Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.</p>
+</section>
+<section id="why-trimming" class="level3">
+<h3 class="anchored" data-anchor-id="why-trimming">Why Trimming?</h3>
+<section id="the-need-for-trimming" class="level4">
+<h4 class="anchored" data-anchor-id="the-need-for-trimming">The Need for Trimming</h4>
+<p>Trimming the impeller allows for the customization of pump performance to meet specific operational requirements. This customization is particularly necessary when: - The available pump sizes do not perfectly match the required system specifications. - System demands change over time, necessitating adjustments to maintain optimal efficiency. - Reducing the operational costs by minimizing energy wastage.</p>
+</section>
+<section id="energy-consumption" class="level4">
+<h4 class="anchored" data-anchor-id="energy-consumption">Energy Consumption</h4>
+<p>Centrifugal pumps are often responsible for a significant portion of the energy consumption in industrial settings. Trimming the impeller to match the exact system requirements can greatly reduce the energy consumption of the pump. By operating more efficiently, the pump uses less power, leading to substantial energy savings. For every kilowatt (kW) saved by the pump, the reduction in power station output significantly decreases pollution.</p>
+</section>
+<section id="market-availability" class="level4">
+<h4 class="anchored" data-anchor-id="market-availability">Market Availability</h4>
+<p>The pumps available in the market may not always fit specific system requirements precisely. Typically, pumps are designed for a range of operations and may be larger or smaller than needed for a particular application. Impeller trimming allows for customizing the pump’s performance to meet these specific needs, ensuring that the pump operates at optimal efficiency.</p>
+</section>
+</section>
+</section>
+<section id="energy-savings-and-environmental-impact" class="level2">
+<h2 class="anchored" data-anchor-id="energy-savings-and-environmental-impact">Energy Savings and Environmental Impact</h2>
+<p>Trimming the impeller is not only beneficial for energy savings but also contributes to environmental sustainability. Reduced energy consumption leads to lower greenhouse gas emissions. For every kilowatt-hour (kWh) saved by the pump, the reduction in power station output significantly decreases pollution.</p>
+</section>
+<section id="traditional-methods-of-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-methods-of-impeller-trimming">Traditional Methods of Impeller Trimming</h2>
+<section id="scaling-methods" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-methods">Scaling Methods</h3>
+<p>Traditional methods for impeller trimming typically involve scaling laws and empirical correlations derived from extensive testing and experience. These methods include:</p>
+<section id="constant-area-scaling" class="level4">
+<h4 class="anchored" data-anchor-id="constant-area-scaling">Constant-Area Scaling</h4>
+<p>Constant-area scaling assumes that the trimmed impeller maintains a constant area, ensuring proportional changes in flow and head. This method involves adjusting the impeller diameter while maintaining the proportional relationship between the flow rate and head.</p>
+<p><span class="math display">\[
+\text{constant-area scaling:} \quad \frac{Q'}{Q} = \frac{D_2'}{D_2} \frac{H'}{H} = \left( \frac{D_2'}{D_2} \right)^2
+\]</span></p>
+</section>
+</section>
+</section>
+<section id="artificial-neural-networks-for-impeller-trimming" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-neural-networks-for-impeller-trimming">Artificial Neural Networks for Impeller Trimming</h2>
+<p>Artificial Neural Networks (ANNs) offer a robust alternative to traditional methods by leveraging large datasets to predict pump performance accurately. Unlike empirical methods, ANNs can model complex, non-linear relationships between variables, providing more precise predictions.</p>
+<section id="advantages-of-neural-networks" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-neural-networks">Advantages of Neural Networks</h3>
+<ul>
+<li><strong>Accuracy</strong>: ANNs can learn from vast amounts of data, capturing intricate patterns and relationships that traditional methods might miss.</li>
+<li><strong>Efficiency</strong>: Once trained, ANNs can quickly predict performance outcomes for different impeller diameters, saving time and resources.</li>
+<li><strong>Adaptability</strong>: Neural networks can be updated with new data, continuously improving their predictive capabilities.</li>
+</ul>
+</section>
+<section id="neural-network-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="neural-network-architecture">Neural Network Architecture</h3>
+<p>The architecture of the neural network plays a crucial role in its performance. Key components include: - <strong>Input Layer</strong>: Represents the features or variables used for prediction, such as flow rate and diameter. - <strong>Hidden Layers</strong>: Intermediate layers that process the inputs through weighted connections. The number of hidden layers and neurons per layer is optimized using hyperparameter tuning. - <strong>Output Layer</strong>: Provides the predicted performance metrics, such as head and power.</p>
+</section>
+<section id="training-the-neural-network" class="level3">
+<h3 class="anchored" data-anchor-id="training-the-neural-network">Training the Neural Network</h3>
+<p>The training process involves adjusting the weights of the network to minimize the error between predicted and actual values. This is achieved through backpropagation and optimization algorithms.</p>
+</section>
+<section id="hyperparameters-and-unlearnable-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="hyperparameters-and-unlearnable-parameters">Hyperparameters and Unlearnable Parameters</h3>
+<p>Hyperparameters are settings that you adjust before training your neural network. These parameters influence the training process and the structure of the network. They are not learned from the data but are set by the user. In our code, we have chosen to optimize several hyperparameters, including:</p>
+<ul>
+<li><strong>Number of neurons in the hidden layers</strong>: This determines the capacity of the neural network to learn from the data. More neurons can capture more complex patterns but may also lead to overfitting if not managed properly.</li>
+<li><strong>Training method</strong>: This is specified by the choice of optimizer. In our code, we use the Levenberg-Marquardt (<code>trainlm</code> in MATLAB) optimizer for its efficiency in training feedforward networks.</li>
+<li><strong>Number of epochs</strong>: Epochs refer to the number of complete passes through the training dataset. Our code optimizes the number of epochs to ensure the model is well-trained without overfitting.</li>
+<li><strong>Activation functions</strong>: These functions define the output of each neuron. We experiment with different activation functions like <code>tansig</code> and <code>logsig</code> to find the best fit for our model.</li>
+</ul>
+</section>
+</section>
+<section id="genetic-algorithm-for-hyperparameter-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="genetic-algorithm-for-hyperparameter-optimization">Genetic Algorithm for Hyperparameter Optimization</h2>
+<p>Genetic algorithms (GAs) are a class of optimization techniques inspired by the process of natural selection. They are particularly useful for optimizing complex problems with large search spaces, such as neural network hyperparameter tuning.</p>
+<section id="how-genetic-algorithms-work" class="level3">
+<h3 class="anchored" data-anchor-id="how-genetic-algorithms-work">How Genetic Algorithms Work</h3>
+<ol type="1">
+<li><strong>Initialization</strong>: A population of potential solutions (individuals) is generated. Each individual represents a set of hyperparameters.</li>
+<li><strong>Selection</strong>: Individuals are selected based on their fitness, which is typically a function of how well they perform on a given task (e.g., predicting pump performance).</li>
+<li><strong>Crossover</strong>: Pairs of individuals are combined to produce offspring. This process involves swapping parts of their hyperparameter sets to create new solutions.</li>
+<li><strong>Mutation</strong>: Some offspring undergo random changes to introduce diversity into the population.</li>
+<li><strong>Evaluation</strong>: The fitness of the new generation is evaluated, and the best individuals are selected for the next iteration.</li>
+<li><strong>Termination</strong>: The algorithm repeats the selection, crossover, mutation, and evaluation steps until a stopping criterion is met (e.g., a predefined number of generations or a satisfactory fitness level).</li>
+</ol>
+</section>
+<section id="using-genetic-algorithms-in-our-code" class="level3">
+<h3 class="anchored" data-anchor-id="using-genetic-algorithms-in-our-code">Using Genetic Algorithms in Our Code</h3>
+<p>In our code, we use a genetic algorithm to optimize the hyperparameters of our neural network. The key steps involved are:</p>
+<ol type="1">
+<li><strong>Define the Search Space</strong>: We specify the range for each hyperparameter, such as the number of neurons in hidden layers, the number of epochs, and the indices for the training and activation functions.</li>
+<li><strong>Set Genetic Algorithm Options</strong>: We configure the genetic algorithm with options like population size, maximum number of generations, crossover fraction, and fitness limit.</li>
+<li><strong>Evaluate Hyperparameters</strong>: A fitness function evaluates the performance of each set of hyperparameters. It trains the neural network and computes the mean squared error (MSE) across training, validation, and testing datasets.</li>
+<li><strong>Optimize</strong>: The genetic algorithm iteratively searches for the optimal hyperparameters by generating new populations, evaluating their fitness, and selecting the best-performing sets.</li>
+</ol>
+<p>Here is an outline of the relevant code:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode matlab code-with-copy"><code class="sourceCode matlab"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">% Define bounds for the genetic algorithm optimization</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">lower_bounds</span> <span class="op">=</span> [<span class="fl">2</span><span class="op">,</span>  <span class="fl">13</span><span class="op">,</span>    <span class="fl">13</span><span class="op">,</span> <span class="fl">1</span><span class="op">,</span> <span class="fl">1</span>]<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">upper_bounds</span> <span class="op">=</span> [<span class="fl">2</span><span class="op">,</span>  <span class="fl">300</span><span class="op">,</span>    <span class="fl">300</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="fl">1</span>]<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">% Genetic algorithm options</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">gaOptions</span> <span class="op">=</span> <span class="va">optimoptions</span>(<span class="ss">'ga'</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'PopulationSize'</span><span class="op">,</span> <span class="fl">17</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'MaxGenerations'</span><span class="op">,</span> <span class="fl">13</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'CrossoverFraction'</span><span class="op">,</span> <span class="fl">0.8</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'ConstraintTolerance'</span><span class="op">,</span> <span class="fl">0.000991</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'FitnessLimit'</span><span class="op">,</span> <span class="fl">0.000991</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'EliteCount'</span><span class="op">,</span> <span class="fl">2</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'Display'</span><span class="op">,</span> <span class="ss">'iter'</span><span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="ss">'UseParallel'</span><span class="op">,</span> <span class="va">true</span>)<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">% Optimization using genetic algorithm</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>[<span class="va">optimalHyperParams</span><span class="op">,</span> <span class="va">finalMSE</span>] <span class="op">=</span> <span class="va">ga</span>(<span class="op">@</span>(<span class="va">hyperParams</span>) <span class="va">evaluateHyperparameters</span>(<span class="va">hyperParams</span><span class="op">,</span> <span class="va">x</span><span class="op">,</span> <span class="va">t</span><span class="op">,</span> <span class="va">randomSeed</span>)<span class="op">,</span> <span class="op">...</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="va">length</span>(<span class="va">lower_bounds</span>)<span class="op">,</span> []<span class="op">,</span> []<span class="op">,</span> []<span class="op">,</span> []<span class="op">,</span> <span class="va">lower_bounds</span><span class="op">,</span> <span class="va">upper_bounds</span><span class="op">,</span> []<span class="op">,</span> <span class="va">gaOptions</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this section of the code, we set up the bounds for the hyperparameters and configure the genetic algorithm options. The evaluateHyperparameters function is called by the genetic algorithm to assess the performance of each set of hyperparameters, guiding the search towards the optimal solution.</p>
+<p>The combination of neural networks and genetic algorithms provides a powerful approach for predicting the effects of impeller trimming on centrifugal pump performance. By leveraging AI techniques, we can achieve more accurate and efficient predictions, ultimately leading to better optimization of pump operations.</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>This chapter introduced the concept of impeller trimming and its significance in optimizing centrifugal pump performance. It highlighted the limitations of traditional methods and the advantages of using AI, specifically neural networks and genetic algorithms, for predicting the effects of impeller trimming. The implementation details of these AI techniques were discussed, demonstrating their potential to enhance energy efficiency and reduce operational costs in industrial applications.</p>
+
+
+
+</section>
+
+<div class="quarto-listing quarto-listing-container-custom" id="listing-gallery">
+
+<h2 class="anchored">Figures</h2>
+
+<p>Gallery of Figures</p>
+
+<div class="list grid" style="column-gap: 10px;">
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="0">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">best_nn_diameter_power_visualization_2024-06-26_23-49-25</a>
+        
+        <span class="text-muted listing-subtitle">Description of best_nn_diameter_power_visualization_2024-06-26_23-49-25</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/best_nn_diameter_power_visualization_2024-06-26_23-49-25.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="1">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">best_nn_diameter_power_visualization_2024-06-27_05-02-57</a>
+        
+        <span class="text-muted listing-subtitle">Description of best_nn_diameter_power_visualization_2024-06-27_05-02-57</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/best_nn_diameter_power_visualization_2024-06-27_05-02-57.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="2">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="3">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="4">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="5">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="6">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="7">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="8">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="9">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="10">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="11">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="12">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="13">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="14">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="15">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="16">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="17">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="18">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="19">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="20">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="21">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="22">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="23">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="24">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="25">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="26">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="27">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="28">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="29">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="30">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="31">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="32">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="33">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="34">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="35">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="36">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="37">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="38">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="39">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="40">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="41">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="42">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="43">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="44">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="45">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="46">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="47">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="48">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="49">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="50">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="51">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="52">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="53">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="54">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="55">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="56">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="57">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="58">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="59">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="60">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="61">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="62">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="63">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="64">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="65">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="66">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="67">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="68">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="69">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="70">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="71">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="72">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04</a>
+        
+        <span class="text-muted listing-subtitle">Description of nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="73">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDH_Diameter_220</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDH_Diameter_220</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDH_Diameter_220.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="74">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDH_Diameter_230</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDH_Diameter_230</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDH_Diameter_230.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="75">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDH_Diameter_240</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDH_Diameter_240</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDH_Diameter_240.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="76">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDH_Diameter_250</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDH_Diameter_250</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDH_Diameter_250.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="77">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDH_Diameter_260</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDH_Diameter_260</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDH_Diameter_260.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="78">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDP_Diameter_220</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDP_Diameter_220</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDP_Diameter_220.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="79">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDP_Diameter_230</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDP_Diameter_230</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDP_Diameter_230.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="80">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDP_Diameter_240</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDP_Diameter_240</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDP_Diameter_240.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="81">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDP_Diameter_250</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDP_Diameter_250</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDP_Diameter_250.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="82">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QDP_Diameter_260</a>
+        
+        <span class="text-muted listing-subtitle">Description of QDP_Diameter_260</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QDP_Diameter_260.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="83">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QHD_Diameter_220</a>
+        
+        <span class="text-muted listing-subtitle">Description of QHD_Diameter_220</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QHD_Diameter_220.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="84">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QHD_Diameter_230</a>
+        
+        <span class="text-muted listing-subtitle">Description of QHD_Diameter_230</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QHD_Diameter_230.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="85">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QHD_Diameter_240</a>
+        
+        <span class="text-muted listing-subtitle">Description of QHD_Diameter_240</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QHD_Diameter_240.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="86">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QHD_Diameter_250</a>
+        
+        <span class="text-muted listing-subtitle">Description of QHD_Diameter_250</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QHD_Diameter_250.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="87">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">QHD_Diameter_260</a>
+        
+        <span class="text-muted listing-subtitle">Description of QHD_Diameter_260</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/QHD_Diameter_260.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="88">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_eta_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_eta_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_eta_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="89">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_eta_mtk_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_eta_mtk_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_eta_mtk_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="90">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_H_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_H_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_H_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="91">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_H_mtk_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_H_mtk_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_H_mtk_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="92">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_P_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_P_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_P_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="93">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="" class="listing-title">Q_P_mtk_curves_with_BEPs</a>
+        
+        <span class="text-muted listing-subtitle">Description of Q_P_mtk_curves_with_BEPs</span>
+      </small>
+    </div>
+    <a href="">
+      <img src="figures/Q_P_mtk_curves_with_BEPs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+</div>
+
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
+<script type="text/javascript">
+
+// replace cmd keyboard shortcut w/ control on non-Mac platforms
+const kPlatformMac = typeof navigator !== 'undefined' ? /Mac/.test(navigator.platform) : false;
+if (!kPlatformMac) {
+   var kbds = document.querySelectorAll("kbd")
+   kbds.forEach(function(kbd) {
+      kbd.innerHTML = kbd.innerHTML.replace(/⌘/g, '⌃');
+   });
+}
+
+// tweak headings in pymd
+document.querySelectorAll(".pymd span.co").forEach(el => {
+   if (!el.innerText.startsWith("#|")) {
+      el.style.fontWeight = 1000;
+   }
+});
+
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/MohammedTwheed\.github\.io\/mtk-bachelor-project-website\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://giscus.app/client.js" data-repo="MohammedTwheed/mtk-bachelor-project-website" data-repo-id="R_kgDOL0cvvQ" data-category="Blog" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Proudly supervised by <a href="https://scholar.google.com.eg/citations?user=JebIw2QAAAAJ&amp;hl=en"><img src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=JebIw2QAAAAJ&amp;citpid=2.png" class="img-fluid" alt="Prof. Dr. Mohamed farid khalil" width="65"></a></p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MohammedTwheed/mtk-bachelor-project-website">
+      <i class="bi bi-github" role="img" aria-label="mtk-bachelor-project-website GitHub">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

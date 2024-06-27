@@ -248,7 +248,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" id="toc-chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="nav-link active" data-scroll-target="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai">Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</a>
+  <li><a href="#here-is-proposed-presentation" id="toc-here-is-proposed-presentation" class="nav-link active" data-scroll-target="#here-is-proposed-presentation">here is proposed presentation</a></li>
+  <li><a href="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" id="toc-chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="nav-link" data-scroll-target="#chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai">Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#the-concept-of-impeller-trimming" id="toc-the-concept-of-impeller-trimming" class="nav-link" data-scroll-target="#the-concept-of-impeller-trimming">The Concept of Impeller Trimming</a>
@@ -327,6 +328,9 @@ window.Quarto = {
 
 
 
+<section id="here-is-proposed-presentation" class="level1">
+<h1>here is proposed <a href="../../../../data/writings/posts/2024-06-24-chapter-1-trimming -AI/presentation.html">presentation</a></h1>
+</section>
 <section id="chapter-1-prediction-of-the-effect-of-impeller-trimming-on-centrifugal-pump-performance-using-ai" class="level1">
 <h1>Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI</h1>
 <section id="introduction" class="level2">
@@ -584,7 +588,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <section id="qhd-results-table" class="level3">
 <h3 class="anchored" data-anchor-id="qhd-results-table">QHD results table</h3>
-<div id="bd0eb5c7" class="cell" data-execution_count="1">
+<div id="7fa17c84" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the QHD results table</span></span>
@@ -659,7 +663,7 @@ window.Quarto = {
 </section>
 <section id="qdp-results-tabel" class="level3">
 <h3 class="anchored" data-anchor-id="qdp-results-tabel">QDP results tabel</h3>
-<div id="51e9fa5f" class="cell" data-execution_count="2">
+<div id="fc37cfac" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the QDP results table</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>qdp_results <span class="op">=</span> pd.read_csv(<span class="st">'QDP_results.csv'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>qdp_results.columns <span class="op">=</span> [<span class="st">'DiameterRemoved'</span>, <span class="st">'AvgMSE'</span>, <span class="st">'TrainPerformance'</span>, <span class="st">'ValPerformance'</span>, <span class="st">'TestPerformance'</span>, <span class="st">'MSEDeletedDiameter'</span>, <span class="st">'MSEBEPs'</span>]</span>
@@ -731,7 +735,7 @@ window.Quarto = {
 </section>
 <section id="qdh-results-tabel" class="level3">
 <h3 class="anchored" data-anchor-id="qdh-results-tabel">QDH results tabel</h3>
-<div id="49231926" class="cell" data-execution_count="3">
+<div id="2c1536ba" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the QDH results table</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>qdh_results <span class="op">=</span> pd.read_csv(<span class="st">'QDH_results.csv'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>qdh_results.columns <span class="op">=</span> [<span class="st">'DiameterRemoved'</span>, <span class="st">'AvgMSE'</span>, <span class="st">'TrainPerformance'</span>, <span class="st">'ValPerformance'</span>, <span class="st">'TestPerformance'</span>, <span class="st">'MSEDeletedDiameter'</span>, <span class="st">'MSEBEPs'</span>]</span>
@@ -825,7 +829,7 @@ window.Quarto = {
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>as we see here we do so in two different variants where in <code>percent_errors_cas_260</code> we feed to <code>constant_area_scaling</code> the last diameter the $ 260:mm $ diameter as the base diameter and for all the test points which are the best effecincy points they will trimm form it and this gives greater error as you see below.</p>
 <p>while <code>trim_diameters</code> the function will find the nearst curve from the given 5 curves to trim againist it and this will reduce the error so much but it still higher that the nn by order of magnitude.</p>
-<div id="b4bad9cd" class="cell" data-execution_count="4">
+<div id="99918a1f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>erros_reductions <span class="op">=</span> pd.read_csv(<span class="st">'errors_and_reductions.csv'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>erros_reductions .columns <span class="op">=</span> [<span class="st">'Index'</span>, <span class="st">'Percent_Error_CAS_260'</span>, <span class="st">'Percent_Error_CAS_Nearest'</span>, <span class="st">'Percent_Error_NN'</span>, <span class="st">'Percent_Reduction'</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>erros_reductions </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -894,7 +898,7 @@ window.Quarto = {
 </section>
 <section id="final-stats" class="level3">
 <h3 class="anchored" data-anchor-id="final-stats">final stats</h3>
-<div id="e65d4ede" class="cell" data-execution_count="5">
+<div id="2c44443b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fstats <span class="op">=</span> pd.read_csv(<span class="st">'final_statistics.csv'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fstats.columns <span class="op">=</span> [<span class="st">'MAE_Trim_Diameters'</span>, <span class="st">'MAE_TrainedNetQHD'</span>, <span class="st">'Count_Better_TrainedNetQHD'</span>, <span class="st">'Count_Better_Trim_Diameters'</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fstats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
