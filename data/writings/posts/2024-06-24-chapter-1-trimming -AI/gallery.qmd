@@ -1,0 +1,10 @@
+---
+title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
+author: "Mohammed Twheed Khater"
+date: "2024-06-24"
+cache: false
+listing:
+  - id: gallery
+    template: gallery.ejs
+    contents: gallery.yml
+---

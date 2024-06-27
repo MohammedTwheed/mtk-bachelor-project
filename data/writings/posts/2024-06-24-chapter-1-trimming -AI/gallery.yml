@@ -1,0 +1,285 @@
+- category: Figures
+  description: Gallery of Figures
+  tiles:
+  - subtitle: Description of best_nn_diameter_power_visualization_2024-06-26_23-49-25
+    thumbnail: figures/best_nn_diameter_power_visualization_2024-06-26_23-49-25.png
+    title: best_nn_diameter_power_visualization_2024-06-26_23-49-25
+  - subtitle: Description of best_nn_diameter_power_visualization_2024-06-27_05-02-57
+    thumbnail: figures/best_nn_diameter_power_visualization_2024-06-27_05-02-57.png
+    title: best_nn_diameter_power_visualization_2024-06-27_05-02-57
+  - subtitle: Description of nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03
+    thumbnail: figures/nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03.png
+    title: nn_diameter-220_iteration_10_2-51-264-1-1_mseDia-4.631136e-03_test-1.474209e-03
+  - subtitle: Description of nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03
+    thumbnail: figures/nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03.png
+    title: nn_diameter-220_iteration_11_2-52-261-1-1_mseDia-3.540134e-02_test-5.639226e-03
+  - subtitle: Description of nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03
+    thumbnail: figures/nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03.png
+    title: nn_diameter-220_iteration_12_2-51-262-1-1_mseDia-6.829475e-03_test-4.445475e-03
+  - subtitle: Description of nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03
+    thumbnail: figures/nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03.png
+    title: nn_diameter-220_iteration_13_2-52-264-1-1_mseDia-4.526453e-04_test-6.299822e-03
+  - subtitle: Description of nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03
+    thumbnail: figures/nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03.png
+    title: nn_diameter-220_iteration_14_2-51-259-1-1_mseDia-2.193948e-03_test-2.819540e-03
+  - subtitle: Description of nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03
+    thumbnail: figures/nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03.png
+    title: nn_diameter-220_iteration_15_2-52-264-1-1_mseDia-1.869470e-02_test-1.080346e-03
+  - subtitle: Description of nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03
+    thumbnail: figures/nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03.png
+    title: nn_diameter-220_iteration_16_2-51-264-1-1_mseDia-2.089594e-03_test-3.406835e-03
+  - subtitle: Description of nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00
+    thumbnail: figures/nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00.png
+    title: nn_diameter-220_iteration_17_2-51-263-1-1_mseDia-6.729495e-02_test-9.282804e+00
+  - subtitle: Description of nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00
+    thumbnail: figures/nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00.png
+    title: nn_diameter-220_iteration_18_2-52-260-1-1_mseDia-5.216853e-03_test-1.034067e+00
+  - subtitle: Description of nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02
+    thumbnail: figures/nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02.png
+    title: nn_diameter-220_iteration_19_2-51-262-1-1_mseDia-4.303755e-04_test-5.570226e-02
+  - subtitle: Description of nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02
+    thumbnail: figures/nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02.png
+    title: nn_diameter-220_iteration_1_2-48-255-1-1_mseDia-1.451433e-04_test-1.443107e-02
+  - subtitle: Description of nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04
+    thumbnail: figures/nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04.png
+    title: nn_diameter-220_iteration_20_2-52-262-1-1_mseDia-7.448321e-03_test-9.132916e-04
+  - subtitle: Description of nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02
+    thumbnail: figures/nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02.png
+    title: nn_diameter-220_iteration_2_2-51-261-1-1_mseDia-7.942964e-01_test-2.495736e-02
+  - subtitle: Description of nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00
+    thumbnail: figures/nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00.png
+    title: nn_diameter-220_iteration_3_2-50-262-1-1_mseDia-1.662826e-01_test-8.739276e+00
+  - subtitle: Description of nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00
+    thumbnail: figures/nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00.png
+    title: nn_diameter-220_iteration_4_2-50-263-1-1_mseDia-5.526657e-03_test-2.431055e+00
+  - subtitle: Description of nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01
+    thumbnail: figures/nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01.png
+    title: nn_diameter-220_iteration_5_2-52-261-1-1_mseDia-5.826613e-02_test-2.183893e-01
+  - subtitle: Description of nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04
+    thumbnail: figures/nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04.png
+    title: nn_diameter-220_iteration_6_2-51-264-1-1_mseDia-1.620744e-01_test-7.017350e-04
+  - subtitle: Description of nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01
+    thumbnail: figures/nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01.png
+    title: nn_diameter-220_iteration_7_2-51-259-1-1_mseDia-3.427594e-04_test-1.807621e-01
+  - subtitle: Description of nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02
+    thumbnail: figures/nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02.png
+    title: nn_diameter-220_iteration_8_2-52-263-1-1_mseDia-1.049658e-03_test-9.818476e-02
+  - subtitle: Description of nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00
+    thumbnail: figures/nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00.png
+    title: nn_diameter-220_iteration_9_2-52-262-1-1_mseDia-5.042946e-01_test-4.279715e+00
+  - subtitle: Description of nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02
+    thumbnail: figures/nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02.png
+    title: nn_diameter-230_iteration_10_2-16-192-1-1_mseDia-6.539777e-06_test-4.418643e-02
+  - subtitle: Description of nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03
+    thumbnail: figures/nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03.png
+    title: nn_diameter-230_iteration_11_2-16-191-1-1_mseDia-1.897601e-04_test-8.967212e-03
+  - subtitle: Description of nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00
+    thumbnail: figures/nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00.png
+    title: nn_diameter-230_iteration_1_2-14-189-1-1_mseDia-2.123792e-04_test-2.682739e+00
+  - subtitle: Description of nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02
+    thumbnail: figures/nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02.png
+    title: nn_diameter-230_iteration_2_2-15-191-1-1_mseDia-4.573431e-04_test-3.076450e-02
+  - subtitle: Description of nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01
+    thumbnail: figures/nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01.png
+    title: nn_diameter-230_iteration_3_2-16-191-1-1_mseDia-2.098153e-05_test-1.996420e-01
+  - subtitle: Description of nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01
+    thumbnail: figures/nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01.png
+    title: nn_diameter-230_iteration_4_2-16-193-1-1_mseDia-2.922957e-05_test-1.140381e-01
+  - subtitle: Description of nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01
+    thumbnail: figures/nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01.png
+    title: nn_diameter-230_iteration_5_2-16-194-1-1_mseDia-2.667331e-05_test-3.306433e-01
+  - subtitle: Description of nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00
+    thumbnail: figures/nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00.png
+    title: nn_diameter-230_iteration_6_2-15-195-1-1_mseDia-7.611546e-03_test-7.003550e+00
+  - subtitle: Description of nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02
+    thumbnail: figures/nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02.png
+    title: nn_diameter-230_iteration_7_2-15-195-1-1_mseDia-2.203415e-02_test-2.568556e-02
+  - subtitle: Description of nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02
+    thumbnail: figures/nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02.png
+    title: nn_diameter-230_iteration_8_2-16-194-1-1_mseDia-2.878154e-05_test-4.467712e-02
+  - subtitle: Description of nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02
+    thumbnail: figures/nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02.png
+    title: nn_diameter-230_iteration_9_2-15-190-1-1_mseDia-1.608663e-05_test-2.695317e-02
+  - subtitle: Description of nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01
+    thumbnail: figures/nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01.png
+    title: nn_diameter-240_iteration_1_2-40-264-1-1_mseDia-1.552556e-06_test-2.915896e-01
+  - subtitle: Description of nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03
+    thumbnail: figures/nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03.png
+    title: nn_diameter-240_iteration_2_2-40-250-1-1_mseDia-1.717564e-04_test-2.364596e-03
+  - subtitle: Description of nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03
+    thumbnail: figures/nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03.png
+    title: nn_diameter-240_iteration_3_2-40-251-1-1_mseDia-1.426877e-03_test-2.078074e-03
+  - subtitle: Description of nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03
+    thumbnail: figures/nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03.png
+    title: nn_diameter-240_iteration_4_2-39-249-1-1_mseDia-6.810560e-05_test-1.279386e-03
+  - subtitle: Description of nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00
+    thumbnail: figures/nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00.png
+    title: nn_diameter-250_iteration_10_2-43-254-1-1_mseDia-8.299140e-03_test-7.474668e+00
+  - subtitle: Description of nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01
+    thumbnail: figures/nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01.png
+    title: nn_diameter-250_iteration_11_2-43-255-1-1_mseDia-2.468579e-01_test-3.724990e+01
+  - subtitle: Description of nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04
+    thumbnail: figures/nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04.png
+    title: nn_diameter-250_iteration_12_2-43-252-1-1_mseDia-1.497363e-03_test-8.321293e-04
+  - subtitle: Description of nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02
+    thumbnail: figures/nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02.png
+    title: nn_diameter-250_iteration_13_2-43-252-1-1_mseDia-5.627291e-04_test-3.175057e-02
+  - subtitle: Description of nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03
+    thumbnail: figures/nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03.png
+    title: nn_diameter-250_iteration_14_2-43-250-1-1_mseDia-2.920388e-04_test-4.679399e-03
+  - subtitle: Description of nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03
+    thumbnail: figures/nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03.png
+    title: nn_diameter-250_iteration_15_2-44-255-1-1_mseDia-1.510201e-02_test-1.263276e-03
+  - subtitle: Description of nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03
+    thumbnail: figures/nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03.png
+    title: nn_diameter-250_iteration_16_2-43-250-1-1_mseDia-6.112923e-05_test-2.322065e-03
+  - subtitle: Description of nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02
+    thumbnail: figures/nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02.png
+    title: nn_diameter-250_iteration_1_2-40-254-1-1_mseDia-2.762442e-04_test-1.058931e-02
+  - subtitle: Description of nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02
+    thumbnail: figures/nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02.png
+    title: nn_diameter-250_iteration_2_2-44-255-1-1_mseDia-4.458115e-03_test-3.020039e-02
+  - subtitle: Description of nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04
+    thumbnail: figures/nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04.png
+    title: nn_diameter-250_iteration_3_2-43-250-1-1_mseDia-2.587186e-03_test-9.379359e-04
+  - subtitle: Description of nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03
+    thumbnail: figures/nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03.png
+    title: nn_diameter-250_iteration_4_2-44-253-1-1_mseDia-4.812756e-02_test-2.261070e-03
+  - subtitle: Description of nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03
+    thumbnail: figures/nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03.png
+    title: nn_diameter-250_iteration_5_2-43-250-1-1_mseDia-3.731435e-03_test-1.737575e-03
+  - subtitle: Description of nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03
+    thumbnail: figures/nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03.png
+    title: nn_diameter-250_iteration_6_2-44-253-1-1_mseDia-1.436546e-04_test-1.130975e-03
+  - subtitle: Description of nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01
+    thumbnail: figures/nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01.png
+    title: nn_diameter-250_iteration_7_2-44-254-1-1_mseDia-9.584743e-03_test-2.373867e-01
+  - subtitle: Description of nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00
+    thumbnail: figures/nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00.png
+    title: nn_diameter-250_iteration_8_2-43-253-1-1_mseDia-4.389759e-03_test-3.646521e+00
+  - subtitle: Description of nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03
+    thumbnail: figures/nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03.png
+    title: nn_diameter-250_iteration_9_2-43-250-1-1_mseDia-6.934819e-04_test-1.905809e-03
+  - subtitle: Description of nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02
+    thumbnail: figures/nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02.png
+    title: nn_diameter-260_iteration_10_2-50-242-1-1_mseDia-5.610540e+00_test-1.390688e-02
+  - subtitle: Description of nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03
+    thumbnail: figures/nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03.png
+    title: nn_diameter-260_iteration_11_2-49-240-1-1_mseDia-3.939663e-03_test-1.532100e-03
+  - subtitle: Description of nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03
+    thumbnail: figures/nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03.png
+    title: nn_diameter-260_iteration_12_2-50-245-1-1_mseDia-5.483495e-03_test-1.260306e-03
+  - subtitle: Description of nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03
+    thumbnail: figures/nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03.png
+    title: nn_diameter-260_iteration_13_2-49-242-1-1_mseDia-2.719966e-03_test-1.262362e-03
+  - subtitle: Description of nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03
+    thumbnail: figures/nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03.png
+    title: nn_diameter-260_iteration_14_2-49-240-1-1_mseDia-1.135403e-02_test-1.048174e-03
+  - subtitle: Description of nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04
+    thumbnail: figures/nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04.png
+    title: nn_diameter-260_iteration_15_2-50-245-1-1_mseDia-1.914322e-02_test-8.892275e-04
+  - subtitle: Description of nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04
+    thumbnail: figures/nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04.png
+    title: nn_diameter-260_iteration_16_2-49-240-1-1_mseDia-2.427548e-03_test-9.909529e-04
+  - subtitle: Description of nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03
+    thumbnail: figures/nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03.png
+    title: nn_diameter-260_iteration_17_2-49-240-1-1_mseDia-8.289200e-02_test-9.554322e-03
+  - subtitle: Description of nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02
+    thumbnail: figures/nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02.png
+    title: nn_diameter-260_iteration_18_2-50-245-1-1_mseDia-4.468881e-03_test-1.010439e-02
+  - subtitle: Description of nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02
+    thumbnail: figures/nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02.png
+    title: nn_diameter-260_iteration_19_2-49-243-1-1_mseDia-3.609624e-03_test-3.850919e-02
+  - subtitle: Description of nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02
+    thumbnail: figures/nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02.png
+    title: nn_diameter-260_iteration_1_2-49-255-1-1_mseDia-4.136578e-03_test-1.113098e-02
+  - subtitle: Description of nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04
+    thumbnail: figures/nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04.png
+    title: nn_diameter-260_iteration_20_2-50-243-1-1_mseDia-3.500926e-02_test-7.055046e-04
+  - subtitle: Description of nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04
+    thumbnail: figures/nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04.png
+    title: nn_diameter-260_iteration_2_2-49-241-1-1_mseDia-6.520750e-03_test-9.190240e-04
+  - subtitle: Description of nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04
+    thumbnail: figures/nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04.png
+    title: nn_diameter-260_iteration_3_2-49-242-1-1_mseDia-5.176642e-03_test-8.972362e-04
+  - subtitle: Description of nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02
+    thumbnail: figures/nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02.png
+    title: nn_diameter-260_iteration_4_2-49-240-1-1_mseDia-3.486987e-03_test-1.148965e-02
+  - subtitle: Description of nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03
+    thumbnail: figures/nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03.png
+    title: nn_diameter-260_iteration_5_2-49-244-1-1_mseDia-4.711585e-02_test-2.015901e-03
+  - subtitle: Description of nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03
+    thumbnail: figures/nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03.png
+    title: nn_diameter-260_iteration_6_2-48-240-1-1_mseDia-3.580358e-03_test-1.035566e-03
+  - subtitle: Description of nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03
+    thumbnail: figures/nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03.png
+    title: nn_diameter-260_iteration_7_2-50-242-1-1_mseDia-5.120050e-03_test-4.864993e-03
+  - subtitle: Description of nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01
+    thumbnail: figures/nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01.png
+    title: nn_diameter-260_iteration_8_2-49-244-1-1_mseDia-2.680748e+01_test-4.151179e-01
+  - subtitle: Description of nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04
+    thumbnail: figures/nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04.png
+    title: nn_diameter-260_iteration_9_2-49-240-1-1_mseDia-5.274027e-01_test-9.101108e-04
+  - subtitle: Description of QDH_Diameter_220
+    thumbnail: figures/QDH_Diameter_220.png
+    title: QDH_Diameter_220
+  - subtitle: Description of QDH_Diameter_230
+    thumbnail: figures/QDH_Diameter_230.png
+    title: QDH_Diameter_230
+  - subtitle: Description of QDH_Diameter_240
+    thumbnail: figures/QDH_Diameter_240.png
+    title: QDH_Diameter_240
+  - subtitle: Description of QDH_Diameter_250
+    thumbnail: figures/QDH_Diameter_250.png
+    title: QDH_Diameter_250
+  - subtitle: Description of QDH_Diameter_260
+    thumbnail: figures/QDH_Diameter_260.png
+    title: QDH_Diameter_260
+  - subtitle: Description of QDP_Diameter_220
+    thumbnail: figures/QDP_Diameter_220.png
+    title: QDP_Diameter_220
+  - subtitle: Description of QDP_Diameter_230
+    thumbnail: figures/QDP_Diameter_230.png
+    title: QDP_Diameter_230
+  - subtitle: Description of QDP_Diameter_240
+    thumbnail: figures/QDP_Diameter_240.png
+    title: QDP_Diameter_240
+  - subtitle: Description of QDP_Diameter_250
+    thumbnail: figures/QDP_Diameter_250.png
+    title: QDP_Diameter_250
+  - subtitle: Description of QDP_Diameter_260
+    thumbnail: figures/QDP_Diameter_260.png
+    title: QDP_Diameter_260
+  - subtitle: Description of QHD_Diameter_220
+    thumbnail: figures/QHD_Diameter_220.png
+    title: QHD_Diameter_220
+  - subtitle: Description of QHD_Diameter_230
+    thumbnail: figures/QHD_Diameter_230.png
+    title: QHD_Diameter_230
+  - subtitle: Description of QHD_Diameter_240
+    thumbnail: figures/QHD_Diameter_240.png
+    title: QHD_Diameter_240
+  - subtitle: Description of QHD_Diameter_250
+    thumbnail: figures/QHD_Diameter_250.png
+    title: QHD_Diameter_250
+  - subtitle: Description of QHD_Diameter_260
+    thumbnail: figures/QHD_Diameter_260.png
+    title: QHD_Diameter_260
+  - subtitle: Description of Q_eta_curves_with_BEPs
+    thumbnail: figures/Q_eta_curves_with_BEPs.png
+    title: Q_eta_curves_with_BEPs
+  - subtitle: Description of Q_eta_mtk_curves_with_BEPs
+    thumbnail: figures/Q_eta_mtk_curves_with_BEPs.png
+    title: Q_eta_mtk_curves_with_BEPs
+  - subtitle: Description of Q_H_curves_with_BEPs
+    thumbnail: figures/Q_H_curves_with_BEPs.png
+    title: Q_H_curves_with_BEPs
+  - subtitle: Description of Q_H_mtk_curves_with_BEPs
+    thumbnail: figures/Q_H_mtk_curves_with_BEPs.png
+    title: Q_H_mtk_curves_with_BEPs
+  - subtitle: Description of Q_P_curves_with_BEPs
+    thumbnail: figures/Q_P_curves_with_BEPs.png
+    title: Q_P_curves_with_BEPs
+  - subtitle: Description of Q_P_mtk_curves_with_BEPs
+    thumbnail: figures/Q_P_mtk_curves_with_BEPs.png
+    title: Q_P_mtk_curves_with_BEPs

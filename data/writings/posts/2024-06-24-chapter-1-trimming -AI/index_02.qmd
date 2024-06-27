@@ -1,0 +1,238 @@
+---
+title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
+author: "Mohammed Twheed Khater"
+date: "2024-06-24"
+---
+
+# Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI
+
+## Introduction
+
+Centrifugal pumps are pivotal components in various industrial applications, from water supply systems to chemical processing. Optimizing their performance is crucial for enhancing energy efficiency and reducing operational costs. One key optimization technique is impeller trimming, which involves reducing the diameter of a pump impeller to align the pump's performance more closely with the system requirements. This chapter explores the concept of impeller trimming, its significance, traditional methods, and the advantages of employing Artificial Intelligence (AI) for performance prediction.
+
+## The Concept of Impeller Trimming
+
+### What is Trimming?
+
+Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.
+
+### Why Trimming?
+
+Impeller trimming is essential for several reasons:
+1. **Energy Consumption**: Proper trimming ensures that the pump operates at its optimal efficiency point, significantly reducing energy consumption. Each kilowatt saved at the pump level translates to approximately six kilowatts saved at the power station.
+2. **Market Availability**: Pumps available in the market may not always fit specific system requirements precisely. Trimming provides a means to tailor the pump’s performance to meet these specific needs.
+
+## Energy Savings and Environmental Impact
+
+Impeller trimming is not only beneficial for energy savings but also contributes to environmental sustainability. Reduced energy consumption leads to lower greenhouse gas emissions. For every kilowatt-hour (kWh) saved by the pump, the reduction in power station output significantly decreases pollution, making trimming an environmentally responsible practice.
+
+## Traditional Methods of Impeller Trimming
+
+### Scaling Methods
+
+Instead of relying solely on empirical formulas and performance curves derived from extensive testing, scaling methods provide a mathematical approach to predicting the performance of a trimmed impeller. One such method is constant-area scaling, which assumes that the trimmed impeller maintains a constant area, ensuring proportional changes in flow and head.
+
+#### Constant-Area Scaling
+
+Constant-area scaling involves adjusting the impeller diameter while maintaining the proportional relationship between the flow rate and head. This method ensures that the trimmed impeller operates efficiently within the desired performance range, without significant deviations from the original design.
+
+The constant-area scaling method is defined by the following relationship:
+
+\[ D_{trimmed} = D_{original} \times \left(\frac{Q_{trimmed}}{Q_{original}}\right)^{1/2} \]
+
+Where:
+- \( D_{trimmed} \) is the diameter of the trimmed impeller.
+- \( D_{original} \) is the original diameter of the impeller.
+- \( Q_{trimmed} \) is the desired flow rate after trimming.
+- \( Q_{original} \) is the original flow rate.
+
+### The Need for Trimming
+
+Trimming the impeller allows for the customization of pump performance to meet specific operational requirements. This customization is particularly necessary when:
+- The available pump sizes do not perfectly match the required system specifications.
+- System demands change over time, necessitating adjustments to maintain optimal efficiency.
+- Reducing the operational costs by minimizing energy wastage.
+
+## Artificial Neural Networks for Impeller Trimming
+
+Artificial Neural Networks (ANNs) offer a robust alternative to traditional methods by leveraging large datasets to predict pump performance accurately. Unlike empirical methods, ANNs can model complex, non-linear relationships between variables, providing more precise predictions.
+
+### Advantages of Neural Networks
+
+- **Accuracy**: ANNs can learn from vast amounts of data, capturing intricate patterns and relationships that traditional methods might miss.
+- **Efficiency**: Once trained, ANNs can quickly predict performance outcomes for different impeller diameters, saving time and resources.
+- **Adaptability**: Neural networks can be updated with new data, continuously improving their predictive capabilities.
+
+## Implementation in MATLAB
+
+The implementation of AI for impeller trimming was carried out using MATLAB. The scripts `main_04.m` and `QHforDiameters.m` are critical components of this implementation, leveraging optimized neural network architectures to predict pump performance based on different impeller diameters.
+
+### Script: main_04.m
+
+The `main_04.m` script incorporates the following key steps:
+
+1. **Data Loading**: Loading datasets containing flow rate, head, diameter, and power metrics.
+2. **Network Training**: Training neural networks with optimized architectures to predict head and power based on flow rate and diameter.
+3. **Performance Evaluation**: Evaluating the trained networks on various performance metrics to ensure accuracy and reliability.
+4. **Visualization**: Generating 3D plots to visualize the relationship between flow rate, head, diameter, and power, showcasing the neural network predictions versus actual data.
+
+#### Key Functions and Their Roles
+
+- **train_nn**: This function trains the neural network using the provided data, returning the trained model and performance metrics.
+- **trim_diameters**: This function determines the optimal trimmed diameter based on the provided pump data and performance criteria.
+- **processDataAndVisualize**: This function processes the data and generates visualizations to compare neural network predictions with actual data points.
+
+#### Sample Code Snippet from `main_04.m`
+
+The following MATLAB code snippet from `main_04.m` demonstrates how to load data, train neural networks, and visualize the results:
+
+```matlab
+clear; clc; clf; close all;
+
+% Load data
+load('filtered_QHD_table.mat');
+load('filtered_QDP_table.mat');
+load('deleted_QHD_table.mat');
+load('deleted_QDP_table.mat');
+
+% Extract data
+QH = [filtered_QHD_table.FlowRate_m3h, filtered_QHD_table.Head_m]';
+D = [filtered_QHD_table.Diameter_mm]';
+QD = [filtered_QDP_table.FlowRate_m3h, filtered_QDP_table.Diameter_mm]';
+P = [filtered_QDP_table.Power_kW]';
+
+% Train on full dataset
+[trainedNetQHD, ~, ~, ~, ~] = train_nn([2, 16], 191, 'trainlm', QH, D, 4837);
+[trainedNetQDP, ~, ~, ~, ~] = train_nn([2, 7, 29, 17], 191, 'trainlm', QD, P, 4837);
+
+% Visualization
+processDataAndVisualize(QH', D', QD', P', trainedNetQHD, trainedNetQDP, 'figures');
+```
+
+In this script, data is first loaded from various `.mat` files. The `train_nn` function is used to train neural networks on the flow rate and head data (`QH`) and diameter (`D`). The `processDataAndVisualize` function then generates visualizations to compare neural network predictions with actual data points.
+
+### Script: QHforDiameters.m
+
+The `QHforDiameters.m` script focuses on optimizing neural network hyperparameters for better performance prediction. It uses a genetic algorithm to find the optimal neural network architecture, ensuring accurate predictions for different impeller diameters.
+
+#### Key Steps in `QHforDiameters.m`
+
+1. **Initialization**: Loading data and initializing variables.
+2. **Hyperparameter Optimization**: Using a genetic algorithm to find the optimal neural network architecture.
+3. **Performance Evaluation**: Assessing the neural network's performance on the training and test datasets.
+4. **Visualization**: Plotting the predicted performance curves for different impeller diameters.
+
+#### Sample Code Snippet from `QHforDiameters.m`
+
+The following MATLAB code snippet from `QHforDiameters.m` illustrates the process of optimizing neural network hyperparameters and visualizing the results:
+
+```matlab
+clear; clc; clf;
+load('filtered_QHD_table.mat');
+load('filtered_QDP_table.mat');
+load('deleted_QHD_table.mat');
+load('deleted_QDP_table.mat');
+
+QH = [filtered_QHD_table.FlowRate_m3h, filtered_QHD_table.Head_m]';
+D  = [filtered_QHD_table.Diameter_mm]';
+
+QH_beps=[deleted_QHD_table.FlowRate_m3h,deleted_QHD_table.Head_m]';
+D_beps=[deleted_QHD_table.Diameter_mm]';
+
+QD = [filtered_QDP_table.FlowRate_m3h,filtered_QDP_table.Diameter_mm]';
+P = [filtered_QDP_table.Power_kW]';
+
+QD_beps=[deleted_QDP_table.FlowRate_m3h,deleted_QDP_table.Diameter_mm]';
+P_beps=[deleted_QDP_table.Power_kW]';
+
+% User-specified random seed (optional)
+userSeed = 4826;
+
+% Define a threshold for MSE to exit the loop early
+mseThreshold = 0.000199;
+
+% Initialize result matrix
+result = [];
+
+% Find all distinct diameters in D
+distinctDiameters = unique(D);
+
+% Weights for combining MSEs
+weightDiameter = 0.5;
+weightBeps = 0.5;
+
+for dIdx = 1:length(distinctDiameters)
+    % Current diameter to remove
+    diameterToRemove = distinctDiam
+
+eters(dIdx);
+    
+    % Remove the current diameter from QH and D
+    idxToKeep = D ~= diameterToRemove;
+    QH_filtered = QH(:, idxToKeep);
+    D_filtered = D(idxToKeep);
+    
+    % Calculate the number of epochs based on dataset size
+    maxEpochs = 1000 + floor(size(QH_filtered, 2) / 10);
+    
+    % Determine the number of hidden layers and neurons to search
+    hiddenLayers = [1:10];
+    neuronsPerLayer = [1:30];
+    
+    % Initialize the best MSE and corresponding architecture
+    bestMSE = Inf;
+    bestArch = [];
+    
+    % Random seed for reproducibility
+    rng(userSeed);
+    
+    for hl = hiddenLayers
+        for np = neuronsPerLayer
+            % Define the neural network architecture
+            netArch = [repmat(np, 1, hl), 1];
+            
+            % Train the neural network
+            [trainedNet, trainPerformance, ~, ~, ~] = train_nn(netArch, maxEpochs, 'trainlm', QH_filtered, D_filtered, userSeed);
+            
+            % Calculate the Mean Squared Error (MSE) on the removed data
+            QH_beps_pred = trainedNet(QH_beps);
+            mse_beps = mean((QH_beps_pred - D_beps).^2);
+            
+            % Calculate the weighted MSE
+            weightedMSE = weightDiameter * trainPerformance.best_perf + weightBeps * mse_beps;
+            
+            % Update the best architecture if current MSE is lower
+            if weightedMSE < bestMSE
+                bestMSE = weightedMSE;
+                bestArch = netArch;
+            end
+            
+            % Exit loop early if the MSE is below the threshold
+            if weightedMSE < mseThreshold
+                break;
+            end
+        end
+        
+        % Exit loop early if the MSE is below the threshold
+        if bestMSE < mseThreshold
+            break;
+        end
+    end
+    
+    % Store the result for the current diameter
+    result = [result; diameterToRemove, bestArch, bestMSE];
+end
+
+% Display the best architectures for each removed diameter
+disp('Best architectures for each removed diameter:');
+disp(result);
+
+% Save the result to a file
+save('best_architectures.mat', 'result');
+```
+
+In this script, data is loaded from various `.mat` files, and a genetic algorithm is used to find the optimal neural network architecture for predicting pump performance based on different impeller diameters. The script evaluates the performance of the trained networks and visualizes the results to ensure accuracy.
+
+## Conclusion
+
+Impeller trimming is a crucial technique for optimizing centrifugal pump performance, leading to significant energy savings and reduced environmental impact. Traditional methods, while useful, have limitations in accuracy and adaptability. Artificial Neural Networks (ANNs) provide a superior alternative by accurately predicting the effects of trimming, thus enabling better decision-making and operational efficiency. The MATLAB scripts `main_04.m` and `QHforDiameters.m` demonstrate the practical implementation of AI in predicting pump performance, highlighting the potential of this approach in real-world applications.
