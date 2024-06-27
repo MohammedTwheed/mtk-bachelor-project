@@ -1,0 +1,169 @@
+---
+title: "Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI"
+author: "mohammed twheed"
+format: revealjs
+---
+
+## What is this Project All About
+
+### Project Overview
+
+- **Objective**: To optimize centrifugal pump performance through impeller trimming using AI.
+- **Importance**: Enhances energy efficiency, reduces operational costs, and minimizes environmental impact.
+
+## Achieving Project Goals
+
+### Methodology
+
+- **Data Collection**: Gather performance data of centrifugal pumps.
+- **AI Implementation**: Develop neural networks to predict pump performance.
+- **Optimization**: Use genetic algorithms for hyperparameter tuning.
+
+## Tools Used
+
+### Essential Tools
+
+- **MATLAB**: For implementing neural networks and genetic algorithms.
+- **Python**: For data analysis and visualization.
+- **Quarto**: For documentation and presentation.
+
+## Explanation of Tools
+
+### Neural Networks
+
+- **Concept**: Neural networks model complex relationships between inputs (e.g., flow rate) and outputs (e.g., pump head).
+- **Example**: Predicting pump head for a given flow rate and impeller diameter.
+
+#### Simple Example
+```
+inputs: [flow_rate, impeller_diameter]
+outputs: [pump_head]
+```
+
+### Genetic Algorithms
+
+- **Concept**: Optimization technique inspired by natural selection.
+- **Example**: Finding the best hyperparameters for the neural network.
+
+#### Simple Example
+```
+population: [[neurons_layer1, neurons_layer2], ...]
+fitness: mean_squared_error
+```
+
+## Performance of Neural Networks
+
+### Evaluation Metrics
+
+- **Mean Squared Error (MSE)**: Measures prediction accuracy.
+- **Training, Validation, and Test Performance**: Assess generalization of the model.
+
+### Results
+```
+Trained Network Performance:
+- Training MSE: 0.001
+- Validation MSE: 0.002
+- Test MSE: 0.003
+```
+
+## Performance of Traditional Trimming Methods
+
+### Scaling Methods
+
+- **Constant-Area Scaling**: Adjusts impeller diameter proportionally to maintain flow rate and head relationships.
+
+#### Example
+```
+Q'/Q = D2'/D2
+H'/H = (D2'/D2)^2
+```
+
+## Engineering Value of This Project
+
+### Benefits
+
+- **Energy Efficiency**: Reduces energy consumption by optimizing pump performance.
+- **Cost Savings**: Lowers operational costs by minimizing energy wastage.
+- **Environmental Impact**: Decreases greenhouse gas emissions by saving energy.
+
+## Effect of Trimming on Energy Consumption and Pollution Reduction
+
+### Energy Savings
+
+- **Efficiency Gains**: Trimming impeller to match system requirements improves efficiency.
+- **Impact**: For each kW saved in pump delivery, approximately 6 kWh is saved at the power station.
+
+### Pollution Reduction
+
+- **Correlation**: Reduced energy consumption leads to lower emissions.
+- **Example**: Each kWh saved translates to significant reductions in power station output and pollution.
+
+## Neural Networks and Hyperparameter Optimization
+
+### Neural Network Architecture
+
+- **Components**: Input layer, hidden layers, output layer.
+- **Training Process**: Adjusting weights to minimize error.
+
+### Hyperparameters
+
+- **Definition**: Settings adjusted before training.
+- **Examples**: Number of neurons, epochs, activation functions.
+
+### Genetic Algorithm for Optimization
+
+- **Process**:
+  1. Initialization: Generate initial population.
+  2. Selection: Choose best individuals.
+  3. Crossover: Combine individuals to create offspring.
+  4. Mutation: Introduce variations.
+  5. Evaluation: Assess fitness and iterate.
+
+#### MATLAB Implementation
+```matlab
+% Genetic algorithm options
+gaOptions = optimoptions('ga', ...
+    'PopulationSize', 17, ...
+    'MaxGenerations', 13, ...
+    'CrossoverFraction', 0.8, ...
+    'FitnessLimit', 0.000991, ...
+    'EliteCount', 2, ...
+    'Display', 'iter', ...
+    'UseParallel', true);
+
+% Optimization using genetic algorithm
+[optimalHyperParams, finalMSE] = ga(@(hyperParams) evaluateHyperparameters(hyperParams, x, t, randomSeed), ...
+    length(lower_bounds), [], [], [], [], lower_bounds, upper_bounds, [], gaOptions);
+```
+
+## Comparison with Traditional Methods
+
+### Errors and Reductions
+
+- **Error Analysis**: Compare errors in predictions by neural networks and traditional methods.
+- **Reductions**: Analyze the percent reduction in diameter and its impact.
+
+### Results
+```
+Errors and Reductions:
+- Traditional Method Error: 10%
+- Neural Network Error: 1%
+- Percent Reduction: 5%
+```
+
+## Creative Thoughts and Further Directions
+
+### Future Enhancements
+
+- **Data Integration**: Incorporate real-time data for dynamic adjustments.
+- **Advanced Models**: Explore deep learning for more complex predictions.
+- **Wider Applications**: Extend methodology to other types of pumps and industrial equipment.
+
+## Conclusion
+
+### Summary
+
+- **AI Advantage**: Neural networks and genetic algorithms significantly improve prediction accuracy and efficiency.
+- **Environmental Impact**: Optimized pump performance contributes to energy savings and pollution reduction.
+- **Future Potential**: Continuous improvement and application expansion can further enhance industrial efficiency and sustainability.
+

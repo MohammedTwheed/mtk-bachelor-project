@@ -8,6 +8,8 @@ listing:
     template: gallery.ejs
     contents: gallery.yml
 ---
+# here is proposed [presentation](presentation.qmd)
+
 
 # Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI
 

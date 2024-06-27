@@ -1,0 +1,148 @@
+---
+title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
+format: revealjs
+---
+
+## Project Overview
+
+### What is this project all about?
+This project aims to optimize the trimming of pump impeller diameters using neural networks. 
+
+It compares the performance of neural networks with traditional trimming methods in predicting the correct diameter for efficient pump operation.
+
+
+
+## Project Goals
+
+- build code that is capable of search for optimal neural network architecture using genetic algorithms (using matlab `ga`).
+- compare NNs with traditional scaling based methods as in *weme paper*
+
+## How will it achieve its goals?
+- Train neural networks on existing pump performance data.
+- create loop to hide a one curve and use it for testing in addition to the beps.
+- Evaluate the trained models on new data points (beps) with best efficiency points used for testing performance of NNs we build.
+- Compare the neural network predictions to traditional trimming methods.
+
+## Tools Used
+
+## Tools it will use
+- MATLAB ga toolbox.
+- MATLAB Neural Network Toolbox in MATLAB.
+- Traditional trimming methods: Constant Area Scaling (*weme paper*) and nearest diameter method (this our convention of largest diameter being the master).
+
+##  Neural Networks - Theory
+
+## Neural Networks Explained
+- Neural networks are composed of layers of interconnected nodes.
+- Each node applies a weighted sum followed by a non-linear activation function.
+- The network is trained using a dataset to minimize the error in predictions.
+
+## Example
+1. **Input Layer**: Receives input data (e.g., flow rate, head).
+2. **Hidden Layers**: Perform transformations on the data.
+3. **Output Layer**: Produces the prediction (e.g., trimmed diameter).
+4. **Epochs**: number of iterations.
+
+##  Traditional Trimming Methods - Theory
+
+### Constant Area Scaling
+- Adjusts the impeller diameter while maintaining a constant area ratio.
+- Traditional method used for scaling pump performance.
+
+### Nearest Diameter Method
+- Chooses the nearest available diameter from a predefined set based on performance criteria.
+
+##  Neural Network Performance
+
+## Performance of the Neural Networks
+- Training and testing neural networks with various architectures.
+- Evaluating on metrics like Mean Squared Error (MSE).
+- Results show how well the network predicts the trimmed diameters.
+
+
+##  Traditional Methods Performance
+
+## Performance of Traditional Trimming Methods
+- Comparison with Constant Area Scaling and nearest diameter method.
+- Errors are calculated as the difference between the predicted and actual diameters.
+
+## here is example fit
+
+![best nn over all view](figures/best_nn_diameter_power_visualization_2024-06-27_05-02-57.png)
+
+
+
+## QHD results table
+
+```{python}
+import pandas as pd
+
+# Load the QHD results table
+qhd_results = pd.read_csv('QHD_results.csv')
+# Rename columns to ensure headers are displayed correctly
+qhd_results.columns = ['DiameterRemoved', 'AvgMSE', 'TrainPerformance', 'ValPerformance', 'TestPerformance', 'MSEDeletedDiameter', 'MSEBEPs']
+qhd_results
+```
+## QDP results table
+
+```{python}
+# Load the QDP results table
+qdp_results = pd.read_csv('QDP_results.csv')
+qdp_results.columns = ['DiameterRemoved', 'AvgMSE', 'TrainPerformance', 'ValPerformance', 'TestPerformance', 'MSEDeletedDiameter', 'MSEBEPs']
+qdp_results
+```
+
+
+## QDH results tabel
+```{python}
+# Load the QDH results table
+qdh_results = pd.read_csv('QDH_results.csv')
+qdh_results.columns = ['DiameterRemoved', 'AvgMSE', 'TrainPerformance', 'ValPerformance', 'TestPerformance', 'MSEDeletedDiameter', 'MSEBEPs']
+qdh_results
+```
+## NNs errors comparisons with traditional trimming and reductions in Diameter
+
+## comparison
+```{python}
+erros_reductions = pd.read_csv('errors_and_reductions.csv')
+erros_reductions .columns = ['Index', 'Percent_Error_CAS_260', 'Percent_Error_CAS_Nearest', 'Percent_Error_NN', 'Percent_Reduction']
+erros_reductions 
+```
+
+## final comparison statistics
+```{python}
+fstats = pd.read_csv('final_statistics.csv')
+fstats.columns = ['MAE_Trim_Diameters', 'MAE_TrainedNetQHD', 'Count_Better_TrainedNetQHD', 'Count_Better_Trim_Diameters']
+fstats
+```
+## Engineering Value
+
+### The Engineering Value of This Project
+- Accurate prediction of trimmed diameters enhances pump efficiency.
+- Reduces the need for physical trials, saving time and resources.
+
+##  Environmental Impact
+
+### Effect of Trimming on Energy Consumption and Pollution Reduction
+- Optimized trimming leads to energy-efficient pump operation.
+- Lower energy consumption results in reduced greenhouse gas emissions. where each 1 kw reduction in pump delivery corresponds to 6 kwhr in the power station.
+
+
+
+
+
+
+## Future Directions
+- Extend the neural network model to predict other performance metrics.
+- Integrate real-time data for dynamic trimming adjustments.
+- Explore other machine learning algorithms for comparison.
+
+##  Results and Conclusion
+
+### Results
+- Neural networks outperform traditional methods in all cases.
+- Significant reduction in error rates and improved accuracy.
+
+### Conclusion
+- Neural networks offer a promising alternative for impeller diameter trimming.
+- Further research and real-world testing can enhance the reliability and applicability of these models.

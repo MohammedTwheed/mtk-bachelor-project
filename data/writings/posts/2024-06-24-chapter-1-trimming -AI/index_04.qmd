@@ -1,0 +1,153 @@
+---
+title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
+author: "Mohammed Twheed Khater"
+date: "2024-06-24"
+cache: false
+listing:
+  - id: gallery
+    template: gallery.ejs
+    contents: gallery.yml
+---
+
+# Chapter 1: Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI
+
+## Introduction
+
+### What is This Project About?
+
+This project focuses on optimizing the performance of centrifugal pumps, which are essential in various industrial applications such as water supply systems and chemical processing. The optimization technique of interest is impeller trimming, which involves reducing the diameter of a pump impeller to better match the pump's performance with the system requirements. This chapter explores the concept of impeller trimming, its significance, traditional methods, and the advantages of employing Artificial Intelligence (AI) for performance prediction.
+
+### How Will It Achieve Its Goals?
+
+The project aims to enhance energy efficiency and reduce operational costs by accurately predicting the effects of impeller trimming on pump performance. By leveraging AI techniques, particularly neural networks and genetic algorithms, the project seeks to provide precise predictions that can outperform traditional empirical methods.
+
+### Tools It Will Use
+
+1. **Artificial Neural Networks (ANNs)**: For predicting pump performance based on various input parameters.
+2. **Genetic Algorithms (GAs)**: For optimizing the hyperparameters of the neural networks.
+3. **MATLAB**: As the primary platform for implementing the AI models and optimization algorithms.
+
+## The Concept of Impeller Trimming
+
+### What is Trimming?
+
+Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.
+
+### Why Trimming?
+
+#### The Need for Trimming
+
+Trimming the impeller allows for the customization of pump performance to meet specific operational requirements. This customization is particularly necessary when:
+- The available pump sizes do not perfectly match the required system specifications.
+- System demands change over time, necessitating adjustments to maintain optimal efficiency.
+- Reducing the operational costs by minimizing energy wastage.
+
+#### Energy Consumption
+
+Centrifugal pumps are often responsible for a significant portion of the energy consumption in industrial settings. Trimming the impeller to match the exact system requirements can greatly reduce the energy consumption of the pump. By operating more efficiently, the pump uses less power, leading to substantial energy savings. For every kilowatt (kW) saved by the pump, the reduction in power station output significantly decreases pollution.
+
+#### Market Availability
+
+The pumps available in the market may not always fit specific system requirements precisely. Typically, pumps are designed for a range of operations and may be larger or smaller than needed for a particular application. Impeller trimming allows for customizing the pump's performance to meet these specific needs, ensuring that the pump operates at optimal efficiency.
+
+## Energy Savings and Environmental Impact
+
+Trimming the impeller is not only beneficial for energy savings but also contributes to environmental sustainability. Reduced energy consumption leads to lower greenhouse gas emissions. For every kilowatt-hour (kWh) saved by the pump, the reduction in power station output significantly decreases pollution.
+
+## Traditional Methods of Impeller Trimming
+
+### Scaling Methods
+
+Traditional methods for impeller trimming typically involve scaling laws and empirical correlations derived from extensive testing and experience. These methods include:
+
+#### Constant-Area Scaling
+
+Constant-area scaling assumes that the trimmed impeller maintains a constant area, ensuring proportional changes in flow and head. This method involves adjusting the impeller diameter while maintaining the proportional relationship between the flow rate and head.
+
+$$
+\text{constant-area scaling:} \quad \frac{Q'}{Q} = \frac{D_2'}{D_2} \frac{H'}{H} = \left( \frac{D_2'}{D_2} \right)^2
+$$
+
+## Artificial Neural Networks for Impeller Trimming
+
+Artificial Neural Networks (ANNs) offer a robust alternative to traditional methods by leveraging large datasets to predict pump performance accurately. Unlike empirical methods, ANNs can model complex, non-linear relationships between variables, providing more precise predictions.
+
+### Advantages of Neural Networks
+
+- **Accuracy**: ANNs can learn from vast amounts of data, capturing intricate patterns and relationships that traditional methods might miss.
+- **Efficiency**: Once trained, ANNs can quickly predict performance outcomes for different impeller diameters, saving time and resources.
+- **Adaptability**: Neural networks can be updated with new data, continuously improving their predictive capabilities.
+
+### Neural Network Architecture
+
+The architecture of the neural network plays a crucial role in its performance. Key components include:
+- **Input Layer**: Represents the features or variables used for prediction, such as flow rate and diameter.
+- **Hidden Layers**: Intermediate layers that process the inputs through weighted connections. The number of hidden layers and neurons per layer is optimized using hyperparameter tuning.
+- **Output Layer**: Provides the predicted performance metrics, such as head and power.
+
+### Training the Neural Network
+
+The training process involves adjusting the weights of the network to minimize the error between predicted and actual values. This is achieved through backpropagation and optimization algorithms.
+
+### Hyperparameters and Unlearnable Parameters
+
+Hyperparameters are settings that you adjust before training your neural network. These parameters influence the training process and the structure of the network. They are not learned from the data but are set by the user. In our code, we have chosen to optimize several hyperparameters, including:
+
+- **Number of neurons in the hidden layers**: This determines the capacity of the neural network to learn from the data. More neurons can capture more complex patterns but may also lead to overfitting if not managed properly.
+- **Training method**: This is specified by the choice of optimizer. In our code, we use the Levenberg-Marquardt (`trainlm` in MATLAB) optimizer for its efficiency in training feedforward networks.
+- **Number of epochs**: Epochs refer to the number of complete passes through the training dataset. Our code optimizes the number of epochs to ensure the model is well-trained without overfitting.
+- **Activation functions**: These functions define the output of each neuron. We experiment with different activation functions like `tansig` and `logsig` to find the best fit for our model.
+
+## Genetic Algorithm for Hyperparameter Optimization
+
+Genetic algorithms (GAs) are a class of optimization techniques inspired by the process of natural selection. They are particularly useful for optimizing complex problems with large search spaces, such as neural network hyperparameter tuning.
+
+### How Genetic Algorithms Work
+
+1. **Initialization**: A population of potential solutions (individuals) is generated. Each individual represents a set of hyperparameters.
+2. **Selection**: Individuals are selected based on their fitness, which is typically a function of how well they perform on a given task (e.g., predicting pump performance).
+3. **Crossover**: Pairs of individuals are combined to produce offspring. This process involves swapping parts of their hyperparameter sets to create new solutions.
+4. **Mutation**: Some offspring undergo random changes to introduce diversity into the population.
+5. **Evaluation**: The fitness of the new generation is evaluated, and the best individuals are selected for the next iteration.
+6. **Termination**: The algorithm repeats the selection, crossover, mutation, and evaluation steps until a stopping criterion is met (e.g., a predefined number of generations or a satisfactory fitness level).
+
+### Using Genetic Algorithms in Our Code
+
+In our code, we use a genetic algorithm to optimize the hyperparameters of our neural network. The key steps involved are:
+
+1. **Define the Search Space**: We specify the range for each hyperparameter, such as the number of neurons in hidden layers, the number of epochs, and the indices for the training and activation functions.
+2. **Set Genetic Algorithm Options**: We configure the genetic algorithm with options like population size, maximum number of generations, crossover fraction, and fitness limit.
+3. **Evaluate Hyperparameters**: A fitness function evaluates the performance of each set of hyperparameters. It trains the neural network and computes the mean squared error (MSE) across training, validation, and testing datasets.
+4. **Optimize**: The genetic algorithm iteratively searches for the optimal hyperparameters by generating new populations, evaluating their fitness, and selecting the best-performing sets.
+
+Here is an outline of the relevant code:
+
+```matlab
+% Define bounds for the genetic algorithm optimization
+lower_bounds = [2,  13,    13, 1, 1];
+upper_bounds = [2,  300,    300, 2, 1];
+
+% Genetic algorithm options
+gaOptions = optimoptions('ga', ...
+    'PopulationSize', 17, ...
+    'MaxGenerations', 13, ...
+    'CrossoverFraction', 0.8, ...
+    'ConstraintTolerance', 0.000991, ...
+    'FitnessLimit', 0.000991, ...
+    'EliteCount', 2, ...
+    'Display', 'iter', ...
+    'UseParallel', true);
+
+% Optimization using genetic algorithm
+[optimalHyperParams, finalMSE] = ga(@(hyperParams) evaluateHyperparameters(hyperParams, x, t, randomSeed), ...
+    length(lower_bounds), [], [], [], [], lower_bounds, upper_bounds, [], gaOptions);
+```
+
+In this section of the code, we set up the bounds for the hyperparameters and configure the genetic algorithm options. The evaluateHyperparameters function is called by the genetic algorithm to assess the performance of each set of hyperparameters, guiding the search towards the optimal solution.
+
+The combination of neural networks and genetic algorithms provides a powerful approach for predicting the effects of impeller trimming on centrifugal pump performance. By leveraging AI techniques, we can achieve more accurate and efficient predictions, ultimately leading to better optimization of pump operations.
+
+# Conclusion
+
+This chapter introduced the concept of impeller trimming and its significance in optimizing centrifugal pump performance. It highlighted the limitations of traditional methods and the advantages of using AI, specifically neural networks and genetic algorithms, for predicting the effects of impeller trimming. The implementation details of these AI techniques were discussed, demonstrating their potential to enhance energy efficiency and reduce operational costs in industrial applications.
+
