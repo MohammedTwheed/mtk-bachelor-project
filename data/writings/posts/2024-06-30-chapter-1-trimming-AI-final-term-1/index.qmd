@@ -1,0 +1,76 @@
+---
+title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
+author: "Mohammed Twheed Khater"
+date: "2024-06-24"
+listing:
+  - id: gallery
+    template: gallery.ejs
+    contents: gallery.yml
+format:
+    html: default
+    pdf: default
+    docx: default
+bibliography: trimming-final-book-term-1.bib
+
+---
+
+
+# Chapter 1 | prediction of the effect of impeller trimming on centrifugal pump performance using AI.
+
+## abstract
+
+## Introduction
+
+## What is trimming in centrifugal pump impeller
+Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.
+
+
+
+## Why trimming
+System design engineers often "round up" system capacity and losses to account for construction changes, potential expansions, fluid viscosity changes, and pipe roughening over time. This practice leads to pumps running at higher pressures and flow rates than necessary, wasting energy and causing issues like cavitation and premature wear. Instead of throttling back powerful pumps, a more efficient and cost-effective solution is impeller trimming. This process involves machining the impeller to reduce its diameter, thereby lowering the flow rate, pressure, and power consumption of the pump. While trimming can slightly reduce pump efficiency due to increased internal recirculation, the overall energy savings typically outweigh this drawback. Manufacturers provide performance curves to guide impeller trimming, ensuring that the pumps operate efficiently within specified limits. 
+
+
+### Energy Consumption
+
+Centrifugal pumps are often responsible for a significant portion of the energy consumption in industrial settings. Trimming the impeller to match the exact system requirements can greatly reduce the energy consumption of the pump. By operating more efficiently, the pump uses less power, leading to substantial energy savings *where for each 1 kw in pump delivery corresponds to 6 kwhr in power station*.
+
+### Market Availability
+
+The pumps available in the market may not always fit specific system requirements precisely. Typically, pumps are designed for a range of operations and may be larger or smaller than needed for a particular application. Impeller trimming allows for customizing the pump's performance to meet these specific needs, ensuring that the pump operates at optimal efficiency.
+
+
+## Energy Saving and Environmental Impact 
+
+![energy flow and typical losses through power station](./figures/energyLoss.png){#fig-energyLoss}
+
+
+As illustrated in @fig-energyLoss @Hickok-AdjustableSpeedTool-1985 , energy flows through a power system experiencing significant losses at each stage, from the initial fuel input (e.g., a boiler) to the usable work performed by equipment. While minimizing thermal losses at the power plant (through combined cycle or cogeneration) offers substantial gains, focusing solely on the front-end might seem counterintuitive. After all, if only 15-20 kW of usable work remains from a 100 kW fuel input, why prioritize efficiency in motors and driven equipment? The answer lies in the leverage – every 1 kw saved at the utilization stage translates to a 6 kW reduction in fuel consumption at the power plant @Hickok-AdjustableSpeedTool-1985 . This dramatic impact underscores the importance of identifying and minimizing losses within process drives .
+
+
+
+## traditional trimming methods
+add the formula used and its confidence here
+
+## Data Extraction or digitization
+
+## Neural networks (we used feed forward deep neural nets)
+
+## Genetic algorithm (for nn hyperparameters optimization)
+
+## comparison of NN based vs constant area scaling method.
+
+## conclusion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
