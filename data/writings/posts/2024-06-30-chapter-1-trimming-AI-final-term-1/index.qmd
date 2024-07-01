@@ -2,10 +2,10 @@
 title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
 author: "Mohammed Twheed Khater"
 date: "2024-06-24"
-listing:
-  - id: gallery
-    template: gallery.ejs
-    contents: gallery.yml
+# listing:
+#   - id: gallery
+#     template: gallery.ejs
+#     contents: gallery.yml
 format:
     html: default
     pdf: default
@@ -13,6 +13,100 @@ format:
 bibliography: trimming-final-book-term-1.bib
 
 ---
+the core thing we are doing here is that we have pump data from manufacturer which are Q-H curves for different diameters and Q-power curves for the same different diameters .
+
+we have first digitized this data  using a semi-manual tool call *webplotdigitizer* its available online and could be downloaded locally. then export the Q-H-D points and Q-P-D points in a csv file then import this to matlab and re creates the pdf plots using and find the best efficiency points by calculating  $\eta$ from power. then removed the beps from the dataset that will be used to train the nn on trimming for further testing .
+
+for the nn we faced the problem of how to select the best architecture for that dataset so we used the matlab `ga` to do so.
+
+where we used the `ga` to find :
+
+Number of hidden layers
+Number of hidden neurons in each layer
+Activation function
+Training algorithm
+
+where :
+
+trainingFunctionOptions = {'trainlm', 'trainbr', 'trainrp', ...
+    'traincgb', 'traincgf', 'traincgp', 'traingdx', 'trainoss'};
+activationFunctionOptions = {'tansig', 'logsig'};
+
+and we finally found that the best nn for (Q,H) -> D was hidden layers [5,15] and for (Q,D)-> P was [2, 7, 29, 17] for both the best training function was 'trainlm' and activation 'tansig' and maxepochs was 355.
+
+we have set the nn training options for data processing to be :
+
+        % Create the neural network
+        net = feedforwardnet(neurons);
+    
+        % Set other properties
+        net.trainParam.showWindow = showWindow;
+        net.input.processFcns = {'removeconstantrows', 'mapminmax'};
+        net.output.processFcns = {'removeconstantrows', 'mapminmax'};
+        net.divideFcn = 'dividerand';
+        net.divideMode = 'sample';
+        net.divideParam.trainRatio = 0.7;
+        net.divideParam.valRatio = 0.15;
+        net.divideParam.testRatio = 0.15;
+
+        we have used  
+        
+        % Set the seed for reproducibility
+        rng(userSeed);
+
+for the ga part we used options :
+
+% Define options for the genetic algorithm.
+gaOptions = optimoptions('ga', ...
+    'PopulationSize', 17, ...
+    'MaxGenerations', 13, ...
+    'CrossoverFraction', 0.8, ...
+    'ConstraintTolerance', 0.000991, ...
+    'FitnessLimit', 0.000991, ...
+    'EliteCount', 2, ...
+    'Display', 'iter', ...
+    'UseParallel', true);
+
+
+the fitness function was designed to return the average mse of training validation testing performances callculated by perform in matlab.
+
+
+    trainPerformance = perform(net, trainTargets, predictions);
+    valPerformance = perform(net, valTargets, predictions);
+    testPerformance = perform(net, testTargets, predictions);
+
+
+after coming up with results from the ga we shift our attention to the stability of this architecture to the topology of trainging data in the first part we was depending the matlab built-in random selection of testing and training :
+
+        net.divideFcn = 'dividerand';
+        net.divideMode = 'sample';
+        net.divideParam.trainRatio = 0.7;
+        net.divideParam.valRatio = 0.15;
+        net.divideParam.testRatio = 0.15;
+
+        but , we begin in addition to that to test the performance of removing a complete diameter curve from the training data and test the resulted network to save the best on of them of course the statistical performance measuers for the complete diameter set given was the best . but our chosen architectres proves a better berformance than traditional constant area scaling method by order of magnitude. the thing to notice here is that if the removed diameter was the smallest or largest one this would result in the worst performance .
+
+        to select the best we created a score function :
+
+        % Function to compute the weighted score, omitting NaN values
+function score = compute_score(trainPerf, valPerf, testPerf, mseDeleted, mseBEPS, weights) 
+if ~isnan(mseDeleted)
+        score = weights.train * trainPerf + ...
+            weights.val * valPerf + ...
+            weights.test * testPerf + ...
+            weights.deleted_diameter * mseDeleted + weights.beps * mseBEPS;
+else
+       score = weights.train * trainPerf + ...
+            weights.val * valPerf + ...
+            weights.test * testPerf  + weights.beps * mseBEPS;
+end
+end
+
+weights = struct('train', 0, 'val', 0.05, 'test', 0.35, 'deleted_diameter', 0.40, 'beps', 0.20);
+
+
+and here is the final results in this table :
+
 
 
 # Chapter 1 | prediction of the effect of impeller trimming on centrifugal pump performance using AI.
@@ -21,13 +115,16 @@ bibliography: trimming-final-book-term-1.bib
 
 ## Introduction
 
+
 ## What is trimming in centrifugal pump impeller
 Impeller trimming is the process of mechanically reducing the diameter of the pump impeller. This adjustment directly influences the pump’s head and flow rate, thereby modifying its performance characteristics. Trimming is performed to ensure that the pump operates within the desired performance range, avoiding over-delivery or under-delivery of fluid.
 
 
 
 ## Why trimming
-System design engineers often "round up" system capacity and losses to account for construction changes, potential expansions, fluid viscosity changes, and pipe roughening over time. This practice leads to pumps running at higher pressures and flow rates than necessary, wasting energy and causing issues like cavitation and premature wear. Instead of throttling back powerful pumps, a more efficient and cost-effective solution is impeller trimming. This process involves machining the impeller to reduce its diameter, thereby lowering the flow rate, pressure, and power consumption of the pump. While trimming can slightly reduce pump efficiency due to increased internal recirculation, the overall energy savings typically outweigh this drawback. Manufacturers provide performance curves to guide impeller trimming, ensuring that the pumps operate efficiently within specified limits. 
+System design engineers often "round up" system capacity and losses to account for construction changes, potential expansions, fluid viscosity changes, and pipe roughening over time . This practice leads to pumps running at higher pressures and flow rates than necessary, leading not only to wasting energy but also causing issues like cavitation and premature wear @HydraulicInstitute-TrimmingImpellersReduce-2022. Instead of throttling back powerful pumps or opening discharge bypass line that recirculate portion of the flow back to the suction leading also to energy loss or using variable speed drive to drive the pump at lower speed reduction its head, a more efficient and cost-effective solution is impeller trimming. This process involves machining the impeller to reduce its diameter, thereby lowering the flow rate, pressure, and power consumption of the pump. While trimming can slightly reduce pump efficiency due to increased internal recirculation, the overall energy savings typically outweigh this drawback.
+
+(NeedWork) Manufacturers provide performance curves to guide impeller trimming, ensuring that the pumps operate efficiently within specified limits. 
 
 
 ### Energy Consumption
@@ -49,7 +146,23 @@ As illustrated in @fig-energyLoss @Hickok-AdjustableSpeedTool-1985 , energy flow
 
 
 ## traditional trimming methods
-add the formula used and its confidence here
+
+
+Trimming methods are essential in adjusting the performance characteristics of pumps by modifying the impeller diameter. One of the common trimming methods is constant-area scaling, which assumes that the trimmed impeller maintains a constant area, thereby ensuring proportional changes in both flow rate and head. This method involves reducing the impeller diameter in a manner that preserves the proportional relationship between the original and the trimmed impeller's performance metrics. The equations governing constant-area scaling are as follows:
+
+\[
+\text{Constant-area scaling:} \quad \frac{Q'}{Q} = \frac{D_2'}{D_2}, \quad \frac{H'}{H} = \left( \frac{D_2'}{D_2} \right)^2
+\]
+
+where:
+- \( Q' \) and \( H' \) represent the flow rate and head after trimming, respectively.
+- \( D'_2 \) and \( D_2 \) represent the diameter of the trimmed and untrimmed impeller, respectively.
+
+
+
+In this project, constant-area scaling serves as a benchmark to compare against the predictive capabilities of neural networks. By validating the neural network models against this traditional method, we can assess the accuracy and reliability of data-driven approaches in predicting trimmed pump diameter for a given operating point (Q,H).
+
+
 
 ## Data Extraction or digitization
 
@@ -60,6 +173,8 @@ add the formula used and its confidence here
 ## comparison of NN based vs constant area scaling method.
 
 ## conclusion
+
+
 
 
 
