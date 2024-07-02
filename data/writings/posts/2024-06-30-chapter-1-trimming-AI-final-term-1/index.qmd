@@ -1,7 +1,10 @@
 ---
 title: "Application of Artificial Intelligence on the Centrifugal Pump Operation"
-author: "Mohammed Twheed Khater"
-date: "2024-06-24"
+author:
+  - name:  "Mohammed Twheed Khater"
+  - name: "Seif Ibrahim Hassan"
+abstract: "This research explores the application of artificial intelligence (AI) in predicting the effects of impeller trimming on centrifugal pump performance, focusing on the DAB Model KDN 100-250 - 2 POLES pump. Centrifugal pumps are vital in various industrial applications, where optimizing their performance often involves impeller trimming—mechanically reducing impeller diameter to adjust flow rate and head. Traditional methods, like constant-area scaling, provide approximate solutions but suffer from inaccuracies due to oversimplification of the trimming process. In contrast, this study employs neural networks optimized with genetic algorithms to predict performance changes more accurately. The research showcases neural networks' effectiveness in modeling complex relationships between impeller dimensions and pump performance metrics, achieving high accuracy in predicting trimmed diameter and power output. Results indicate significant improvement over traditional methods, highlighting AI's potential to enhance efficiency and reduce energy consumption in industrial pump systems."
+date: "2024-07-3"
 # listing:
 #   - id: gallery
 #     template: gallery.ejs
@@ -13,6 +16,7 @@ format:
 bibliography: trimming-final-book-term-1.bib
 ---
 
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="http://localhost:7489/data/writings/posts/2024-06-30-chapter-1-trimming-AI-final-term-1/index.pdf" data-original-href="http://localhost:7489/data/writings/posts/2024-06-30-chapter-1-trimming-AI-final-term-1/index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="http://localhost:7489/data/writings/posts/2024-06-30-chapter-1-trimming-AI-final-term-1/index.docx" data-original-href="http://localhost:7489/data/writings/posts/2024-06-30-chapter-1-trimming-AI-final-term-1/index.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div>
 
 # Chapter 1 | Prediction of the Effect of Impeller Trimming on Centrifugal Pump Performance Using AI
 
